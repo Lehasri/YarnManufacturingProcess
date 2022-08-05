@@ -6,21 +6,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Supplier</title>
+<title>Update Customer</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="update" method="post" modelAttribute="updatesupplier">
-				<p>
+			<form:form action="update" method="post" modelAttribute="updatecustomer">
 				<div>
-					<label>Supplier Details :</label>
-				</div>
-				</p>
-				<div>
-					<label for="supplierId">Supplier Id</label>
+					<label for="yarnId">Yarn Id</label>
 					<div>
-						<form:input path="supplierId" />
+						<form:input path="yarnId" />
+					</div>
+				</div>
+				<div>
+					<label for="customerId">Customer Id</label>
+					<div>
+						<form:input path="customerId" />
 					</div>
 				</div>
 				<div>
@@ -42,42 +43,21 @@
 					</div>
 				</div>
 				<div>
-					<label for="phoneNo">phone No</label>
+					<label for="phoneNo">Phone No</label>
 					<div>
 						<form:input path="phoneNo" />
 					</div>
 				</div>
 				<div>
-					<label for="emailId">Email Id</label>
 					<div>
-						<form:input path="emailId" />
+						<label for="emailId">Email Id</label>
+						<div>
+							<form:input path="emailId" />
+						</div>
 					</div>
-				</div>
-				<div>
-					<label>Bank Details :</label>
-				</div>
-				</p>
-				<div>
-					<label for="bankName">Bank Name</label>
 					<div>
-						<form:input path="bankName" />
+						<form:button>Update</form:button>
 					</div>
-				</div>
-				<div>
-					<label for="accountNumber">Account Number</label>
-					<div>
-						<form:input path="accountNumber" />
-					</div>
-				</div>
-				<div>
-					<label for="ifscCode">IFSC Code</label>
-					<div>
-						<form:input path="ifscCode" />
-					</div>
-				</div>
-				<div>
-					<form:button>Update</form:button>
-				</div>
 			</form:form>
 		</div>
 	</div>

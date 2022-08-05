@@ -20,11 +20,11 @@ import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 	@RequestMapping("/supplier")
 	public class SupplierController {
 		@Autowired
-		SupplierService spservice;
+		SupplierService supplierService;
 	    @GetMapping("/list")
 		public String getAllSuppliers(Model model) {
-			List<Supplier> suplist = spservice.getallSuppliers();
-			model.addAttribute("allsuppliers",suplist);
+			List<Supplier> supplierList = supplierService.getAllSuppliers();
+			model.addAttribute("allsuppliers",supplierList);
 			return "list-suppliers";
 		}
 	    @GetMapping("/addform")
@@ -36,30 +36,30 @@ import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 	    }
 	    @PostMapping("/add")
 		public String addNewSuppliers(@ModelAttribute("addsupplier") Supplier thesupplier) {
-	    	spservice.save(thesupplier);
+	    	supplierService.save(thesupplier);
 	    	return "redirect:/supplier/list";
 		}
 	    @GetMapping("/updateform")
-	    public String showUpdateForm(@RequestParam("supid") int id,Model model)
+	    public String showUpdateForm(@RequestParam("supplierid") int id,Model model)
 	    {
-	    	Supplier theSupplier=spservice.findById(id);
+	    	Supplier theSupplier=supplierService.findById(id);
 	    	model.addAttribute("updatesupplier",theSupplier);
 	    	return "update-supplier-form";
 	    }
 	    @PostMapping("/update")
 		public String updateSuppliers(@ModelAttribute("updatesupplier") Supplier theSupplier) {
-			spservice.save(theSupplier);
+	    	supplierService.save(theSupplier);
 	    	return "redirect:/supplier/list";
 		}
 	    @GetMapping("/deletesupplier")
-		public String deleteSuppliers(@RequestParam("supid") int id) {
-	    	spservice.deleteById(id);
+		public String deleteSuppliers(@RequestParam("supplierid") int id) {
+	    	supplierService.deleteById(id);
 			return "redirect:/supplier/list";
 		}
-	    @GetMapping("/findSupplierById")
-		public String findSupplierById(@RequestParam("supid") int id,Model model) {
-	    	Supplier theSupplier=spservice.findById(id);
-	    	model.addAttribute("findSupplierById",theSupplier);
+	    @GetMapping("/findsupplierbyid")
+		public String findSupplierById(@RequestParam("supplierid") int id,Model model) {
+	    	Supplier theSupplier=supplierService.findById(id);
+	    	model.addAttribute("findsupplierbyid",theSupplier);
 	    	return "find-supplier-by-id-form";
 		}
 }

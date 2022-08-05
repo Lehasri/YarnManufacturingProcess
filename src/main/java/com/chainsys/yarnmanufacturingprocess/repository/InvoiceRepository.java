@@ -2,11 +2,13 @@ package com.chainsys.yarnmanufacturingprocess.repository;
 
 import java.util.List;
 
+import org.springframework.data.repository.CrudRepository;
+
 import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 
-public class InvoiceRepository {
+public interface InvoiceRepository extends CrudRepository<Invoice,Integer>  {
 	Invoice findById(int id);
-	Invoice save(Invoice in);
-	void deleteById(int in_id);
+	Invoice save(Invoice invoice);
+	void deleteById(int invoice_id);
 	List <Invoice> findAll();
 }

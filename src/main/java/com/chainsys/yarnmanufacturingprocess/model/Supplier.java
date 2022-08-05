@@ -21,8 +21,12 @@ public class Supplier {
 	private long phoneNo;
 	@Column(name = "email_id")
 	private String emailId;
-	@Column(name = "bank_details")
-	private String bankDetails;
+	@Column(name = "bank_name")
+	private String bankName;
+	@Column(name = "account_number")
+	private long accountNumber;
+	@Column(name = "ifsc_code")
+	private String ifscCode;
 
 	public int getSupplierId() {
 		return supplierId;
@@ -71,14 +75,31 @@ public class Supplier {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-
-	public String getBankDetails() {
-		return bankDetails;
+	public String getBankName() {
+		return bankName;
 	}
 
-	public void setBankDetails(String bankDetails) {
-		this.bankDetails = bankDetails;
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
 	}
+
+	public long getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(long accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+	public String getIfscCode() {
+		return ifscCode;
+	}
+
+	public void setIfscCode(String ifscCode) {
+		this.ifscCode = ifscCode;
+	}
+
+	
+	
 
 //	@Override
 //	public String toString() // Default method

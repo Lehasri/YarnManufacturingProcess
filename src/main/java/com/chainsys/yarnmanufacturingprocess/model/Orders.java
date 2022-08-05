@@ -1,6 +1,6 @@
 package com.chainsys.yarnmanufacturingprocess.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +9,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="orders")
 public class Orders {
+	@Column(name="customer_id")
+	private int customerId;
 	@Id
 	@Column(name="order_id")
 	private int orderId;
@@ -29,6 +31,12 @@ public class Orders {
 	@Column(name="advance")
 	private double advance;
 	
+	public int getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
 	public int getOrderId() {
 		return orderId;
 	}

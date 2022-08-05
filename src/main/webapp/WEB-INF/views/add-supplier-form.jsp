@@ -12,6 +12,11 @@
 	<div id="root">
 		<div id="form">
 			<form:form action="add" method="post" modelAttribute="addsupplier">
+				<p>
+				<div>
+					<label>Supplier Details :</label>
+				</div>
+				</p>
 				<div>
 					<label for="supplierId">Supplier Id</label>
 					<div>
@@ -48,10 +53,27 @@
 						<form:input path="emailId" />
 					</div>
 				</div>
+				<p>
 				<div>
-					<label for="bankDetails">Bank Details</label>
+					<label>Bank Details :</label>
+				</div>
+				</p>
+				<div>
+					<label for="bankName">Bank Name</label>
 					<div>
-						<form:input path="bankDetails" />
+						<form:input path="bankName" />
+					</div>
+				</div>
+				<div>
+					<label for="accountNumber">Account Number</label>
+					<div>
+						<form:input path="accountNumber" />
+					</div>
+				</div>
+				<div>
+					<label for="ifscCode">IFSC Code</label>
+					<div>
+						<form:input path="ifscCode" />
 					</div>
 				</div>
 				<div>

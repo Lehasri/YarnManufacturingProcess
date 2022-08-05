@@ -8,7 +8,7 @@ import com.chainsys.yarnmanufacturingprocess.model.Supplier;
 
 public interface SupplierRepository extends CrudRepository<Supplier,Integer> {
 	Supplier findById(int id);
-	Supplier save(Supplier sp);
-	void deleteById(int sp_id);
+	Supplier save(Supplier supplier);
+	void deleteById(int supplier_id);
 	List <Supplier> findAll();
 }

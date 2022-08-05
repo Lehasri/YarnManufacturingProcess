@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Supplier</title>
+<title>Find Supplier By Id</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="update" method="post" modelAttribute="updatesupplier">
+			<form:form action="" method="get" modelAttribute="findsupplierbyid">
 				<p>
 				<div>
 					<label>Supplier Details :</label>
@@ -20,39 +20,40 @@
 				<div>
 					<label for="supplierId">Supplier Id</label>
 					<div>
-						<form:input path="supplierId" />
+						<form:input path="supplierId" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="firstName">First Name</label>
 					<div>
-						<form:input path="firstName" />
+						<form:input path="firstName" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="lastName">Last Name</label>
 					<div>
-						<form:input path="lastName" />
+						<form:input path="lastName" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="address">Address</label>
 					<div>
-						<form:input path="address" />
+						<form:input path="address" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="phoneNo">phone No</label>
 					<div>
-						<form:input path="phoneNo" />
+						<form:input path="phoneNo" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="emailId">Email Id</label>
 					<div>
-						<form:input path="emailId" />
+						<form:input path="emailId" readonly="true"/>
 					</div>
 				</div>
+				<p>
 				<div>
 					<label>Bank Details :</label>
 				</div>
@@ -74,9 +75,6 @@
 					<div>
 						<form:input path="ifscCode" />
 					</div>
-				</div>
-				<div>
-					<form:button>Update</form:button>
 				</div>
 			</form:form>
 		</div>

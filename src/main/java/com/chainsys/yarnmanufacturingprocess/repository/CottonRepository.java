@@ -2,11 +2,13 @@ package com.chainsys.yarnmanufacturingprocess.repository;
 
 import java.util.List;
 
+import org.springframework.data.repository.CrudRepository;
+
 import com.chainsys.yarnmanufacturingprocess.model.Cotton;
 
-public class CottonRepository {
+public interface CottonRepository extends CrudRepository<Cotton,Integer>  {
 	Cotton findById(int id);
-	Cotton save(Cotton ct);
-	void deleteById(int ct_id);
+	Cotton save(Cotton cotton);
+	void deleteById(int cotton_id);
 	List <Cotton> findAll();
 }

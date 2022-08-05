@@ -5,36 +5,32 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Supplier List</title>
+<title>Customer List</title>
 </head>
 <body>
 	<div id="table root">
 		<table border="2" width="100%" cellpadding="2">
 			<thead>
 				<tr>
-					<th>Supplier Id</th>
+					<th>Yarn Id</th>
+					<th>Customer Id</th>
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Address</th>
 					<th>Phone No</th>
 					<th>Email Id</th>
-					<th>Bank Name</th>
-					<th>Account Number</th>
-					<th>IFSC Code</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="supplier" items="${allsuppliers}">
+				<c:forEach var="customer" items="${allcustomers}">
 					<tr>
-						<td>${supplier.supplierId}</td>
-						<td>${supplier.firstName}</td>
-						<td>${supplier.lastName}</td>
-						<td>${supplier.address}</td>
-						<td>${supplier.phoneNo}</td>
-						<td>${supplier.emailId}</td>
-						<td>${supplier.bankName}</td>
-						<td>${supplier.accountNumber}</td>
-						<td>${supplier.ifscCode}</td>
+						<td>${customer.yarnId}</td>
+						<td>${customer.customerId}</td>
+						<td>${customer.firstName}</td>
+						<td>${customer.lastName}</td>
+						<td>${customer.address}</td>
+						<td>${customer.phoneNo}</td>
+						<td>${customer.emailId}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

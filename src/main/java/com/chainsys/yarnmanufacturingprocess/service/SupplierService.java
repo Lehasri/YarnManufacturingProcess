@@ -5,27 +5,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.chainsys.yarnmanufacturingprocess.model.Supplier;
 import com.chainsys.yarnmanufacturingprocess.repository.SupplierRepository;
-
-
-
 	@Service
 	public class SupplierService {
 		@Autowired
-		private SupplierRepository repo;
+		private SupplierRepository supplierRepository;
 		
 		public Supplier findById(int id) {
-			return repo.findById(id);
+			return supplierRepository.findById(id);
 		}
-		public Supplier save(Supplier sp) {
-			 return repo.save(sp);
+		public Supplier save(Supplier supplier) {
+			 return supplierRepository.save(supplier);
 		}
-        public List<Supplier>getallSuppliers()		{
-		 List<Supplier>listSu=repo.findAll();
-		 return listSu;
+        public List<Supplier>getAllSuppliers()		{
+		 List<Supplier>listSupplier=supplierRepository.findAll();
+		 return listSupplier;
 		}
 		public void deleteById(int id)
 		{
-			repo.deleteById(id);
+			supplierRepository.deleteById(id);
 		}
 		
 	}

@@ -8,6 +8,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="customer")
 public class Customer {
+	@Column(name="yarn_id")
+	private int yarnId;
 	@Id
 	@Column(name="customer_id")
 	private int customerId;
@@ -21,7 +23,13 @@ public class Customer {
 	private long phoneNo;     
 	@Column(name="email_id")
 	private String emailId; 
-
+	
+	public int getYarnId() {
+		return yarnId;
+	}
+	public void setYarnId(int yarnId) {
+		this.yarnId = yarnId;
+	}
 	public int getCustomerId() {
 		return customerId;
 	}

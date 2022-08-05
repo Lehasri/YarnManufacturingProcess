@@ -1,5 +1,33 @@
 package com.chainsys.yarnmanufacturingprocess.service;
 
-public class CottonService {
+import java.util.List;
 
-}
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.chainsys.yarnmanufacturingprocess.model.Cotton;
+import com.chainsys.yarnmanufacturingprocess.repository.CottonRepository;
+    @Service
+	public class CottonService {
+		@Autowired
+		private CottonRepository cottonRepository;
+		
+		public Cotton findById(int id) {
+			return cottonRepository.findById(id);
+		}
+		public Cotton save(Cotton cotton) {
+			 return cottonRepository.save(cotton);
+		}
+        public List<Cotton>getAllCottons()		{
+		 List<Cotton>listCotton=cottonRepository.findAll();
+		 return listCotton;
+		}
+		public void deleteById(int id)
+		{
+			cottonRepository.deleteById(id);
+		}
+		
+	}
+
+
+

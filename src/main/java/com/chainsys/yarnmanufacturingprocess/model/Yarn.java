@@ -1,6 +1,7 @@
 package com.chainsys.yarnmanufacturingprocess.model;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,24 +10,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name="yarn_daily_production")
 public class Yarn {
-	@Id
-	@Column(name="date")
-	private Date date;
+	@Column(name="production_date")
+	private Date productionDate;
 	@Column(name="production_quantity")
 	private int productionQuantity;
 	@Column(name="remarks")
 	private String remarks;
+	@Id
 	@Column(name="cotton_id")
 	private int cottonId;
 	@Column(name="quantity_used")
-	private int quantityUsed;  
+	private int quantityUsed; 
 	
-	public Date getDate() {
-		return date;
+	public Date getProductionDate() {
+		return productionDate;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setProductionDate(Date productionDate) {
+		this.productionDate = productionDate;
 	}
+	
 	public int getProductionQuantity() {
 		return productionQuantity;
 	}
@@ -54,7 +56,7 @@ public class Yarn {
 	@Override
 	public String toString() // Default method
 	{
-		return String.format("%s, %d, %s, %d, %d",date,productionQuantity,remarks,cottonId,quantityUsed);
+		return String.format("%s, %d, %s, %d, %d",productionDate,productionQuantity,remarks,cottonId,quantityUsed);
 	}
 	
 	
