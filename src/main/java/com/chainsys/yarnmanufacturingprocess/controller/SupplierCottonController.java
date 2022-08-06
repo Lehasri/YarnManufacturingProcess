@@ -11,7 +11,9 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 	import org.springframework.web.bind.annotation.PostMapping;
 	import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RequestParam;
-    import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
+
+import com.chainsys.yarnmanufacturingprocess.compositekey.SupplierCottonDetail;
+import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
     import com.chainsys.yarnmanufacturingprocess.service.SupplierCottonService;
 
 
@@ -57,6 +59,7 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 		}
 	    @GetMapping("/findsuppliercottonbyid")
 		public String findSupplierCottonById(@RequestParam("suppliercottonid") int id,Model model) {
+	    	SupplierCottonDetail supplierCottonDetail = new SupplierCottonDetail(id,id);
 	    	SupplierCotton theSupplierCotton=supplierCottonService.findById(id);
 	    	model.addAttribute("findsuppliercottonbyid",theSupplierCotton);
 	    	return "find-suppliercotton-by-id-form";

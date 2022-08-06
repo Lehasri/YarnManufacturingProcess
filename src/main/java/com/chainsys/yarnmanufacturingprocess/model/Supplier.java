@@ -1,8 +1,12 @@
 package com.chainsys.yarnmanufacturingprocess.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,7 +31,10 @@ public class Supplier {
 	private long accountNumber;
 	@Column(name = "ifsc_code")
 	private String ifscCode;
-
+//
+//	@OneToMany(mappedBy = "supplier", fetch = FetchType.LAZY)
+//	private List<SupplierCotton> suppliercotton;
+//	
 	public int getSupplierId() {
 		return supplierId;
 	}

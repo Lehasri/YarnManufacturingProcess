@@ -1,10 +1,14 @@
 package com.chainsys.yarnmanufacturingprocess.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="orders")
@@ -31,6 +35,10 @@ public class Orders {
 	@Column(name="advance")
 	private double advance;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "invoice_id", nullable = false, insertable = false, updatable = false)
+	private Invoice invoice;
+
 	public int getCustomerId() {
 		return customerId;
 	}

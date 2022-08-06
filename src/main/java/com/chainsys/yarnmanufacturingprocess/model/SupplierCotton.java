@@ -2,9 +2,12 @@ package com.chainsys.yarnmanufacturingprocess.model;
 
 import java.sql.Timestamp;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="supplier_cotton_details")
@@ -20,6 +23,9 @@ public class SupplierCotton {
 	private double rate;
 	@Column(name="lead_time")
 	private Timestamp leadTime;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "supplier_id", nullable = false, insertable = false, updatable = false)
 	
 	public int getSupplierId() {
 		return supplierId;

@@ -11,7 +11,9 @@
 	import org.springframework.web.bind.annotation.PostMapping;
 	import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RequestParam;
-    import com.chainsys.yarnmanufacturingprocess.model.Orders;
+
+import com.chainsys.yarnmanufacturingprocess.dto.OrdersInvoiceDTO;
+import com.chainsys.yarnmanufacturingprocess.model.Orders;
     import com.chainsys.yarnmanufacturingprocess.service.OrdersService;
 
 	@Controller
@@ -60,4 +62,12 @@
 	    	model.addAttribute("findordersbyid",theOrders);
 	    	return "find-orders-by-id-form";
 		}
+	    @GetMapping("/getorderinvoice")
+		public String getInvoice(@RequestParam("orderid") int id, Model model) {
+			OrdersInvoiceDTO dto = ordersService.getOrdersAndInvoice(id);
+			model.addAttribute("getOrders", dto.getOrders());
+			model.addAttribute("orderList", dto.getInvoiceList());
+			return "list-order-invoices";
+		}
+
 }

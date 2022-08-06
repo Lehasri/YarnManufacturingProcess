@@ -2,10 +2,13 @@ package com.chainsys.yarnmanufacturingprocess.model;
 
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="invoice")
@@ -23,6 +26,9 @@ public class Invoice {
 	private String paymentMethod;
 	@Column(name="invoice_status")
 	private String invoiceStatus;
+
+	@OneToMany(mappedBy = "invoice", fetch = FetchType.LAZY)
+	private List<Orders> orders;
 
 	public int getInvoiceNo() {
 		return invoiceNo;
