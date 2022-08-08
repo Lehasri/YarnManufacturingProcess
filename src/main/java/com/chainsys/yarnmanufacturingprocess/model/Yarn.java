@@ -5,7 +5,11 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="yarn_daily_production")
@@ -21,6 +25,7 @@ public class Yarn {
 	private int cottonId;
 	@Column(name="quantity_used")
 	private int quantityUsed; 
+	
 	
 	public Date getProductionDate() {
 		return productionDate;
@@ -52,11 +57,6 @@ public class Yarn {
 	}
 	public void setQuantityUsed(int quantityUsed) {
 		this.quantityUsed = quantityUsed;
-	}
-	@Override
-	public String toString() // Default method
-	{
-		return String.format("%s, %d, %s, %d, %d",productionDate,productionQuantity,remarks,cottonId,quantityUsed);
 	}
 	
 	

@@ -1,8 +1,13 @@
 package com.chainsys.yarnmanufacturingprocess.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="cotton")
@@ -12,12 +17,21 @@ public class Cotton {
 	private int cottonId;
 	@Column(name="cotton_type")
 	private String cottonType;
-	@Column(name="cotton_quality")
-	private String cottonQuality;
-	@Column(name="rate_per_ton")
+	@Column(name="colour")
+	private String colour;
+	@Column(name="trash_Content")
+	private String trashContent;
+	@Column(name="ginning_Percentage")
+	private String ginningPercentage;
+	@Column(name="staple_length")
+	private String stapleLength;
+	@Column(name="micronaire")
+	private String micronaire;
+    @Column(name="rate_per_ton")
 	private double ratePerTon;
 	@Column(name="stock_in_hand")
 	private int stockInHand;
+	
 	
 	public int getCottonId() {
 		return cottonId;
@@ -31,11 +45,35 @@ public class Cotton {
 	public void setCottonType(String cottonType) {
 		this.cottonType = cottonType;
 	}
-	public String getCottonQuality() {
-		return cottonQuality;
+	public String getColour() {
+		return colour;
 	}
-	public void setCottonQuality(String cottonQuality) {
-		this.cottonQuality = cottonQuality;
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+	public String getTrashContent() {
+		return trashContent;
+	}
+	public void setTrashContent(String trashContent) {
+		this.trashContent = trashContent;
+	}
+	public String getGinningPercentage() {
+		return ginningPercentage;
+	}
+	public void setGinningPercentage(String ginningPercentage) {
+		this.ginningPercentage = ginningPercentage;
+	}
+	public String getStapleLength() {
+		return stapleLength;
+	}
+	public void setStapleLength(String stapleLength) {
+		this.stapleLength = stapleLength;
+	}
+	public String getMicronaire() {
+		return micronaire;
+	}
+	public void setMicronaire(String micronaire) {
+		this.micronaire = micronaire;
 	}
 	public double getRatePerTon() {
 		return ratePerTon;
@@ -49,10 +87,5 @@ public class Cotton {
 	public void setStockInHand(int stockInHand) {
 		this.stockInHand = stockInHand;
 	}
-	@Override
-	public String toString() // Default method
-    {
-		return String.format("%d, %s, %s, %d, %d",cottonId,cottonType,cottonQuality,ratePerTon,stockInHand);
- 	}
 	
 }

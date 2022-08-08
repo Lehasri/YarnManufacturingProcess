@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.yarnmanufacturingprocess.model.Invoice;
+import com.chainsys.yarnmanufacturingprocess.model.Orders;
 import com.chainsys.yarnmanufacturingprocess.model.Supplier;
 import com.chainsys.yarnmanufacturingprocess.repository.SupplierRepository;
 import com.chainsys.yarnmanufacturingprocess.service.InvoiceService;
+import com.chainsys.yarnmanufacturingprocess.service.OrdersService;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 
 @Controller
@@ -21,6 +23,8 @@ import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 public class InvoiceController {
 	@Autowired
 	InvoiceService invoiceService;
+	@Autowired
+	OrdersService ordersService;
 
 	@GetMapping("/list")
 	public String getAllInvoices(Model model) {
@@ -43,7 +47,7 @@ public class InvoiceController {
 	}
 
 	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("invoiceid") int id, Model model) {
+	public String showUpdateForm(@RequestParam("invoiceno") int id, Model model) {
 		Invoice theInvoice = invoiceService.findById(id);
 		model.addAttribute("updateinvoice", theInvoice);
 		return "update-invoice-form";
@@ -56,15 +60,16 @@ public class InvoiceController {
 	}
 
 	@GetMapping("/deleteinvoice")
-	public String deleteInvoice(@RequestParam("invoiceid") int id) {
+	public String deleteInvoice(@RequestParam("invoiceno") int id) {
 		invoiceService.deleteById(id);
 		return "redirect:/invoice/list";
 	}
 
 	@GetMapping("/findinvoicebyid")
-	public String findInvoiceById(@RequestParam("invoiceid") int id, Model model) {
+	public String findInvoiceById(@RequestParam("invoiceno") int id, Model model) {
 		Invoice theInvoice = invoiceService.findById(id);
 		model.addAttribute("findinvoicebyid", theInvoice);
 		return "find-invoice-by-id-form";
 	}
+
 }

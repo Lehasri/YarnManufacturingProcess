@@ -25,9 +25,33 @@
 					</div>
 				</div>
 				<div>
-					<label for="cottonQuality">Cotton Quality</label>
+					<label for="colour">Colour</label>
 					<div>
-						<form:input path="cottonQuality" />
+						<form:input path="colour" />
+					</div>
+				</div>
+				<div>
+					<label for="trashContent">Trash Content</label>
+					<div>
+						<form:input path="trashContent" />
+					</div>
+				</div>
+				<div>
+					<label for="ginningPercentage">Ginning Percentage</label>
+					<div>
+						<form:input path="ginningPercentage" />
+					</div>
+				</div>
+				<div>
+					<label for="stapleLength">Staple Length</label>
+					<div>
+						<form:input path="stapleLength" />
+					</div>
+				</div>
+				<div>
+					<label for="stapleLength">Micronaire</label>
+					<div>
+						<form:input path="stapleLength" />
 					</div>
 				</div>
 				<div>

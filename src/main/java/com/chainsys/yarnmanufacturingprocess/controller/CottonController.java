@@ -11,13 +11,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.yarnmanufacturingprocess.model.Cotton;
+import com.chainsys.yarnmanufacturingprocess.model.Invoice;
+import com.chainsys.yarnmanufacturingprocess.model.Orders;
+import com.chainsys.yarnmanufacturingprocess.model.Yarn;
 import com.chainsys.yarnmanufacturingprocess.service.CottonService;
+import com.chainsys.yarnmanufacturingprocess.service.YarnService;
 
 @Controller
 @RequestMapping("/cotton")
 public class CottonController {
 	@Autowired
 	CottonService cottonService;
+	@Autowired
+	YarnService yarnService;
 
 	@GetMapping("/list")
 	public String getAllCottons(Model model) {
@@ -64,4 +70,13 @@ public class CottonController {
 		model.addAttribute("findcottonbyid", theCotton);
 		return "find-cotton-by-id-form";
 	}
+	 @GetMapping("/getcottonyarn")
+	    public String getInvoiceOrdersByNo(@RequestParam("id")int id, Model model) {
+	    	Cotton theCotton = cottonService.findById(id);
+	        model.addAttribute("fetchcottonbyid", theCotton);
+	    	List<Yarn> theYarn = yarnService.getYarn(id);
+	        model.addAttribute("allyarns", theYarn);
+	        return "find-cotton-yarn-by-id-form";
+	    }
+	
 }

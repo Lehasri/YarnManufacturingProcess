@@ -25,12 +25,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="orderId">Order Id</label>
-					<div>
-						<form:input path="orderId" />
-					</div>
-				</div>
-				<div>
 					<label for="totalAmount">Total Amount</label>
 					<div>
 						<form:input path="totalAmount" />

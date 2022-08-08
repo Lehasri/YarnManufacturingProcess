@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.yarnmanufacturingprocess.dto.OrdersInvoiceDTO;
 import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 import com.chainsys.yarnmanufacturingprocess.model.Orders;
 import com.chainsys.yarnmanufacturingprocess.repository.InvoiceRepository;
@@ -34,19 +33,19 @@ import com.chainsys.yarnmanufacturingprocess.repository.OrdersRepository;
 		{
 			invoiceRepository.deleteById(id);
 		}
-		@Transactional
-	    public OrdersInvoiceDTO getOrdersAndInvioice(int id) {
-
-			Invoice invoice = findById(id);
-			OrdersInvoiceDTO ordersInvoiceDTO = new OrdersInvoiceDTO();
-			ordersInvoiceDTO.setInvoice(invoice);
-	        List<Orders> order = ordersRepository.findById(id);
-	          Iterator<Orders> itr=order.iterator();
-	        while(itr.hasNext()) {
-	        	ordersInvoiceDTO.addOrdersInvoice((Orders) itr.next());
-	        }
-	        return ordersInvoiceDTO;
-		}
+//		@Transactional
+//	    public OrdersInvoiceDTO getOrdersAndInvioice(int id) {
+//
+//			Invoice invoice = findById(id);
+//			OrdersInvoiceDTO ordersInvoiceDTO = new OrdersInvoiceDTO();
+//			ordersInvoiceDTO.setInvoice(invoice);
+//	        List<Orders> order = ordersRepository.findById(id);
+//	          Iterator<Orders> itr=order.iterator();
+//	        while(itr.hasNext()) {
+//	        	ordersInvoiceDTO.addOrdersInvoice((Orders) itr.next());
+//	        }
+//	        return ordersInvoiceDTO;
+//		}
 	}
 
 

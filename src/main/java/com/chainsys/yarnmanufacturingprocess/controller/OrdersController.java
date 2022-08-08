@@ -12,15 +12,19 @@
 	import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.yarnmanufacturingprocess.dto.OrdersInvoiceDTO;
+import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 import com.chainsys.yarnmanufacturingprocess.model.Orders;
-    import com.chainsys.yarnmanufacturingprocess.service.OrdersService;
+import com.chainsys.yarnmanufacturingprocess.repository.InvoiceRepository;
+import com.chainsys.yarnmanufacturingprocess.service.InvoiceService;
+import com.chainsys.yarnmanufacturingprocess.service.OrdersService;
 
 	@Controller
 	@RequestMapping("/orders")
 	public class OrdersController {
 		@Autowired
 		OrdersService ordersService;
+		@Autowired
+		InvoiceService invoiceService;
 	    @GetMapping("/list")
 		public String getAllOrders(Model model) {
 			List<Orders> ordersList = ordersService.getAllOrders();
@@ -62,12 +66,12 @@ import com.chainsys.yarnmanufacturingprocess.model.Orders;
 	    	model.addAttribute("findordersbyid",theOrders);
 	    	return "find-orders-by-id-form";
 		}
-	    @GetMapping("/getorderinvoice")
-		public String getInvoice(@RequestParam("orderid") int id, Model model) {
-			OrdersInvoiceDTO dto = ordersService.getOrdersAndInvoice(id);
-			model.addAttribute("getOrders", dto.getOrders());
-			model.addAttribute("orderList", dto.getInvoiceList());
-			return "list-order-invoices";
-		}
-
+	    @GetMapping("/getinvoiceorders")
+	    public String getInvoiceOrdersByNo(@RequestParam("id")int id, Model model) {
+	    	Invoice theInvoice = invoiceService.findById(id);
+	        model.addAttribute("fetchInvoiceById", theInvoice);
+	    	List<Orders> theOrders = ordersService.getOrders(id);
+	        model.addAttribute("allorders", theOrders);
+	        return "find-orders-by-invoiceid-form";
+	    }
 }

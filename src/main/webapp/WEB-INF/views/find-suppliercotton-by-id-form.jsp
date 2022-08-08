@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Find SupplierCotton By Idn</title>
+<title>Find SupplierCotton By Id</title>
 </head>
 <body>
 	<div id="root">

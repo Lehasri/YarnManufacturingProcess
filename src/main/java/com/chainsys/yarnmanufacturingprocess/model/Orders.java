@@ -9,12 +9,14 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="orders")
 public class Orders {
-	@Column(name="customer_id")
-	private int customerId;
+	@Column(name="yarn_id")
+	private int yarnId;
 	@Id
 	@Column(name="order_id")
 	private int orderId;
@@ -34,16 +36,15 @@ public class Orders {
 	private String orderStatus;
 	@Column(name="advance")
 	private double advance;
+	@Column(name="invoice_no")
+	private int invoiceNo;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "invoice_id", nullable = false, insertable = false, updatable = false)
-	private Invoice invoice;
-
-	public int getCustomerId() {
-		return customerId;
+	
+	public int getYarnId() {
+		return yarnId;
 	}
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+	public void setYarnId(int yarnId) {
+		this.yarnId = yarnId;
 	}
 	public int getOrderId() {
 		return orderId;
@@ -99,13 +100,11 @@ public class Orders {
 	public void setAdvance(double advance) {
 		this.advance = advance;
 	}
-	@Override
-	public String toString() // Default method
-    {
-		return String.format("%d, %s, %s, %d, %d,%d,%s,%s,%d",orderId,orderDate,orderedCustomer,orderedQuantity,rate,orderAmount,receivingDate,orderStatus,advance);
- 	}
+	public int getInvoiceNo() {
+		return invoiceNo;
+	}
+	public void setInvoiceNo(int invoiceNo) {
+		this.invoiceNo = invoiceNo;
+	}
 	
-	
-	
-
 }

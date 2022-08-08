@@ -13,9 +13,9 @@
 		<div id="form">
 			<form:form action="add" method="post" modelAttribute="addorders">
 			   <div>
-					<label for="customerId">Customer Id</label>
+					<label for="yarnId">Yarn Id</label>
 					<div>
-						<form:input path="customerId" />
+						<form:input path="yarnId" />
 					</div>
 				</div>
 				<div>
@@ -70,6 +70,12 @@
 					<label for="advance">Advance</label>
 					<div>
 						<form:input path="advance" />
+					</div>
+				</div>
+				<div>
+					<label for="invoiceNo">Invoice No</label>
+					<div>
+						<form:input path="invoiceNo" />
 					</div>
 				</div>
 				<div>

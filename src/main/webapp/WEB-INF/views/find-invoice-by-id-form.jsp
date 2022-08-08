@@ -25,12 +25,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="orderId">Order Id</label>
-					<div>
-						<form:input path="orderId" readonly="true"/>
-					</div>
-				</div>
-				<div>
 					<label for="totalAmount">Total Amount</label>
 					<div>
 						<form:input path="totalAmount" readonly="true"/>
@@ -42,7 +36,6 @@
 						<form:input path="paymentMethod" readonly="true"/>
 					</div>
 				</div>
-				<div>
 				<div>
 					<label for="invoiceStatus">Invoice Status</label>
 					<div>

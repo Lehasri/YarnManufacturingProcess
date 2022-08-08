@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Supplier List</title>
+<title>Supplier Supplier CottonList</title>
 </head>
 <body>
 	<div id="table root">

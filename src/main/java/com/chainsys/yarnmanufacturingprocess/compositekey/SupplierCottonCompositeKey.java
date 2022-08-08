@@ -4,16 +4,20 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 
-public class SupplierCottonDetail implements Serializable{
+public class SupplierCottonCompositeKey implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Column(name = "supplier_id")
 	private int supplierId;
 	@Column(name = "cotton_id")
 	private int cottonId;
 	
-	public SupplierCottonDetail(int postId,int friendId)
+	public SupplierCottonCompositeKey(int supplierId,int cottonId)
 	{
-		this.supplierId = postId;
-		this.cottonId = friendId;
+		this.supplierId = supplierId;
+		this.cottonId = cottonId;
 	}
 	public int getSupplierId()
 	{
@@ -27,7 +31,7 @@ public class SupplierCottonDetail implements Serializable{
 	{
 		return cottonId;
 	}
-	public void setCottonId(int productId)
+	public void setCottonId(int cottonId)
 	{
 		this.cottonId = cottonId;
 	}

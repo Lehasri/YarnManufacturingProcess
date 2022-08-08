@@ -8,7 +8,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="invoice")
@@ -18,8 +21,6 @@ public class Invoice {
 	private int invoiceNo;
 	@Column(name="invoice_date")
 	private Date invoiceDate; 
-	@Column(name="order_id")
-	private int orderId;
 	@Column(name="total_amount")
 	private double totalAmount;
 	@Column(name="payment_method")
@@ -27,26 +28,18 @@ public class Invoice {
 	@Column(name="invoice_status")
 	private String invoiceStatus;
 
-	@OneToMany(mappedBy = "invoice", fetch = FetchType.LAZY)
-	private List<Orders> orders;
-
 	public int getInvoiceNo() {
 		return invoiceNo;
 	}
 	public void setInvoiceNo(int invoiceNo) {
 		this.invoiceNo = invoiceNo;
 	}
+	
 	public Date getInvoiceDate() {
 		return invoiceDate;
 	}
 	public void setInvoiceDate(Date invoiceDate) {
 		this.invoiceDate = invoiceDate;
-	}
-	public int getOrderId() {
-		return orderId;
-	}
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
 	}
 	public double getTotalAmount() {
 		return totalAmount;
@@ -66,11 +59,5 @@ public class Invoice {
 	public void setInvoiceStatus(String invoiceStatus) {
 		this.invoiceStatus = invoiceStatus;
 	}
-	@Override
-	public String toString() // Default method
-    {
-		return String.format("%d, %s, %d, %d, %s, %s",invoiceNo,invoiceDate,orderId,totalAmount,paymentMethod,invoiceStatus);
- 	}
-	
 	
 }

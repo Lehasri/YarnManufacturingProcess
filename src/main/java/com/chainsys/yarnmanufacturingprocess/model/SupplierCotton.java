@@ -6,15 +6,20 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.chainsys.yarnmanufacturingprocess.compositekey.SupplierCottonCompositeKey;
 @Entity
 @Table(name="supplier_cotton_details")
+@IdClass(SupplierCottonCompositeKey.class)
 public class SupplierCotton {
 	@Id
 	@Column(name="supplier_id")
 	private int supplierId;
+	@Id
 	@Column(name="cotton_id")
 	private int cottonId; 
 	@Column(name="maximum_supply_quantity")
@@ -26,6 +31,7 @@ public class SupplierCotton {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "supplier_id", nullable = false, insertable = false, updatable = false)
+//	private Supplier supplier;
 	
 	public int getSupplierId() {
 		return supplierId;

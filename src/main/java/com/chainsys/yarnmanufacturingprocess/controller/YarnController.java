@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.yarnmanufacturingprocess.model.Yarn;
+import com.chainsys.yarnmanufacturingprocess.service.CottonService;
 import com.chainsys.yarnmanufacturingprocess.service.YarnService;
 
 @Controller
@@ -17,6 +18,8 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnService;
 public class YarnController {
 	@Autowired
 	YarnService yarnService;
+	@Autowired
+	CottonService cottonService;
 	@GetMapping("/list")
 	public String getAllYarns(Model model) {
 		List<Yarn> yarnList = yarnService.getAllYarns();
@@ -62,4 +65,11 @@ public class YarnController {
 		model.addAttribute("findyarnbyid", theYarn);
 		return "find-yarn-by-id-form";
 	}
+//	@GetMapping("/getcottonyarn")
+//    public String getCottonYarnId(@RequestParam("yarnid")int id, Model model) {
+//        Yarn theYarn = yarnService.findById(id);
+//        model.addAttribute("fetchyarnbyid", theYarn);
+//        model.addAttribute("fetchcottonbyid",cottonService.findById(theYarn.getCottonId()));
+//        return "find-cotton-yarn-by-id-form";
+//    }
 }

@@ -6,30 +6,25 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Cotton</title>
+<title>Find Cotton Yarn By Id</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="update" method="post" modelAttribute="updatecotton">
+			<form:form action="" method="get" modelAttribute="fetchcottonbyid">
 				<div>
 					<label for="cottonId">Cotton Id</label>
 					<div>
-						<form:input path="cottonId" />
+						<form:input path="cottonId" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="cottonType">Cotton Type</label>
 					<div>
-						<form:input path="cottonType" />
+						<form:input path="cottonType" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="cottonQuality">Cotton Quality</label>
-					<div>
-						<form:input path="cottonQuality" />
-					</div>
-				</div><div>
 					<label for="colour">Colour</label>
 					<div>
 						<form:input path="colour" />
@@ -54,27 +49,48 @@
 					</div>
 				</div>
 				<div>
-					<label for="stapleLength">Micronaire</label>
+					<label for="micronaire">Micronaire</label>
 					<div>
-						<form:input path="stapleLength" />
+						<form:input path="micronaire" />
 					</div>
 				</div>
 				<div>
 					<label for="ratePerTon">Rate Per Ton</label>
 					<div>
-						<form:input path="ratePerTon" />
+						<form:input path="ratePerTon" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="stockInHand">Stock In Hand</label>
 					<div>
-						<form:input path="stockInHand" />
+						<form:input path="stockInHand" readonly="true"/>
 					</div>
 				</div>
-				<div>
-					<form:button>Update</form:button>
-				</div>
 			</form:form>
+			<div id="table root">
+		<table border="2" width="100%" cellpadding="2">
+			<thead>
+				<tr>
+					<th>Production Date</th>
+					<th>Production Quantity</th>
+					<th>Remarks</th>
+					<th>Cotton Id</th>
+					<th>Quantity Used</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="yarn" items="${allyarns}">
+					<tr>
+						<td>${yarn.productionDate}</td>
+						<td>${yarn.productionQuantity}</td>
+						<td>${yarn.remarks}</td>
+						<td>${yarn.cottonId}</td>
+						<td>${yarn.quantityUsed}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 		</div>
 	</div>
 </body>

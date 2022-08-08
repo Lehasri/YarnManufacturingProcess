@@ -14,7 +14,11 @@
 				<tr>
 					<th>Cotton Id</th>
 					<th>Cotton Type</th>
-					<th>Cotton Quality</th>
+					<th>Colour</th>
+					<th>Trash Content</th>
+					<th>Ginning Percentage</th>
+					<th>Staple Length</th>
+					<th>Micronaire</th>
 					<th>Rate Per Ton</th>
 					<th>Stock In Hand</th>
 				</tr>
@@ -24,7 +28,11 @@
 					<tr>
 						<td>${cotton.cottonId}</td>
 						<td>${cotton.cottonType}</td>
-						<td>${cotton.cottonQuality}</td>
+						<td>${cotton.colour}</td>
+						<td>${cotton.trashContent}</td>
+						<td>${cotton.ginningPercentage}</td>
+						<td>${cotton.stapleLength}</td>
+						<td>${cotton.micronaire}</td>
 						<td>${cotton.ratePerTon}</td>
 						<td>${cotton.stockInHand}</td>
 					</tr>
