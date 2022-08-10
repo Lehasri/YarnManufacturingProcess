@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 import com.chainsys.yarnmanufacturingprocess.model.Orders;
-import com.chainsys.yarnmanufacturingprocess.model.Supplier;
-import com.chainsys.yarnmanufacturingprocess.repository.SupplierRepository;
 import com.chainsys.yarnmanufacturingprocess.service.InvoiceService;
 import com.chainsys.yarnmanufacturingprocess.service.OrdersService;
-import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 
 @Controller
 @RequestMapping("/invoice")
@@ -45,9 +42,13 @@ public class InvoiceController {
 		invoiceService.save(theInvoice);
 		return "redirect:/invoice/list";
 	}
+	@GetMapping("/modifyform")
+	public String showModifyForm() {
+		return "invoice-modify-form";
+	}
 
 	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("invoiceno") int id, Model model) {
+	public String showUpdateForm( int id, Model model) {
 		Invoice theInvoice = invoiceService.findById(id);
 		model.addAttribute("updateinvoice", theInvoice);
 		return "update-invoice-form";
@@ -58,18 +59,34 @@ public class InvoiceController {
 		invoiceService.save(theInvoice);
 		return "redirect:/invoice/list";
 	}
+	@GetMapping("/deleteform")
+	public String showdeleteForm() {
+		return "invoice-delete-form";
+	}
 
 	@GetMapping("/deleteinvoice")
-	public String deleteInvoice(@RequestParam("invoiceno") int id) {
+	public String deleteInvoice( int id) {
 		invoiceService.deleteById(id);
 		return "redirect:/invoice/list";
 	}
+	 @GetMapping("/findform")
+		public String showFindForm() {
+			return "fetch-invoice-form";
+		}
 
 	@GetMapping("/findinvoicebyid")
-	public String findInvoiceById(@RequestParam("invoiceno") int id, Model model) {
+	public String findInvoiceById( int id, Model model) {
 		Invoice theInvoice = invoiceService.findById(id);
 		model.addAttribute("findinvoicebyid", theInvoice);
 		return "find-invoice-by-id-form";
 	}
+	@GetMapping("/getordersinvoice")
+    public String getInvoiceOrdersById(@RequestParam("id")int id, Model model) {
+    	Invoice theInvoice = invoiceService.fetchByOrderId(id);
+    	Orders theorders = ordersService.findById(theInvoice.getOrderId());
+        model.addAttribute("invoicedetail",theInvoice);
+        model.addAttribute("orderdetail", theorders);
+        return "find-invoice-by-order-id-form";
+    }
 
 }

@@ -1,15 +1,11 @@
 package com.chainsys.yarnmanufacturingprocess.service;
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 import com.chainsys.yarnmanufacturingprocess.model.Orders;
-import com.chainsys.yarnmanufacturingprocess.repository.InvoiceRepository;
 import com.chainsys.yarnmanufacturingprocess.repository.OrdersRepository;
     @Service
 	public class OrdersService {
@@ -33,8 +29,6 @@ import com.chainsys.yarnmanufacturingprocess.repository.OrdersRepository;
 		public Orders findByInvoiceId(int id) {
 			return ordersRepository.findById(id);
 		}
-		public List<Orders> getOrders(int id){
-	        return ordersRepository.findAllByInvoiceNo(id);
-	    }
+		
 		
 	}

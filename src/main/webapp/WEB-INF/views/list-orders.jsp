@@ -22,7 +22,7 @@
 					<th>Receiving Date</th>
 					<th>Order Status</th>
 					<th>Advance</th>
-					<th>Invoice No</th>
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -38,7 +38,7 @@
 						<td>${orders.receivingDate}</td>
 						<td>${orders.orderStatus}</td>
 						<td>${orders.advance}</td>
-						<td>${orders.invoiceNo}</td>
+						
 					</tr>
 				</c:forEach>
 			</tbody>

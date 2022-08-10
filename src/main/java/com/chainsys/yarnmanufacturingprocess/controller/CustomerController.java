@@ -12,13 +12,19 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 	import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RequestParam;
     import com.chainsys.yarnmanufacturingprocess.model.Customer;
-    import com.chainsys.yarnmanufacturingprocess.service.CustomerService;
+import com.chainsys.yarnmanufacturingprocess.model.Invoice;
+import com.chainsys.yarnmanufacturingprocess.model.Orders;
+import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
+import com.chainsys.yarnmanufacturingprocess.service.CustomerService;
+import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 
 	@Controller
 	@RequestMapping("/customer")
 	public class CustomerController {
 		@Autowired
 		CustomerService customerService;
+		@Autowired
+		YarnStockService yarnStockService;
 	    @GetMapping("/list")
 		public String getAllCustomer(Model model) {
 			List<Customer> customerList = customerService.getAllCustomers();
@@ -37,8 +43,12 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 	    	customerService.save(theCustomer);
 	    	return "redirect:/customer/list";
 		}
+	    @GetMapping("/modifyform")
+		public String showModifyForm() {
+			return "customer-modify-form";
+		}
 	    @GetMapping("/updateform")
-	    public String showUpdateForm(@RequestParam("customerid") int id,Model model)
+	    public String showUpdateForm( int id,Model model)
 	    {
 	    	Customer theCustomer=customerService.findById(id);
 	    	model.addAttribute("updatecustomer",theCustomer);
@@ -49,15 +59,24 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 	    	customerService.save(theCustomer);
 	    	return "redirect:/customer/list";
 		}
+	    @GetMapping("/deleteform")
+		public String showdeleteForm() {
+			return "customer-delete-form";
+		}
 	    @GetMapping("/deletecustomer")
-		public String deleteCustomer(@RequestParam("customerid") int id) {
+		public String deleteCustomer( int id) {
 	    	customerService.deleteById(id);
 			return "redirect:/customer/list";
 		}
+	    @GetMapping("/findform")
+		public String showFindForm() {
+			return "fetch-customer-form";
+		}
 	    @GetMapping("/findcustomerbyid")
-		public String findCustomerById(@RequestParam("customerid") int id,Model model) {
+		public String findCustomerById( int id,Model model) {
 	    	Customer theCustomer=customerService.findById(id);
 	    	model.addAttribute("findcustomerbyid",theCustomer);
 	    	return "find-customer-by-id-form";
 		}
+	   
 }

@@ -9,8 +9,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.chainsys.yarnmanufacturingprocess.model.Cotton;
+import com.chainsys.yarnmanufacturingprocess.model.Customer;
+import com.chainsys.yarnmanufacturingprocess.model.Invoice;
+import com.chainsys.yarnmanufacturingprocess.model.Orders;
+import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
 import com.chainsys.yarnmanufacturingprocess.model.Yarn;
+import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
 import com.chainsys.yarnmanufacturingprocess.service.CottonService;
+import com.chainsys.yarnmanufacturingprocess.service.CustomerService;
 import com.chainsys.yarnmanufacturingprocess.service.YarnService;
 
 @Controller
@@ -18,8 +26,8 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnService;
 public class YarnController {
 	@Autowired
 	YarnService yarnService;
-	@Autowired
-	CottonService cottonService;
+	
+	
 	@GetMapping("/list")
 	public String getAllYarns(Model model) {
 		List<Yarn> yarnList = yarnService.getAllYarns();
@@ -39,9 +47,14 @@ public class YarnController {
 		yarnService.save(theyarn);
 		return "redirect:/yarn/list";
 	}
+	@GetMapping("/modifyform")
+	public String showModifyForm() {
+		return "yarn-modify-form";
+	}
+	
 
 	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("yarnid") int id, Model model) {
+	public String showUpdateForm( int id, Model model) {
 		Yarn theYarn = yarnService.findById(id);
 		model.addAttribute("updateyarn", theYarn);
 		return "update-yarn-form";
@@ -52,24 +65,27 @@ public class YarnController {
 		yarnService.save(theYarn);
 		return "redirect:/yarn/list";
 	}
+	@GetMapping("/deleteform")
+	public String showdeleteForm() {
+		return "yarn-delete-form";
+	}
+
 
 	@GetMapping("/deleteyarn")
-	public String deleteYarn(@RequestParam("yarnid") int id) {
+	public String deleteYarn( int id) {
 		yarnService.deleteById(id);
 		return "redirect:/yarn/list";
 	}
+	@GetMapping("/findform")
+	public String showFindForm() {
+		return "fetch-yarn-form";
+	}
 
 	@GetMapping("/findyarnbyid")
-	public String findYarnById(@RequestParam("yarnid") int id, Model model) {
+	public String findYarnById( int id, Model model) {
 		Yarn theYarn = yarnService.findById(id);
 		model.addAttribute("findyarnbyid", theYarn);
 		return "find-yarn-by-id-form";
 	}
-//	@GetMapping("/getcottonyarn")
-//    public String getCottonYarnId(@RequestParam("yarnid")int id, Model model) {
-//        Yarn theYarn = yarnService.findById(id);
-//        model.addAttribute("fetchyarnbyid", theYarn);
-//        model.addAttribute("fetchcottonbyid",cottonService.findById(theYarn.getCottonId()));
-//        return "find-cotton-yarn-by-id-form";
-//    }
+	
 }

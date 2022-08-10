@@ -14,6 +14,7 @@
 				<tr>
 					<th>Invoice No</th>
 					<th>Invoice Date</th>
+					<th>Order Id</th>
 					<th>Total Amount</th>
 					<th>Payment Method</th>
 					<th>Invoice Status</th>
@@ -24,6 +25,7 @@
 					<tr>
 						<td>${invoice.invoiceNo}</td>
 						<td>${invoice.invoiceDate}</td>
+						<td>${invoice.orderId}</td>
 						<td>${invoice.totalAmount}</td>
 						<td>${invoice.paymentMethod}</td>
 						<td>${invoice.invoiceStatus}</td>

@@ -13,5 +13,4 @@ public interface OrdersRepository extends CrudRepository<Orders,Integer>  {
 	void deleteById(int orders_id);
 	List <Orders> findAll();
 	
-     List<Orders> findAllByInvoiceNo(int id);
 }

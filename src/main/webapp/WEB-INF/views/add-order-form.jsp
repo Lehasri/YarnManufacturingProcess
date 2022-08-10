@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Orders</title>
+<title>Add Order</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="update" method="post" modelAttribute="updateorders">
-				<div>
+			<form:form action="add" method="post" modelAttribute="addorder">
+			   <div>
 					<label for="yarnId">Yarn Id</label>
 					<div>
 						<form:input path="yarnId" />
@@ -72,14 +72,8 @@
 						<form:input path="advance" />
 					</div>
 				</div>
-					<div>
-					<label for="invoiceNo">Invoice No</label>
-					<div>
-						<form:input path="invoiceNo" />
-					</div>
-				</div>
 				<div>
-					<form:button>Update</form:button>
+					<form:button>Add</form:button>
 				</div>
 			</form:form>
 		</div>

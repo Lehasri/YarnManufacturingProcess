@@ -12,4 +12,5 @@ public interface CustomerRepository extends CrudRepository<Customer,Integer>  {
 	Customer save(Customer customer);
 	void deleteById(int customer_id);
 	List <Customer> findAll();
+	List<Customer> findByYarnId(int id);
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.chainsys.yarnmanufacturingprocess.model.Orders;
 import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
 import com.chainsys.yarnmanufacturingprocess.repository.YarnStockRepository;
     @Service
@@ -26,6 +27,10 @@ import com.chainsys.yarnmanufacturingprocess.repository.YarnStockRepository;
 		{
 			yarnStockRepository.deleteById(id);
 		}
+		public List<YarnStock> getYarnStock(int id){
+	        return yarnStockRepository.findAllByYarnId(id);
+	    }
+		
 		
 	}
 

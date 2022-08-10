@@ -21,6 +21,8 @@ public class Invoice {
 	private int invoiceNo;
 	@Column(name="invoice_date")
 	private Date invoiceDate; 
+	@Column(name="order_id")
+	private int orderId; 
 	@Column(name="total_amount")
 	private double totalAmount;
 	@Column(name="payment_method")
@@ -28,6 +30,15 @@ public class Invoice {
 	@Column(name="invoice_status")
 	private String invoiceStatus;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="order_id", nullable = false,insertable = false,updatable = false)
+	private Orders orders;
+	public Orders getOrders() {
+		return orders;
+	}
+	public void setOrders(Orders orders) {
+		this.orders = orders;
+	}
 	public int getInvoiceNo() {
 		return invoiceNo;
 	}
@@ -40,6 +51,12 @@ public class Invoice {
 	}
 	public void setInvoiceDate(Date invoiceDate) {
 		this.invoiceDate = invoiceDate;
+	}
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
 	}
 	public double getTotalAmount() {
 		return totalAmount;

@@ -29,7 +29,7 @@ public class SupplierController {
 		model.addAttribute("allsuppliers", supplierList);
 		return "list-suppliers";
 	}
-
+	
 	@GetMapping("/addform")
 	public String showAddForm(Model model) {
 		Supplier theSupplier = new Supplier();
@@ -42,9 +42,12 @@ public class SupplierController {
 		supplierService.save(thesupplier);
 		return "redirect:/supplier/list";
 	}
-
+	@GetMapping("/modifyform")
+	public String showModifyForm() {
+		return "supplier-modify-form";
+	}
 	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("supplierid") int id, Model model) {
+	public String showUpdateForm( int id, Model model) {
 		Supplier theSupplier = supplierService.findById(id);
 		model.addAttribute("updatesupplier", theSupplier);
 		return "update-supplier-form";
@@ -55,33 +58,25 @@ public class SupplierController {
 		supplierService.save(theSupplier);
 		return "redirect:/supplier/list";
 	}
-
+	@GetMapping("/deleteform")
+	public String showdeleteForm() {
+		return "supplier-delete-form";
+	}
 	@GetMapping("/deletesupplier")
-	public String deleteSuppliers(@RequestParam("supplierid") int id) {
+	public String deleteSuppliers( int id) {
 		supplierService.deleteById(id);
 		return "redirect:/supplier/list";
 	}
+	@GetMapping("/findform")
+	public String showFindForm() {
+		return "fetch-supplier-form";
+	}
 
 	@GetMapping("/findsupplierbyid")
-	public String findSupplierById(@RequestParam("supplierid") int id, Model model) {
+	public String findSupplierById(int id, Model model) {
 		Supplier theSupplier = supplierService.findById(id);
 		model.addAttribute("findsupplierbyid", theSupplier);
 		return "find-supplier-by-id-form";
 	}
-//	    @GetMapping("/getsuppliercottonbyid")
-//        
-//        public String getsuppliercotton(@RequestParam("supplierid")int supplierid,Model model)
-//        {
-//        SupplierCottonDTO supplierCottonDTO=supplierService.getSupplierAndSupplierCotton(supplierid);
-//        model.addAttribute("suppliercottonlist", supplierCottonDTO.getSupplierCotton());
-//        return "list-supplier-cotton";
-//        }
-//       @GetMapping("/findsuppliercottondetailbyid")
-//        
-//        public String getsuppliercottons(@RequestParam("supplierid")int supplierid,Model model)
-//        {
-//        SupplierCottonDTO supplierCottonDTO=supplierService.getSupplierAndSupplierCotton(supplierid);
-//        model.addAttribute("findsuppliercottondetailbyid", supplierCottonDTO.getSupplierCotton());
-//        return "find-supplier-cotton-by-id-form";
-//       }
+
 }

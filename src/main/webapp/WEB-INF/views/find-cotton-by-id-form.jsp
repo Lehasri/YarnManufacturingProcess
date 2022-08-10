@@ -7,11 +7,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Cotton By Id</title>
+<style>type="text/css">
+.form {
+	trxt-align: center;
+}
+
+.check-box {
+	margin-left: 20px;
+}
+</style>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="get" modelAttribute="findcottonbyid">
+			<form:form class="form" action="" method="get" modelAttribute="findcottonbyid">
 				<div>
 					<label for="cottonId">Cotton Id</label>
 					<div>
@@ -27,19 +36,19 @@
 				<div>
 					<label for="colour">Colour</label>
 					<div>
-						<form:input path="colour" />
+						<form:input path="colour" class="check-box"/>
 					</div>
 				</div>
 				<div>
 					<label for="trashContent">Trash Content</label>
 					<div>
-						<form:input path="trashContent" />
+						<form:input path="trashContent" class="check-box"/>
 					</div>
 				</div>
 				<div>
 					<label for="ginningPercentage">Ginning Percentage</label>
 					<div>
-						<form:input path="ginningPercentage" />
+						<form:input path="ginningPercentage" class="check-box"/>
 					</div>
 				</div>
 				<div>

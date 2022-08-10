@@ -9,6 +9,7 @@ import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 public interface InvoiceRepository extends CrudRepository<Invoice,Integer>  {
 	Invoice findById(int id);
 	Invoice save(Invoice invoice);
-	void deleteById(int invoice_id);
+	void deleteById(int invoiceId);
 	List <Invoice> findAll();
+	Invoice findByOrderId(int id);
 }

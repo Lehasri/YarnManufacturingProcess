@@ -74,7 +74,7 @@
 				</div>
 				</form:form>
 				
-				<form:form action ="" method="get" modelAttribute="fetchInvoiceById">
+				<form:form action ="" method="get" modelAttribute="fetchinvoicebyordersid">
 				<div>
 					<label for="invoiceNo">Invoice No</label>
 					<div>

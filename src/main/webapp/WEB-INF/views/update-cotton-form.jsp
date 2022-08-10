@@ -7,11 +7,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Cotton</title>
+<style type="text/css">
+.form {
+	trxt-align: center;
+}
+
+.check-box {
+	margin-left: 20px;
+}
+</style>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="update" method="post" modelAttribute="updatecotton">
+			<form:form class="form" action="update" method="post"
+				modelAttribute="updatecotton">
 				<div>
 					<label for="cottonId">Cotton Id</label>
 					<div>
@@ -24,27 +34,24 @@
 						<form:input path="cottonType" />
 					</div>
 				</div>
+				<div>Cotton Quality</div>
+
 				<div>
-					<label for="cottonQuality">Cotton Quality</label>
-					<div>
-						<form:input path="cottonQuality" />
-					</div>
-				</div><div>
 					<label for="colour">Colour</label>
 					<div>
-						<form:input path="colour" />
+						<form:input path="colour" class="check-box" />
 					</div>
 				</div>
 				<div>
 					<label for="trashContent">Trash Content</label>
 					<div>
-						<form:input path="trashContent" />
+						<form:input path="trashContent" class="check-box"/>
 					</div>
 				</div>
 				<div>
 					<label for="ginningPercentage">Ginning Percentage</label>
 					<div>
-						<form:input path="ginningPercentage" />
+						<form:input path="ginningPercentage" class="check-box"/>
 					</div>
 				</div>
 				<div>

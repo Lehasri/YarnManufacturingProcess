@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.yarnmanufacturingprocess.compositekey.SupplierCottonCompositeKey;
-import com.chainsys.yarnmanufacturingprocess.model.Cotton;
 import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
-import com.chainsys.yarnmanufacturingprocess.repository.CottonRepository;
 import com.chainsys.yarnmanufacturingprocess.repository.SupplierCottonRepository;
 
 @Service
@@ -33,4 +31,10 @@ public class SupplierCottonService {
 	public Optional<SupplierCotton> findById(SupplierCottonCompositeKey id) {
 		return supplierCottonRepository.findById(id);
 	}
+	public List<SupplierCotton> getSuppliers(int id){
+        return supplierCottonRepository.findAllBySupplierId(id);
+    }
+	public List<SupplierCotton> getCotton(int id){
+        return supplierCottonRepository.findByCottonId(id);
+    }
 }
