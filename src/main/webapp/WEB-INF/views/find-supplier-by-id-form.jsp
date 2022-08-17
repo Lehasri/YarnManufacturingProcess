@@ -7,22 +7,25 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Supplier By Id</title>
+<style type="text/css">
+* {
+	font-family: cursive;
+}
+
+#root {
+    line-height: 30px;
+	width: 20%;
+	margin: auto;
+}
+
+</style>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
 			<form:form action="" method="get" modelAttribute="findsupplierbyid">
-				<p>
-				<div>
-					<label>Supplier Details :</label>
-				</div>
-				</p>
-				<div>
-					<label for="supplierId">Supplier Id</label>
-					<div>
-						<form:input path="supplierId" readonly="true"/>
-					</div>
-				</div>
+				
+				
 				<div>
 					<label for="firstName">First Name</label>
 					<div>
@@ -36,9 +39,33 @@
 					</div>
 				</div>
 				<div>
-					<label for="address">Address</label>
+					<label for="doorNo">Door No</label>
 					<div>
-						<form:input path="address" readonly="true"/>
+						<form:input path="doorNo" />
+					</div>
+				</div>
+				<div>
+					<label for="addressLine1">Address Line 1</label>
+					<div>
+						<form:input path="addressLine1" />
+					</div>
+				</div>
+				<div>
+					<label for="addressLine2">Address Line 2</label>
+					<div>
+						<form:input path="addressLine2" />
+					</div>
+				</div>
+				<div>
+					<label for="city">City</label>
+					<div>
+						<form:input path="city" />
+					</div>
+				</div>
+				<div>
+					<label for="pincode">Pincode</label>
+					<div>
+						<form:input path="pincode" />
 					</div>
 				</div>
 				<div>
@@ -53,11 +80,9 @@
 						<form:input path="emailId" readonly="true"/>
 					</div>
 				</div>
-				<p>
 				<div>
 					<label>Bank Details :</label>
 				</div>
-				</p>
 				<div>
 					<label for="bankName">Bank Name</label>
 					<div>

@@ -76,30 +76,38 @@
 					</div>
 				</div>
 			</form:form>
-			<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
-			<thead>
-				<tr>
-					<th>Supplier Id</th>
-					<th>Cotton Id</th>
-					<th>Maximum Supply Quantity</th>
-					<th>Rate</th>
-					<th>Lead Time</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="suppliercotton" items="${listsuppliercottonbycottonid}">
-					<tr>
-						<td>${suppliercotton.supplierId}</td>
-						<td>${suppliercotton.cottonId}</td>
-						<td>${suppliercotton.maximumSupplyQuantity}</td>
-						<td>${suppliercotton.rate}</td>
-						<td>${suppliercotton.leadTime}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
+			<form:form action="" method="get" modelAttribute="findsuppliercotton">
+				<div>
+					<label for="supplierId">Supplier Id</label>
+					<div>
+						<form:input path="SupplierId" readonly="true"/>
+					</div>
+				</div>
+				<div>
+					<label for="cottonId">Cotton Id</label>
+					<div>
+						<form:input path="cottonId" readonly="true"/>
+					</div>
+				</div>
+				<div>
+					<label for="maximumSupplyQuantity">Maximum Supply Quantity</label>
+					<div>
+						<form:input path="maximumSupplyQuantity" readonly="true"/>
+					</div>
+				</div>
+				<div>
+					<label for="rate">Rate</label>
+					<div>
+						<form:input path="rate" readonly="true"/>
+					</div>
+				</div>
+				<div>
+					<label for="leadTime">Lead Time</label>
+					<div>
+						<form:input path="leadTime" readonly="true"/>
+					</div>
+				</div>
+			</form:form>
 		</div>
 	</div>
 </body>

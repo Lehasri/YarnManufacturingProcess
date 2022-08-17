@@ -6,9 +6,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Supplier Cotton List</title>
+<style>
+.center {
+	margin-top: 17%;
+}
+
+.text{
+text-decoration:none;
+color:black;
+}
+</style>
 </head>
 <body>
-	<div id="table root">
+	<div id="table root" class=center>
 		<table border="2" width="100%" cellpadding="2">
 			<thead>
 				<tr>
@@ -27,6 +37,8 @@
 						<td>${suppliercotton.maximumSupplyQuantity}</td>
 						<td>${suppliercotton.rate}</td>
 						<td>${suppliercotton.leadTime}</td>
+						<td><a class=text href="updateform?suppliercottonid=${supplierCotton.supplierCottonId}">Edit</a></td>
+						<td><a class=text href="deletesuppliercotton?suppliercottonid=${supplierCotton.supplierCottonId}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

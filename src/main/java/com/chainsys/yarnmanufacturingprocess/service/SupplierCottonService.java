@@ -34,7 +34,11 @@ public class SupplierCottonService {
 	public List<SupplierCotton> getSuppliers(int id){
         return supplierCottonRepository.findAllBySupplierId(id);
     }
-	public List<SupplierCotton> getCotton(int id){
+	public SupplierCotton findByCottonId(int id){
         return supplierCottonRepository.findByCottonId(id);
     }
+	public SupplierCotton findBySupplierId(int id){
+        return supplierCottonRepository.findBySupplierId(id);
+    }
+
 }

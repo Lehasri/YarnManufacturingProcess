@@ -7,6 +7,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Supplier Cotton</title>
+<style>
+
+* {
+	font-family: cursive;
+}
+
+#root {
+    line-height:30px;
+	width: 20%;
+	margin: auto;
+}
+.movecenter{
+margin-left : 74px;
+}
+</style>
 </head>
 <body>
 	<div id="root">
@@ -42,7 +57,7 @@
 						<form:input path="leadTime" />
 					</div>
 				</div>
-				<div>
+				<div class=movecenter>
 					<form:button>Add</form:button>
 				</div>
 			</form:form>

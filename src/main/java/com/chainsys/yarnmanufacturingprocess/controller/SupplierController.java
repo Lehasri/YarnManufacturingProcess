@@ -2,19 +2,20 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.yarnmanufacturingprocess.compositekey.SupplierCottonCompositeKey;
 import com.chainsys.yarnmanufacturingprocess.model.Supplier;
-import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
-import com.chainsys.yarnmanufacturingprocess.repository.SupplierRepository;
+import com.chainsys.yarnmanufacturingprocess.model.SupplierLogin;
+import com.chainsys.yarnmanufacturingprocess.service.SupplierLoginService;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 
 @Controller
@@ -22,6 +23,10 @@ import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 public class SupplierController {
 	@Autowired
 	SupplierService supplierService;
+	
+	@Autowired
+	SupplierLoginService supplierLoginService;
+
 
 	@GetMapping("/list")
 	public String getAllSuppliers(Model model) {
@@ -33,15 +38,23 @@ public class SupplierController {
 	@GetMapping("/addform")
 	public String showAddForm(Model model) {
 		Supplier theSupplier = new Supplier();
+		theSupplier.setSupplierId(supplierService.getNextValue());
 		model.addAttribute("addsupplier", theSupplier);
 		return "add-supplier-form";
 	}
 
 	@PostMapping("/add")
-	public String addNewSuppliers(@ModelAttribute("addsupplier") Supplier thesupplier) {
-		supplierService.save(thesupplier);
-		return "redirect:/supplier/list";
+	public String addNewSuppliers(@ModelAttribute("addsupplier") Supplier theSupplier) {
+		supplierService.save(theSupplier);
+		return "myprofile";
 	}
+	
+//	  @GetMapping("/myprofileindex") public String showCottonIndex() 
+//	  { 
+//		  return "myprofile"; 
+//		  }
+	 
+	
 	@GetMapping("/modifyform")
 	public String showModifyForm() {
 		return "supplier-modify-form";
@@ -54,9 +67,12 @@ public class SupplierController {
 	}
 
 	@PostMapping("/update")
-	public String updateSuppliers(@ModelAttribute("updatesupplier") Supplier theSupplier) {
+	public String updateSuppliers(@Valid@ModelAttribute("updatesupplier") Supplier theSupplier,Errors errors) {
+		if(errors.hasErrors()) {
+			return "update-supplier-form";
+		}
 		supplierService.save(theSupplier);
-		return "redirect:/supplier/list";
+		return "myprofile";
 	}
 	@GetMapping("/deleteform")
 	public String showdeleteForm() {

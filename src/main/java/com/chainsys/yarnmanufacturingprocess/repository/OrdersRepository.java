@@ -12,5 +12,7 @@ public interface OrdersRepository extends CrudRepository<Orders,Integer>  {
 	Orders save(Orders orders);
 	void deleteById(int orders_id);
 	List <Orders> findAll();
+    List<Orders> findByOrderId(int id);
+  
 	
 }

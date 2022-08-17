@@ -8,6 +8,18 @@
 <meta charset="ISO-8859-1">
 <title>Update Cotton</title>
 <style type="text/css">
+* {
+	font-family: cursive;
+}
+
+#root {
+    line-height:30px;
+	width: 20%;
+	margin: auto;
+}
+.movecenter{
+margin-left : 71px;
+}
 .form {
 	trxt-align: center;
 }
@@ -25,7 +37,7 @@
 				<div>
 					<label for="cottonId">Cotton Id</label>
 					<div>
-						<form:input path="cottonId" />
+						<form:input path="cottonId" readonly="true"/>
 					</div>
 				</div>
 				<div>
@@ -78,7 +90,7 @@
 						<form:input path="stockInHand" />
 					</div>
 				</div>
-				<div>
+				<div class=movecenter>
 					<form:button>Update</form:button>
 				</div>
 			</form:form>

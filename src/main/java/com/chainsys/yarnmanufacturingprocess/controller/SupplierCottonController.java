@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.yarnmanufacturingprocess.compositekey.SupplierCottonCompositeKey;
+import com.chainsys.yarnmanufacturingprocess.model.Cotton;
 import com.chainsys.yarnmanufacturingprocess.model.Customer;
 import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 import com.chainsys.yarnmanufacturingprocess.model.Orders;
 import com.chainsys.yarnmanufacturingprocess.model.Supplier;
 import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
 import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
+import com.chainsys.yarnmanufacturingprocess.service.CottonService;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierCottonService;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 
@@ -29,6 +31,8 @@ public class SupplierCottonController {
 	SupplierCottonService supplierCottonService;
 	@Autowired
 	SupplierService supplierService;
+	@Autowired
+	CottonService cottonService;
 
 	@GetMapping("/list")
 	public String getAllSupplierCottons(Model model) {
@@ -56,7 +60,7 @@ public class SupplierCottonController {
 	}
 
 	@GetMapping("/updateform")
-	public String showUpdateForm(int supplierId, int cottonId, Model model) {
+	public String showUpdateForm(@RequestParam("suppliercottonid")int supplierId, @RequestParam("suppliercottonid") int cottonId, Model model) {
 		SupplierCottonCompositeKey supplierCottonCompositeKey = new SupplierCottonCompositeKey(supplierId, cottonId);
 		Optional<SupplierCotton> theSupplierCotton = supplierCottonService.findById(supplierCottonCompositeKey);
 		model.addAttribute("updatesuppliercotton", theSupplierCotton);
@@ -75,7 +79,7 @@ public class SupplierCottonController {
 	}
 
 	@GetMapping("/deletesuppliercotton")
-	public String deleteSupplierCotton(int supplierId,int cottonId, Model model) {
+	public String deleteSupplierCotton(@RequestParam("suppliercottonid")int supplierId,@RequestParam("suppliercottonid") int cottonId, Model model) {
 		SupplierCottonCompositeKey supplierCottonCompositeKey = new SupplierCottonCompositeKey(supplierId, cottonId);
 		supplierCottonService.deleteById(supplierCottonCompositeKey);
 		return "redirect:/suppliercotton/list";
@@ -102,6 +106,13 @@ public class SupplierCottonController {
 	        model.addAttribute("allsuppliercottons", theSupplierCotton);
 	        return "list-suppliercotton-by-supplier-id-form";
 	    }
-
-
+	 @GetMapping("/getcottondetails")
+	    public String getCottonDetailsById(@RequestParam("id")int id,Model model) {
+		    SupplierCotton theSupplierCotton = supplierCottonService.findByCottonId(id);
+	    	Cotton theCotton = cottonService.findById(theSupplierCotton.getCottonId());
+	        model.addAttribute("fetchcottonbyid", theCotton);
+	        model.addAttribute("findsuppliercotton", theSupplierCotton);
+	        return "find-suppliercotton-by-cotton-id-form";
+	    }
+	
 }

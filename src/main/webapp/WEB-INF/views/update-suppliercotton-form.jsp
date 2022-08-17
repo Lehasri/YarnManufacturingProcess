@@ -6,26 +6,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Yarn</title>
-
-
+<title>Add Supplier Cotton</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="add" method="post" modelAttribute="addyarn">
-				
+			<form:form action="update" method="post" modelAttribute="updatesuppliercotton">
 				<div>
-					<label for="productionQuantity">Production Quantity</label>
+					<label for="supplierId">Supplier Id</label>
 					<div>
-						<form:input path="productionQuantity" />
-						
-					</div>
-				</div>
-				<div>
-					<label for="remarks">Remarks</label>
-					<div>
-						<form:input path="remarks" />
+						<form:input path="SupplierId" />
 					</div>
 				</div>
 				<div>
@@ -35,9 +25,21 @@
 					</div>
 				</div>
 				<div>
-					<label for="quantityUsed">Quantity Used</label>
+					<label for="maximumSupplyQuantity">Maximum Supply Quantity</label>
 					<div>
-						<form:input path="quantityUsed" />
+						<form:input path="maximumSupplyQuantity" />
+					</div>
+				</div>
+				<div>
+					<label for="rate">Rate</label>
+					<div>
+						<form:input path="rate" />
+					</div>
+				</div>
+				<div>
+					<label for="leadTime">Lead Time</label>
+					<div>
+						<form:input path="leadTime" />
 					</div>
 				</div>
 				<div>

@@ -30,5 +30,11 @@ import com.chainsys.yarnmanufacturingprocess.repository.OrdersRepository;
 			return ordersRepository.findById(id);
 		}
 		
+		public List<Orders> getOrders(int id)
+		{
+			return ordersRepository.findByOrderId(id);
+			
+		}
+		
 		
 	}

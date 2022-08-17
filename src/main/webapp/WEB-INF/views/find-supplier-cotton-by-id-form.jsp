@@ -36,9 +36,33 @@
 					</div>
 				</div>
 				<div>
-					<label for="address">Address</label>
+					<label for="doorNo">Door No</label>
 					<div>
-						<form:input path="address" readonly="true"/>
+						<form:input path="door_No" />
+					</div>
+				</div>
+				<div>
+					<label for="addressLine1">Address Line 1</label>
+					<div>
+						<form:input path="addressLine1" />
+					</div>
+				</div>
+				<div>
+					<label for="addressLine2">Address Line 2</label>
+					<div>
+						<form:input path="addressLine2" />
+					</div>
+				</div>
+				<div>
+					<label for="city">City</label>
+					<div>
+						<form:input path="city" />
+					</div>
+				</div>
+				<div>
+					<label for="pincode">Pincode</label>
+					<div>
+						<form:input path="pincode" />
 					</div>
 				</div>
 				<div>

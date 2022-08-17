@@ -5,9 +5,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Supplier Modify Form</title>
+<style type="text/css">
+* {
+	font-family: cursive;
+}
+
+#root {
+	width: 20%;
+	margin: auto;
+}
+
+</style>
 </head>
 <body>
-    <h3>Modify Supplier</h3>
+   <!--  <h3>Modify Supplier</h3> -->
     <br>
     <form action="/supplier/updateform" method="get"
         style="margin: 0;">

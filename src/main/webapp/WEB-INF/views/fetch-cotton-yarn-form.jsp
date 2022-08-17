@@ -4,26 +4,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Fetch Supplier Form</title>
-<style type="text/css">
-* {
-	font-family: cursive;
-}
-
-
-
-</style>
-
+<title>Fetch Cotton Yarn Form</title>
 </head>
 <body>
-<div id="root">
-   <!--  <h3>Fetch</h3> -->
+    <!-- <h3>Fetch Cotton</h3> -->
     <br>
-    <form action="/supplier/findsupplierbyid" method="get"
+    <form action="/yarn/getcottonremarks" method="get"
         style="margin: 0;">
-        <label>Enter Id</label> <input type="text" placeholder="supplier id"
+        <label>Enter Id</label> <input type="text" placeholder="cotton id"
             name="id"> <input type='submit' value="Fetch" name="submit">
     </form>
-<div id="root">
+
 </body>
 </html>

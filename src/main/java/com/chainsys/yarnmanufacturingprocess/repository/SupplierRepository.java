@@ -2,6 +2,7 @@ package com.chainsys.yarnmanufacturingprocess.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.yarnmanufacturingprocess.model.Supplier;
@@ -11,4 +12,6 @@ public interface SupplierRepository extends CrudRepository<Supplier,Integer> {
 	Supplier save(Supplier supplier);
 	void deleteById(int supplier_id);
 	List <Supplier> findAll();
+	@Query(value = "select supplier_id.nextval from dual", nativeQuery = true)
+    public int getNextValMySequence();
 }

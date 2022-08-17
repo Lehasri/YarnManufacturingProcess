@@ -11,8 +11,10 @@ import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
 
 public interface SupplierCottonRepository extends CrudRepository<SupplierCotton, SupplierCottonCompositeKey> {
 	Optional<SupplierCotton> findById(SupplierCottonCompositeKey id);
-	List<SupplierCotton> findByCottonId(int id);
-
+	SupplierCotton findByCottonId(int id);
+	SupplierCotton findBySupplierId(int id);
+	
+    
 	SupplierCotton save(SupplierCotton supplierCotton);
 
 	void deleteById(SupplierCottonCompositeKey supplierId);

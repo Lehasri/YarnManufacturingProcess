@@ -15,7 +15,11 @@
 					<th>Supplier Id</th>
 					<th>First Name</th>
 					<th>Last Name</th>
-					<th>Address</th>
+					<th>Door No</th>
+					<th>Address Line 1</th>
+					<th>Address Line 2</th>
+					<th>City</th>
+					<th>Pincode</th>
 					<th>Phone No</th>
 					<th>Email Id</th>
 					<th>Bank Name</th>
@@ -29,7 +33,11 @@
 						<td>${supplier.supplierId}</td>
 						<td>${supplier.firstName}</td>
 						<td>${supplier.lastName}</td>
-						<td>${supplier.address}</td>
+						<td>${supplier.door_no}</td>
+						<td>${supplier.address_line_1}</td>
+						<td>${supplier.address_line_2}</td>
+						<td>${supplier.city}</td>
+						<td>${supplier.pincode}</td>
 						<td>${supplier.phoneNo}</td>
 						<td>${supplier.emailId}</td>
 						<td>${supplier.bankName}</td>

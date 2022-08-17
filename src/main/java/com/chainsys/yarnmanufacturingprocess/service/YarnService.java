@@ -30,6 +30,9 @@ import com.chainsys.yarnmanufacturingprocess.repository.YarnRepository;
 		public List<Yarn> getYarn(int id){
 	        return yarnRepository.findAllByCottonId(id);
 	    }
+		public Yarn fetchByCottonId(int id) {
+			return yarnRepository.findByCottonId(id);
+		}
 		
 	}
 

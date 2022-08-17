@@ -1,6 +1,7 @@
 package com.chainsys.yarnmanufacturingprocess.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -55,7 +56,7 @@ public class CottonController {
 	
 
 	@GetMapping("/updateform")
-	public String showUpdateForm( int id, Model model) {
+	public String showUpdateForm(@RequestParam("cottonid") int id, Model model) {
 		Cotton theCotton = cottonService.findById(id);
 		model.addAttribute("updatecotton", theCotton);
 		return "update-cotton-form";
@@ -72,7 +73,7 @@ public class CottonController {
 	}
 
 	@GetMapping("/deletecotton")
-	public String deleteCotton( int id) {
+	public String deleteCotton(@RequestParam("cottonid") int id) {
 		cottonService.deleteById(id);
 		return "redirect:/cotton/list";
 	}
@@ -82,11 +83,16 @@ public class CottonController {
 	}
 
 	@GetMapping("/findcottonbyid")
-	public String findCottonById( int id, Model model) {
+	public String findCottonById(@RequestParam("cottonid") int id, Model model) {
 		Cotton theCotton = cottonService.findById(id);
 		model.addAttribute("findcottonbyid", theCotton);
 		return "find-cotton-by-id-form";
 	}
+	@GetMapping("/findcottonform")
+	public String FindForm() {
+		return "fetch-cotton-yarn-	form";
+	}
+	
 	 @GetMapping("/getcottonyarn")
 	    public String getInvoiceOrdersByNo(@RequestParam("id")int id, Model model) {
 	    	Cotton theCotton = cottonService.findById(id);
@@ -95,13 +101,5 @@ public class CottonController {
 	        model.addAttribute("allyarns", theYarn);
 	        return "find-cotton-yarn-by-id-form";
 	    }
-	 @GetMapping("/getcottondetails")
-	    public String getCottonDetailsById(@RequestParam("id")int id, Model model) {
-	    	Cotton theCotton = cottonService.findById(id);
-	        model.addAttribute("fetchcottonbyid", theCotton);
-	    	List<SupplierCotton> theSupplierCotton = supplierCottonService.getCotton(id);
-	        model.addAttribute("listsuppliercottonbycottonid", theSupplierCotton);
-	        return "list-suppliercotton-by-cotton-id-form";
-	    }
-	
+	 
 }

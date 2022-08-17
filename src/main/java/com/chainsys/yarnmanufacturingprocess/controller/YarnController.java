@@ -26,6 +26,9 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnService;
 public class YarnController {
 	@Autowired
 	YarnService yarnService;
+	@Autowired
+	CottonService cottonService;
+	
 	
 	
 	@GetMapping("/list")
@@ -43,8 +46,9 @@ public class YarnController {
 	}
 
 	@PostMapping("/add")
-	public String addNewYarns(@ModelAttribute("addyarn") Yarn theyarn) {
-		yarnService.save(theyarn);
+	public String addNewYarns(@ModelAttribute("addyarn") Yarn theYarn) {
+		theYarn.setProductionDate();
+		yarnService.save(theYarn);
 		return "redirect:/yarn/list";
 	}
 	@GetMapping("/modifyform")
@@ -87,5 +91,18 @@ public class YarnController {
 		model.addAttribute("findyarnbyid", theYarn);
 		return "find-yarn-by-id-form";
 	}
+	@GetMapping("/findyarnform")
+	public String showFindYarnForm() {
+		return "fetch-cotton-yarn-form";
+	}
+	@GetMapping("/getcottonremarks")
+    public String getCottonYarnById(@RequestParam("id")int id, Model model) {
+    	Yarn theYarn = yarnService.fetchByCottonId(id);
+    	Cotton theCotton = cottonService.findById(theYarn.getCottonId());
+        model.addAttribute("yarndetail",theYarn);
+        model.addAttribute("cottondetail", theCotton);
+        return "find-remarks-by-cotton-id-form";
+    }
+	
 	
 }

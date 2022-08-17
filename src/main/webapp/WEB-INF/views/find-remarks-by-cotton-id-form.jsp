@@ -6,20 +6,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Cotton</title>
-<style>
-* {
-	font-family: cursive;
-}
-
-#root {
-    line-height:30px;
-	width: 20%;
-	margin: auto;
-}
-.movecenter{
-margin-left : 77px;
-}
+<title>Find Cotton By Id</title>
+<style>type="text/css">
 .form {
 	trxt-align: center;
 }
@@ -27,36 +15,37 @@ margin-left : 77px;
 .check-box {
 	margin-left: 20px;
 }
-.aligning{
-margin-left:10px;
-}
 </style>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form class="form" action="add" method="post" modelAttribute="addcotton">
-				
+			<form:form class="form" action="" method="get" modelAttribute="cottondetail">
+				<div>
+					<label for="cottonId">Cotton Id</label>
+					<div>
+						<form:input path="cottonId" readonly="true"/>
+					</div>
+				</div>
 				<div>
 					<label for="cottonType">Cotton Type</label>
 					<div>
-						<form:input path="cottonType" />
+						<form:input path="cottonType" readonly="true"/>
 					</div>
 				</div>
-				<div>Cotton Quality :</div>
-				<div class=aligning>
-					<label for="colour">Colour </label>
+				<div>
+					<label for="colour">Colour</label>
 					<div>
 						<form:input path="colour" class="check-box"/>
 					</div>
 				</div>
-				<div class=aligning>
+				<div>
 					<label for="trashContent">Trash Content</label>
 					<div>
 						<form:input path="trashContent" class="check-box"/>
 					</div>
 				</div>
-				<div class=aligning>
+				<div>
 					<label for="ginningPercentage">Ginning Percentage</label>
 					<div>
 						<form:input path="ginningPercentage" class="check-box"/>
@@ -69,25 +58,32 @@ margin-left:10px;
 					</div>
 				</div>
 				<div>
-					<label for="micronaire">Micronaire</label>
+					<label for="stapleLength">Micronaire</label>
 					<div>
-						<form:input path="micronaire" />
+						<form:input path="stapleLength" />
 					</div>
 				</div>
 				<div>
 					<label for="ratePerTon">Rate Per Ton</label>
 					<div>
-						<form:input path="ratePerTon" />
+						<form:input path="ratePerTon" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="stockInHand">Stock In Hand</label>
 					<div>
-						<form:input path="stockInHand" />
+						<form:input path="stockInHand" readonly="true"/>
 					</div>
 				</div>
-				<div class=movecenter>
-					<form:button>Add</form:button>
+			</form:form>
+			
+			<form:form action="" method="get" modelAttribute="yarndetail">
+				
+				<div>
+					<label for="remarks">Remarks</label>
+					<div>
+						<form:input path="remarks" readonly="true"/>
+					</div>
 				</div>
 			</form:form>
 		</div>

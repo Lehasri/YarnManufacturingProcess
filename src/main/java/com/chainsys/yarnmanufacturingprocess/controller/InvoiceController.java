@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.chainsys.yarnmanufacturingprocess.model.Cotton;
 import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 import com.chainsys.yarnmanufacturingprocess.model.Orders;
+import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
 import com.chainsys.yarnmanufacturingprocess.service.InvoiceService;
 import com.chainsys.yarnmanufacturingprocess.service.OrdersService;
 
@@ -81,12 +84,13 @@ public class InvoiceController {
 		return "find-invoice-by-id-form";
 	}
 	@GetMapping("/getordersinvoice")
-    public String getInvoiceOrdersById(@RequestParam("id")int id, Model model) {
+    public String getOrdersInvoiceById(@RequestParam("id")int id, Model model) {
     	Invoice theInvoice = invoiceService.fetchByOrderId(id);
     	Orders theorders = ordersService.findById(theInvoice.getOrderId());
         model.addAttribute("invoicedetail",theInvoice);
         model.addAttribute("orderdetail", theorders);
         return "find-invoice-by-order-id-form";
     }
+	
 
 }

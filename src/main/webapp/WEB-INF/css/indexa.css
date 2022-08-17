@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+.ab {
+	text-align: center;
+	margin-top: 10px;
+	font-family:Century Gothic
+}
+.ba {
+	text-align: center;
+	margin-top: 300px;
+	margin-left: 1px;
+	font-family:Century Gothic
+}
+h1 {
+  background-color: black;
+  width: 1310px;
+  border: 1px lightgrey;
+  padding: 30px;
+ /* margin: 10px;*/
+  color: White; 
+ font-family: Century Gothic"
+}
+
+a {
+	font-family: Century Gothic; 
+	color: White; 
+	font-size: 20px; 
+	text-decoration: none; 
+	float:right;
+	
+}
+
+login-wrapper{
+	width: 50%;
+	margin: auto;
+} 
+.line{
+	text-align: center;
+}

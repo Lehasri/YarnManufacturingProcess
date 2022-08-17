@@ -6,9 +6,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Cotton List</title>
+<style>
+.center {
+	margin-top: 17%;
+}
+
+.text{
+text-decoration:none;
+color:black;
+}
+
+</style>
 </head>
 <body>
-	<div id="table root">
+	<div id="table root" class=center>
 		<table border="2" width="100%" cellpadding="2">
 			<thead>
 				<tr>
@@ -35,6 +46,8 @@
 						<td>${cotton.micronaire}</td>
 						<td>${cotton.ratePerTon}</td>
 						<td>${cotton.stockInHand}</td>
+						<td><a class=text href="updateform?cottonid=${cotton.cottonId}">Edit</a></td>
+						<td><a class=text href="deletecotton?cottonid=${cotton.cottonId}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

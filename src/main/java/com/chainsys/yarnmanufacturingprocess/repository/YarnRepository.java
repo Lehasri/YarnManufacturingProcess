@@ -13,4 +13,5 @@ public interface YarnRepository extends CrudRepository<Yarn,Integer>  {
 	void deleteById(int yarn_id);
 	List <Yarn> findAll();
 	List<Yarn> findAllByCottonId(int id);
+	Yarn findByCottonId(int id);
 }

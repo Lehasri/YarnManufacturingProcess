@@ -31,4 +31,8 @@ import com.chainsys.yarnmanufacturingprocess.repository.SupplierRepository;
 		{
 			supplierRepository.deleteById(id);
 		}
+		public int getNextValue()
+	    {
+	        return supplierRepository.getNextValMySequence();
+	    }
 	}
