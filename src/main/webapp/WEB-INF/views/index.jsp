@@ -18,26 +18,26 @@
 			<div class="navbar">
 				<div class="dropdown">
 					<button class="dropbtn">
-					  <b>Sign Up&emsp;</b> <em class="fa fa-caret-down"></em>
+						Sign Up&emsp; <em class="fa fa-caret-down"></em>
 					</button>
 					<div class="dropdown-content">
-						<a href="/supplier/addform">Supplier </a> 
-						<a	href="/customer/addform">Customer</a> 
+						<a href="/supplier/addform">Supplier </a> <a
+							href="/customer/addform">Customer</a>
 
 					</div>
 				</div>
 			</div>
 
-			
+
 			<div class="navbar">
 				<div class="dropdown">
 					<button class="dropbtn">
-						<b>Login &emsp;&emsp;</b> <em class="fa fa-caret-down"></em>
+						Login &emsp;&emsp; <em class="fa fa-caret-down"></em>
 					</button>
 					<div class="dropdown-content">
-						<a href="/supplier/loginsupplier">Supplier</a> 
-						<a href="/adminlogin/loginadmin">Admin</a> 
-						<a href="/customer/logincustomer">Customer</a>
+						<a href="/supplier/loginsupplier">Supplier</a> <a
+							href="/adminlogin/loginadmin">Admin</a> <a
+							href="/customer/logincustomer">Customer</a>
 
 					</div>
 				</div>
@@ -56,7 +56,5 @@
 		manufactures can upload their products. Yarn manufactures can give
 		remarks for cotton.Customers can buy yarn products by using this
 		website.</div>
-
-
 </body>
 </html>

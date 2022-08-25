@@ -97,11 +97,6 @@ public class Customer {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	/*
-	 * @Override public String toString() // Default method { return
-	 * String.format("%d, %s, %s, %s, %d, %s",customerId,firstName,lastName,address,
-	 * phoneNo,emailId); }
-	 */
 	
 	
 }

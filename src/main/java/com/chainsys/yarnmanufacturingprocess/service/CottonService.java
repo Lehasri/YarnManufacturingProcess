@@ -19,8 +19,7 @@ import com.chainsys.yarnmanufacturingprocess.repository.CottonRepository;
 			 return cottonRepository.save(cotton);
 		}
         public List<Cotton>getAllCottons()		{
-		 List<Cotton>listCotton=cottonRepository.findAll();
-		 return listCotton;
+		 return cottonRepository.findAll();
 		}
 		public void deleteById(int id)
 		{

@@ -18,7 +18,8 @@
 		style="font-size: 30px;float:right; color: white;"></em></a></div>
 	<br>
 	<div id="table root" class=center>
-		<table border="2" width="100%" cellpadding="2">
+		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Supplier Id</th>

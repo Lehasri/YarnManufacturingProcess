@@ -16,7 +16,6 @@
 	outline-color: black;
 	outline-style: dashed;
 	padding: 22px;
-	font-family: Century Gothic ;
 	padding-left:180px;
 	text-align : center;
 
@@ -42,7 +41,6 @@
 	border: 1px lightgrey;
 	font-family: cursive;
 	padding: 26px;
-	font-family: cursive;
 	font-size: 20px;
 	float: right;
 	margin-top: 4px
@@ -81,7 +79,6 @@ margin-left:-162px
 .heading{
 	float:left;
 	color:white;
-	font-family: Century Gothic;
 	padding: 26px;
 	font-family: cursive;
 	font-size: 20px;

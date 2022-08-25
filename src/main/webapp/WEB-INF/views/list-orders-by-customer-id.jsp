@@ -66,11 +66,12 @@ tr:nth-child(even) {
 </head>
 <body>
 	<div class=top style="color: white; text-decoration: none">
-	<b>Order List</b>
+	Order List
 	</div>
 	<br>
 	<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 					

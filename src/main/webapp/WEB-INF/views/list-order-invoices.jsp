@@ -76,7 +76,8 @@
 		</div>
 	</div>
 	<div id="invoice list">
-		<table border="2" width="100%" cellpadding="2">
+		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Invoice No</th>

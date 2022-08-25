@@ -9,7 +9,8 @@
 </head>
 <body>
 	<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 				    <th>Invoice No</th>
@@ -33,7 +34,8 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		<table border="2" width="100%" cellpadding="2">
+		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Order Id</th>
