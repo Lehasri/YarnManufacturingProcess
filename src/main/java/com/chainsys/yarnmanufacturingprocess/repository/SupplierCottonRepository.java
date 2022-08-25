@@ -13,8 +13,6 @@ public interface SupplierCottonRepository extends CrudRepository<SupplierCotton,
 	SupplierCotton findByCottonId(int id);
 	SupplierCotton findBySupplierId(int id);
 	
-    
-	@SuppressWarnings("unchecked")
 	SupplierCotton save(SupplierCotton supplierCotton);
 
 	void deleteById(SupplierCottonCompositeKey supplierId);

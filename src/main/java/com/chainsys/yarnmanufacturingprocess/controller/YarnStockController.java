@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.yarnmanufacturingprocess.model.Customer;
-import com.chainsys.yarnmanufacturingprocess.model.Yarn;
 import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
 import com.chainsys.yarnmanufacturingprocess.service.CustomerService;
 import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;

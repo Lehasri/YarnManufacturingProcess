@@ -3,8 +3,6 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.yarnmanufacturingprocess.compositekey.SupplierCottonCompositeKey;
 import com.chainsys.yarnmanufacturingprocess.model.Cotton;
-import com.chainsys.yarnmanufacturingprocess.model.Customer;
-import com.chainsys.yarnmanufacturingprocess.model.Invoice;
-import com.chainsys.yarnmanufacturingprocess.model.Orders;
-import com.chainsys.yarnmanufacturingprocess.model.Supplier;
 import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
-import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
 import com.chainsys.yarnmanufacturingprocess.service.CottonService;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierCottonService;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierService;

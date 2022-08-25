@@ -1,7 +1,5 @@
 package com.chainsys.yarnmanufacturingprocess.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.chainsys.yarnmanufacturingprocess.model.AdminLogin;
-import com.chainsys.yarnmanufacturingprocess.model.Supplier;
-import com.chainsys.yarnmanufacturingprocess.model.AdminLogin;
-import com.chainsys.yarnmanufacturingprocess.service.AdminLoginService;
 import com.chainsys.yarnmanufacturingprocess.service.AdminLoginService;
 
 @Controller
@@ -42,7 +37,7 @@ public class AdminLoginController {
 		return "adminlogin";
 	}
 	@GetMapping("/yarnindex")
-	public String YarnIndex() {
+	public String yarnIndex() {
 		
 		return "yarn";
 	}

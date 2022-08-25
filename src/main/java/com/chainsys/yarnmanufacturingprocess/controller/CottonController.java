@@ -1,8 +1,6 @@
 package com.chainsys.yarnmanufacturingprocess.controller;
 
 import java.util.List;
-import java.util.Optional;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.yarnmanufacturingprocess.model.Cotton;
-import com.chainsys.yarnmanufacturingprocess.model.Invoice;
-import com.chainsys.yarnmanufacturingprocess.model.Orders;
-import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
 import com.chainsys.yarnmanufacturingprocess.model.Yarn;
 import com.chainsys.yarnmanufacturingprocess.service.CottonService;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierCottonService;
@@ -26,6 +21,7 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnService;
 @Controller
 @RequestMapping("/cotton")
 public class CottonController {
+	private static final String REDIRECTPAGE = "redirect:/cotton/list"; 
 	@Autowired
 	CottonService cottonService;
 	@Autowired
@@ -54,7 +50,7 @@ public class CottonController {
 			return "add-cotton-form";
 		}
 		cottonService.save(theCotton);
-		return "redirect:/cotton/list";
+		return REDIRECTPAGE;
 	}
 	@GetMapping("/modifyform")
 	public String showModifyForm() {
@@ -70,13 +66,13 @@ public class CottonController {
 	}
 
 	@PostMapping("/update")
-	public String updateCotton(@ModelAttribute("updatecotton") Cotton theCotton,Errors error) {
+	public String updateCotton(@ModelAttribute("updatecotton") Cotton theCottonA,Errors error) {
 		if(error.hasErrors())
 		{
 			return "update-cotton-form";
 		}
-		cottonService.save(theCotton);
-		return "redirect:/cotton/list";
+		cottonService.save(theCottonA);
+		return REDIRECTPAGE;
 	}
 	@GetMapping("/deleteform")
 	public String showdeleteForm() {
@@ -86,7 +82,7 @@ public class CottonController {
 	@GetMapping("/deletecotton")
 	public String deleteCotton(@RequestParam("cottonid") int id) {
 		cottonService.deleteById(id);
-		return "redirect:/cotton/list";
+		return REDIRECTPAGE;
 	}
 	@GetMapping("/findform")
 	public String showFindForm() {
@@ -102,8 +98,8 @@ public class CottonController {
 		return "find-cotton-by-id-form";
 	}
 	@GetMapping("/findcottonform")
-	public String FindForm() {
-		return "fetch-cotton-yarn-	form";
+	public String findForm() {
+		return "fetch-cotton-yarn-form";
 	}
 	
 	 @GetMapping("/getcottonyarn")
@@ -116,7 +112,7 @@ public class CottonController {
 	    }
 	 @GetMapping("/myindexpreviousupdatecotton")
 		public String myUpdateCotonIndexForm(Model model) {
-			return "redirect:/cotton/list";
+			return REDIRECTPAGE;
 		}
 	 @GetMapping("/myindexpreviousfetch")
 		public String myPreviousFetchIndexForm(Model model) {
