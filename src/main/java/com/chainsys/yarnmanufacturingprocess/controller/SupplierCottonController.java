@@ -23,6 +23,7 @@ import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 @Controller
 @RequestMapping("/suppliercotton")
 public class SupplierCottonController {
+	private static final String REDIRECTPAGE = "redirect:/suppliercotton/list"; 
 	@Autowired
 	SupplierCottonService supplierCottonService;
 	@Autowired
@@ -45,10 +46,13 @@ public class SupplierCottonController {
 	}
 
 	@PostMapping("/add")
-	public String addNewSupplierCotton(@ModelAttribute("addsuppliercotton") SupplierCotton theSc) {
-		
+	public String addNewSupplierCotton(@ModelAttribute("addsuppliercotton") SupplierCotton theSc,Errors error) {
+		if(error.hasErrors())
+		{
+			return "add-suppliercotton-form";
+		}
 		supplierCottonService.save(theSc);
-		return "redirect:/suppliercotton/list";
+		return REDIRECTPAGE;
 	}
 
 	@GetMapping("/modifyform")
@@ -71,7 +75,7 @@ public class SupplierCottonController {
 			return "update-suppliercotton-form";
 		}
 		supplierCottonService.save(theSupplierCotton);
-		return "redirect:/suppliercotton/list";
+		return REDIRECTPAGE;
 	}
 
 	@GetMapping("/deleteform")
@@ -83,7 +87,7 @@ public class SupplierCottonController {
 	public String deleteSupplierCotton(@RequestParam("supplierid")int supplierId,@RequestParam("supplierid") int cottonId, Model model) {
 		SupplierCottonCompositeKey supplierCottonCompositeKey = new SupplierCottonCompositeKey(supplierId, cottonId);
 		supplierCottonService.deleteById(supplierCottonCompositeKey);
-		return "redirect:/suppliercotton/list";
+		return REDIRECTPAGE;
 	}
 
 	@GetMapping("/findform")
@@ -101,10 +105,6 @@ public class SupplierCottonController {
 
 	 @GetMapping("/getsuppliercotton")
 	    public String getSupplierCottonById(@RequestParam("id")int id, Model model) {
-			/*
-			 * Supplier theSupplier = supplierService.findById(id);
-			 * model.addAttribute("fetchSupplierById", theSupplier);
-			 */
 	    	List<SupplierCotton> theSupplierCotton = supplierCottonService.getSuppliers(id);
 	        model.addAttribute("allsuppliercottons", theSupplierCotton);
 	        return "list-suppliercotton-by-supplier-id-form";
@@ -124,7 +124,7 @@ public class SupplierCottonController {
 	    }
 	 @GetMapping("/leadlist")
 		public String showFindLeadListForm() {
-			return "redirect:/suppliercotton/list";
+			return REDIRECTPAGE;
 		}
 	
 }

@@ -50,9 +50,13 @@ public class OrdersController {
 	}
 
 	@PostMapping("/add")
-	public String addNewOrder(@Valid @ModelAttribute("addorder") Orders theOrders, Errors errors) {
+	public String addNewOrder(@Valid @ModelAttribute("addorder") Orders theOrders, Errors error) {
 		theOrders.setOrderDate();
 		theOrders.setReceivingDate();
+		if(error.hasErrors())
+		{
+			return "add-order-form";
+		}
 		ordersService.save(theOrders);
 		int orderId = theOrders.getOrderId();
 		return "redirect:/invoice/addform?orderId=" + orderId;

@@ -69,7 +69,11 @@ public class InvoiceController {
 	}
 
 	@PostMapping("/update")
-	public String updateInvoice(@ModelAttribute("updateinvoice") Invoice theInvoice) {
+	public String updateInvoice(@ModelAttribute("updateinvoice") Invoice theInvoice,Errors error) {
+		if(error.hasErrors())
+		{
+			return "update-invoice-form";
+		}
 		invoiceService.save(theInvoice);
 		return "redirect:/invoice/list";
 	}

@@ -1,9 +1,13 @@
 package com.chainsys.yarnmanufacturingprocess.controller;
 
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +22,7 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnService;
 @Controller
 @RequestMapping("/yarn")
 public class YarnController {
+	private static final String REDIRECTPAGE = "redirect:/yarn/list"; 
 	@Autowired
 	YarnService yarnService;
 	@Autowired
@@ -40,10 +45,14 @@ public class YarnController {
 	}
 
 	@PostMapping("/add")
-	public String addNewYarns(@ModelAttribute("addyarn") Yarn theYarn) {
+	public String addNewYarns(@Valid@ModelAttribute("addyarn") Yarn theYarn,Errors error) {
 		theYarn.setProductionDate();
+		if(error.hasErrors())
+		{
+			return "add-yarn-form";
+		}
 		yarnService.save(theYarn);
-		return "redirect:/yarn/list";
+		return REDIRECTPAGE;
 	}
 	@GetMapping("/modifyform")
 	public String showModifyForm() {
@@ -59,9 +68,13 @@ public class YarnController {
 	}
 
 	@PostMapping("/update")
-	public String updateYarn(@ModelAttribute("updateyarn") Yarn theYarn) {
+	public String updateYarn(@Valid@ModelAttribute("updateyarn") Yarn theYarn,Errors error) {
+		if(error.hasErrors())
+		{
+			return "update-yarn-form";
+		}
 		yarnService.save(theYarn);
-		return "redirect:/yarn/list";
+		return REDIRECTPAGE;
 	}
 	@GetMapping("/deleteform")
 	public String showdeleteForm() {
@@ -72,7 +85,7 @@ public class YarnController {
 	@GetMapping("/deleteyarn")
 	public String deleteYarn(@RequestParam("yarnid") int id) {
 		yarnService.deleteById(id);
-		return "redirect:/yarn/list";
+		return REDIRECTPAGE;
 	}
 	@GetMapping("/findform")
 	public String showFindForm() {

@@ -1,9 +1,13 @@
 package com.chainsys.yarnmanufacturingprocess.controller;
 
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,7 +44,11 @@ public class YarnStockController {
 	}
 
 	@PostMapping("/add")
-	public String addNewYarnStocks(@ModelAttribute("addyarnstock") YarnStock theyarnstock) {
+	public String addNewYarnStocks(@Valid@ModelAttribute("addyarnstock") YarnStock theyarnstock,Errors error) {
+		if(error.hasErrors())
+		{
+			return "add-yarnstock-form";
+		}
 		yarnStockService.save(theyarnstock);
 		return REDIRECT_PAGE;
 	}
@@ -58,7 +66,11 @@ public class YarnStockController {
 	}
 
 	@PostMapping("/update")
-	public String updateYarnStocks(@ModelAttribute("updateyarnstock") YarnStock theYarnStock) {
+	public String updateYarnStocks(@ModelAttribute("updateyarnstock") YarnStock theYarnStock,Errors error) {
+		if(error.hasErrors())
+		{
+			return "update-yarnstock-form";
+		}
 		yarnStockService.save(theYarnStock);
 		return REDIRECT_PAGE;
 	}
@@ -71,7 +83,7 @@ public class YarnStockController {
 	@GetMapping("/deleteyarnstock")
 	public String deleteYarnStocks(int id) {
 		yarnStockService.deleteById(id);
-		return "redirect:/yarnstock/list";
+		return REDIRECT_PAGE;
 	}
 
 	@GetMapping("/findform")

@@ -15,7 +15,7 @@
 <body>
 	<div class=top>
 		 Update Cotton<a href="/supplier/cottonindex"><em class="fa fa-home"
-		style="font-size: 40px; color: white"></em></a>
+		style="font-size: 30px; color: white;float:right;"></em></a>
 	</div>
 <br>
 

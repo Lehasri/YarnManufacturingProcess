@@ -1,11 +1,12 @@
 @charset "ISO-8859-1";
 .heading {
 	background-color: black;
-	width: 1330px;
+	width: 1345px;
 	border: 1px lightgrey;
 	font-family: cursive;
 	float:right;
-	padding: 9px;
+	padding: 0px;
+	height:79px;
 	
 }
 * {
@@ -18,12 +19,11 @@
 	outline-color: black;
 	outline-style: dashed;
 	padding: 10px;
+	padding-top: 5px;
 	color: red;
 	font-family: cursive;
 	padding-left: 180;
 	text-align: center;
-	margin-left:5px;
-	margin-top: 56px;
 }
 .list {
 	color: Black;
@@ -46,7 +46,8 @@
 	font-size: 20px;
 }
 .dropdown {
-	float: left;
+	    display: flex;
+    justify-content: space-between;
 	overflow: hidden;
 }
 .dropdown .dropbtn {
@@ -81,10 +82,7 @@
 .dropdown:hover .dropdown-content {
 	display: block;
 }
-.image {
-	margin-left: 266px;
-	margin-top: -345px;
-    }
+
  .account{
  	float: right;
     font-size: larger;
@@ -98,8 +96,22 @@
  text-decoration: none;
  color: White;
  }
- img{
- float:right;
- width:30px;
- height:30px;
+ .content{
+     display: inline-flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+     margin-left: 5px;
+ }
+ 
+ .imgg{
+     margin-left: 5px;
+    height: 486px;
+    margin-top: 1px;
+    width: 1098px;
+ }
+ .navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
  }

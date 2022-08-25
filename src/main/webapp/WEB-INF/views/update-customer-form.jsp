@@ -144,9 +144,10 @@
 					</div>
 				</div>
 
-					<div>
-						<form:button>Update</form:button>
+					<div class=movecenter>
+						<form:button class="but hover">Update</form:button>
 					</div>
+					<div>${result}</div>
 			</form:form>
 		</div>
 	</div>

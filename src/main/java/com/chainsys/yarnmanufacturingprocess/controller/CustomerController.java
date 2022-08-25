@@ -6,7 +6,8 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Controller;
 	import org.springframework.ui.Model;
-	import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.GetMapping;
 	import org.springframework.web.bind.annotation.ModelAttribute;
 	import org.springframework.web.bind.annotation.PostMapping;
 	import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 	@Controller
 	@RequestMapping("/customer")
 	public class CustomerController {
+		private static final String REDIRECTPAGE = "redirect:/customer/list"; 
 		@Autowired
 		CustomerService customerService;
 		@Autowired
@@ -36,9 +38,16 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 	    	return "add-customer-form";
 	    }
 	    @PostMapping("/add")
-		public String addNewCustomer(@ModelAttribute("addcustomer") Customer theCustomer) {
+		public String addNewCustomer(@ModelAttribute("addcustomer") Customer theCustomer,Model model) {
+	    	try{
 	    	customerService.save(theCustomer);
-	    	return "customer";
+	    	model.addAttribute("result","Added Successfully");
+	    	return "add-customer-form";
+			}
+	    	catch(Exception err) {
+				model.addAttribute("message","could not create account,try again");
+				return "add-customer-form";
+			}
 		}
 	    @GetMapping("/modifyform")
 		public String showModifyForm() {
@@ -52,10 +61,17 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 	    	return "update-customer-form";
 	    }
 	    @PostMapping("/update")
-		public String updateCustomer(@ModelAttribute("updatecustomer") Customer theCustomer) {
+		public String updateCustomer(@ModelAttribute("updatecustomer") Customer theCustomer,Model model) {
+	    	try {
 	    	customerService.save(theCustomer);
-	    	return "redirect:/customer/list";
+	    	model.addAttribute("result","Updated Successfully");
+	    	return "update-customer-form";
 		}
+	    	catch(Exception err) {
+				model.addAttribute("message","could not Update account,try again");
+				return "update-customer-form";
+			}
+		}	
 	    @GetMapping("/deleteform")
 		public String showdeleteForm() {
 			return "customer-delete-form";
@@ -63,7 +79,7 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 	    @GetMapping("/deletecustomer")
 		public String deleteCustomer( int id) {
 	    	customerService.deleteById(id);
-			return "redirect:/customer/list";
+			return REDIRECTPAGE;
 		}
 	    @GetMapping("/findform")
 		public String showFindForm() {
@@ -76,7 +92,7 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 	    	return "find-customer-by-id-form";
 		}
 	    @GetMapping("/customerindex")
-		public String CustomerIndex() {
+		public String customerIndex() {
 			
 			return "customer";
 		}

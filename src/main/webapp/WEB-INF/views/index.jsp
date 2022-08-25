@@ -13,7 +13,7 @@
 <body>
 
 	<h1>
-		Yarn Manufacturing Process Tracking System
+		Track Your Yarn
 		<div>
 			<div class="navbar">
 				<div class="dropdown">

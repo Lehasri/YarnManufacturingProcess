@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.yarnmanufacturingprocess.model.Customer;
 import com.chainsys.yarnmanufacturingprocess.model.Supplier;
 import com.chainsys.yarnmanufacturingprocess.model.SupplierLogin;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierLoginService;
@@ -45,41 +46,39 @@ public class SupplierController {
 	}
 
 	@PostMapping("/add")
-	public String addNewSuppliers(@Valid @ModelAttribute("addsupplier") Supplier theSupplier,Errors error,Model model) {
+	public String addNewSuppliers(@Valid @ModelAttribute("addsupplier") Supplier theSupplier,Model model) {
 		try {
 			supplierService.save(theSupplier);
 			model.addAttribute("result","Added Successfully");
 			return "add-supplier-form";
 		}
 		catch(Exception err) {
-			model.addAttribute("message","Added Successfully");
+			model.addAttribute("message","could not create account,try again");
 			return "add-supplier-form";
 		}
 	}
-	
-//	  @GetMapping("/myprofileindex") public String showCottonIndex() 
-//	  { 
-//		  return "myprofile"; 
-//		  }
-	 
+	@GetMapping("/fetchform")
+	public String showForm() {
+		return "supplier-modify-form";
+	}
 	@GetMapping("/updateform")
-	public String showUpdateForm(HttpServletRequest request,@RequestParam("id") int id, Model model) {
-		Supplier theSupplier = supplierService.findById(id);
-		HttpSession session = request.getSession();
-		int supplierId =(int)session.getAttribute("Id");
-		System.out.println(supplierId);
-		theSupplier.setSupplierId(supplierId);
-		model.addAttribute("updatesupplier", theSupplier);
+	public String showUpdateForm( int id, Model model) {
+		Supplier theSupplier=supplierService.findById(id);
+		model.addAttribute("updatesupplierA", theSupplier);
 		return "update-supplier-form";
 	}
 
-	@PostMapping("/updatesuppliers")
-	public String updateSuppliers(@ModelAttribute("updatesupplier") Supplier supplier,Errors errors) {
-		if(errors.hasErrors()) {
+	@PostMapping("/update")
+	public String updateSuppliers(@ModelAttribute("updatesupplierA") Supplier theSupplier,Model model) {
+		try {
+			supplierService.save(theSupplier);
+			model.addAttribute("result","Updated Successfully");
 			return "update-supplier-form";
 		}
-		supplierService.save(supplier);
-		return "redirect:/supplierlogin/loginsupplier";
+		catch(Exception err) {
+			model.addAttribute("message","could not Update account,try again");
+			return "update-supplier-form";
+		}
 	}
 	@GetMapping("/deleteform")
 	public String showdeleteForm() {
@@ -95,7 +94,7 @@ public class SupplierController {
 		return "fetch-supplier-form";
 	}
 
-	@GetMapping("/findsupplierbyid")
+	@GetMapping("/findsupplierbyId")
 	public String findSupplierById(int id, Model model) {
 		Supplier theSupplier = supplierService.findById(id);
 		model.addAttribute("findsupplierbyid", theSupplier);

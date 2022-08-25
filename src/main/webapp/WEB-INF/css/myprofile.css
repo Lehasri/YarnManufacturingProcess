@@ -14,17 +14,16 @@
 
 .s {
 	background-color: lightgrey;
-	Height: 462px;
-	width: 19%;
+	Height: 464px;
+    width: 201px;
 	outline-color: black;
 	outline-style: dashed;
 	padding: 10px;
+	padding-top: 5px;
 	color: red;
 	font-family: cursive;
-	padding-left:180;
-	text-align:center;
-	margin-left:5px;
-	margin-top:57px;
+	padding-left: 180;
+	text-align: center;
 }
 
 .list {
@@ -67,7 +66,7 @@
 }
  .top {
 	background-color: black;
-	width: 1330px;
+	width: 1313px;
 	border: 1px lightgrey;
 	display: flex;
 	justify-content: space-between;
@@ -80,9 +79,19 @@
 	align-items: center;
 }
 
-img{
-	width:30px;
-	height:30px;
-	float:right;
-}
+.content{
+     display: inline-flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+     margin-left: 5px;
+ }
+ 
+ .imgg{
+    
+    width: 1098px;
+    height: 486px;
+    margin-left: 8px;
+
+ }
 	

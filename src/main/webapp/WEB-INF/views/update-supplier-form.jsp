@@ -10,16 +10,17 @@
 <style type="text/css">
 <%@include file="/WEB-INF/css/supplier-form.css"%>
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div class=top>
-		Edit Account<a href="/supplier/cottonindex"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxXTuxRJzWsUA0uiZKT-_79osm34J9fwZ9A&usqp=CAU"></a>
+	<div class=top style="color: white; text-decoration: none">
+		Edit Account<a href="/supplier/cottonindex"><em class="fa fa-home"
+		style="font-size: 30px; color: white;"></em></a>
 	</div>
-	<br>
+	<br> 
 	<div id="root">
 		<div id="form">
-			<form:form action="update" method="post"
-				modelAttribute="updatesuppliercotton">
+			<form:form action="update" method="post" modelAttribute="updatesupplierA">
 
 				<div class="grid-container">
 				<div>
@@ -160,6 +161,7 @@
 		<div>
 			<form:button class="but hover">Update</form:button>
 		</div>
+		<div>${result}</div>
 		</form:form>
 	</div>
 	</div>

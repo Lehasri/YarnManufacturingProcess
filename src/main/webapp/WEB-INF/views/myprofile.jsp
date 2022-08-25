@@ -24,11 +24,11 @@
 			<a href="/supplier/cottonindex"><em class="fa fa-home" style="font-size: 30px; color: white"></em></a>
 		</div>
 		</div>
-		<br>
+		<div class="content">
 		<div class=s>
 		<br>
 			<div>
-				<a class="list" href="/supplier/updateform?id=${Id}">Edit
+				<a class="list" href="/supplier/fetchform">Edit
 					Account
 					<hr>
 				</a><br>
@@ -39,6 +39,11 @@
 				</a>
 			</div>
 		</div>
+		<div>
+			 <img src="https://img.freepik.com/free-photo/top-view-private-written-note-colored-background-job-office-school-business-copybook-salary-color-money-college_179666-18257.jpg?w=360"
+				alt="imgg" class="imgg">
+		</div>
+	</div>
 		<footer>
 			<a href="/supplier/myindexpreviouscotton" class="previous background">&#8249;</a>
 		</footer>

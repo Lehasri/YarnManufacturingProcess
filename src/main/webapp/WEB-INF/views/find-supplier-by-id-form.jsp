@@ -107,7 +107,7 @@ float:right;
 					<div>
 						<label for="phoneNo">phone No</label>
 						<div>
-							<form:input path="phoneNo"readonly="true" />
+							<form:input path="phoneNo" readonly="true" />
 						</div>
 					</div>
 					<div>
@@ -179,7 +179,7 @@ float:right;
 					<div>
 						<label for="ifscCode">IFSC Code</label>
 						<div>
-							<form:input path="ifscCode "readonly="true" />
+							<form:input path="ifscCode" readonly="true" />
 						</div>
 					</div>
 
