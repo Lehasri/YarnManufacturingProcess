@@ -74,7 +74,6 @@ body {
 
 #root{
 	line-height: 40px;
-	width: 20%;
 	margin: auto;
 	margin-top: 41px;
 	background-color: lightgrey;
@@ -83,7 +82,7 @@ body {
 	outline-color: black;
 	outline-style: dashed;
 	padding: 22px;
-	font-family: Century Gothic ;
+	font-family: cursive ;
 	padding-left: 180;
 	text-align: center;
 }

@@ -3,7 +3,7 @@
 	background-color: black;
 	width: 1330px;
 	border: 1px lightgrey;
-	font-family: Century Gothic;
+	font-family: cursive;
 	float:right;
 	padding: 9px;
 	
@@ -19,7 +19,7 @@
 	outline-style: dashed;
 	padding: 10px;
 	color: red;
-	font-family: Century Gothic;
+	font-family: cursive;
 	padding-left: 180;
 	text-align: center;
 	margin-left:5px;
@@ -28,7 +28,7 @@
 .list {
 	color: Black;
 	text-align: center;
-	morgin: 20px;
+	margin: 20px;
 	tab-size: 20;
 	font-size: 20px;
 	text-decoration: none;
@@ -89,7 +89,7 @@
  	float: right;
     font-size: larger;
     margin-top: 18px;
-	font-family: Century Gothic;
+	font-family: cursive;
 	display: flex;
 	justify-content: space-around;
 	width: 200px;
@@ -101,5 +101,5 @@
  img{
  float:right;
  width:30px;
- heigth:30px;
+ height:30px;
  }

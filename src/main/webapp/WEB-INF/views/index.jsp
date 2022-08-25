@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Index</title>
@@ -18,7 +18,7 @@
 			<div class="navbar">
 				<div class="dropdown">
 					<button class="dropbtn">
-					  <b>Sign Up&emsp;</b> <i class="fa fa-caret-down"></i>
+					  <b>Sign Up&emsp;</b> <em class="fa fa-caret-down"></em>
 					</button>
 					<div class="dropdown-content">
 						<a href="/supplier/addform">Supplier </a> 
@@ -32,7 +32,7 @@
 			<div class="navbar">
 				<div class="dropdown">
 					<button class="dropbtn">
-						<b>Login &emsp;&emsp;</b> <i class="fa fa-caret-down"></i>
+						<b>Login &emsp;&emsp;</b> <em class="fa fa-caret-down"></em>
 					</button>
 					<div class="dropdown-content">
 						<a href="/supplier/loginsupplier">Supplier</a> 
@@ -46,7 +46,7 @@
 
 		</div>
 	</h1>
-	<img
+	<img alt="image"
 		src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDFRqiGeD03CVQuGZ3aJXOWrOWvtX3kxPDg&usqp=CAU"
 		width="650px" height="460px" style="float: left">
 	<br>

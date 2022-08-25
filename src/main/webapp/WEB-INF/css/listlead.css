@@ -35,7 +35,6 @@ tr:nth-child(even) {
 	border-radius: 50%;
 	float: left;
 	margin-top: 296px;
-	float: left;
 	text-decoration: none;
 	padding: 5px 16px;
 }
@@ -44,7 +43,7 @@ tr:nth-child(even) {
 	background-color: black;
 	width: 1300px;
 	border: 1px lightgrey;
-	font-family: Century Gothic;
+	font-family: cursive;
 	padding: 26px;
 	font-family: cursive;
 	font-size: 20px;
@@ -54,6 +53,8 @@ tr:nth-child(even) {
 	color: white; 
 	text-decoration: none;
 }
+a{
+text-decoration: none;}
 img{
 float:right;	
 

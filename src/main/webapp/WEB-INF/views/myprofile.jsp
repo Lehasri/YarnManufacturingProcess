@@ -18,7 +18,7 @@
 
 	<div class=top>
 		<div>
-			My Account <a href="/supplier/cottonindex">
+			My Account <a href="/supplier/cottonindex"></a>
 		</div>
 		<div>
 			<a href="/supplier/cottonindex"><em class="fa fa-home" style="font-size: 30px; color: white"></em></a>

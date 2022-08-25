@@ -14,7 +14,6 @@ input {
 
 #root {
 	line-height: 40px;
-	width: 20%;
 	margin: auto;
 	margin-top: 41px;
 	background-color: lightgrey;
@@ -23,7 +22,7 @@ input {
 	outline-color: black;
 	outline-style: dashed;
 	padding: 22px;
-	font-family: Century Gothic;
+	font-family: cursive;
 	padding-left: 180;
 	text-align: center;
 }
@@ -46,15 +45,17 @@ input {
 	background-color: black;
 	width: 1278px;
 	border: 1px lightgrey;
-	font-family: Century Gothic;
-	padding: 26px;
 	font-family: cursive;
+	padding: 26px;
 	font-size: 20px;
 	text-decoration: none;
 	margin-left: auto;
 	margin-right: auto;
 	color: white;
-	text-decoration: none;
+
+}
+a{
+		text-decoration: none;
 }
 
 .hover:hover {

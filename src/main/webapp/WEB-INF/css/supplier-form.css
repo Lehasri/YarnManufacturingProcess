@@ -8,7 +8,6 @@
 
 #root {
 	line-height: 30px;
-	width: 20%;
 	margin: auto;
 	margin-top: 116px;
 	background-color: lightgrey;
@@ -41,15 +40,16 @@
 	background-color: black;
 	width: 1278px;
 	border: 1px lightgrey;
-	font-family: Century Gothic;
+	font-family: cursive;
 	padding: 26px;
 	font-family: cursive;
 	font-size: 20px;
-	text-decoration: none;
 	float: right;
 	margin-top: 4px
 }
-
+a{
+	text-decoration: none;
+}
 .grid-container {
 	display: grid;
 	grid-template-columns: auto auto auto;

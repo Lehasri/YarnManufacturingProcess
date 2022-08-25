@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>login form</title>
@@ -16,7 +16,7 @@
 	<div class="login-wrapper">
 		<form action="checkuserlogin" method="post" modelAttribute="log">
 		<div class=s>
-         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqJ0rLOdjj19gDwDaBK6IBxPbXxc0Cr_bd792mH6I&s">
+         <img alt="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqJ0rLOdjj19gDwDaBK6IBxPbXxc0Cr_bd792mH6I&s">
 			<div>
 				<label for="emailId">User Id </label><br> <input class=a
 					type="text" name="emailId" id="emailId" />

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Fetch Supplier Form</title>
@@ -76,7 +76,7 @@
 </head>
 <body>
 	<div class=top style="color: white; text-decoration: none">
-		<b>Fetch</b><a href="/supplier/cottonindex"><img class=" float"
+		<b>Fetch</b><a href="/supplier/cottonindex"><img alt="image" class=" float"
 			src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxXTuxRJzWsUA0uiZKT-_79osm34J9fwZ9A&usqp=CAU"
 			width="30px" height="30px"></a>
 	</div>

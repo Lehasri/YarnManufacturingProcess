@@ -5,7 +5,6 @@
 
 #root {
     line-height:30px;
-	width: 20%;
 	margin: auto;
 	margin-top: 147px;
 	background-color: lightgrey;
@@ -14,12 +13,12 @@
 	outline-color: black;
 	outline-style: dashed;
 	padding: 75px;
-	font-family: Century Gothic ;
+	font-family: cursive ;
 	padding-left: 180;
 	text-align: center;
 }
 .form {
-	trxt-align: center;
+	text-align: center;
 }
 
 .check-box {
@@ -44,7 +43,7 @@
 	background-color: black;
 	width: 1295px;
 	border: 1px lightgrey;
-	font-family: Century Gothic;
+	font-family: cursive;
 	padding: 26px;
 	font-family: cursive;
 	font-size: 20px;
@@ -52,7 +51,9 @@
 	float: right;
 	margin-top: 4px;
 	color: white;
-	text-decoration: none;
+}
+a{
+		text-decoration: none;
 }
 img{
 	float:right;	
