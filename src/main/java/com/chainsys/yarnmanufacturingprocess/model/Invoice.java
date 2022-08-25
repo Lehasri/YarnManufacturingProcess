@@ -1,26 +1,27 @@
 package com.chainsys.yarnmanufacturingprocess.model;
 
 
-import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 @Entity
 @Table(name="invoice")
 public class Invoice {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "invoice_no")
+	@SequenceGenerator(name = "invoice_no", sequenceName = "invoice_no", allocationSize = 1)
 	@Column(name="invoice_no")
 	private int invoiceNo;
 	@Column(name="invoice_date")
-	private Date invoiceDate; 
+	private String invoiceDate; 
 	@Column(name="order_id")
 	private int orderId; 
 	@Column(name="total_amount")
@@ -46,10 +47,10 @@ public class Invoice {
 		this.invoiceNo = invoiceNo;
 	}
 	
-	public Date getInvoiceDate() {
+	public String getInvoiceDate() {
 		return invoiceDate;
 	}
-	public void setInvoiceDate(Date invoiceDate) {
+	public void setInvoiceDate(String invoiceDate) {
 		this.invoiceDate = invoiceDate;
 	}
 	public int getOrderId() {

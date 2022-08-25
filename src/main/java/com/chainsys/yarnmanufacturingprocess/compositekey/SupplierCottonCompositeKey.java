@@ -8,6 +8,10 @@ public class SupplierCottonCompositeKey implements Serializable{
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
 	@Column(name = "supplier_id")
 	private int supplierId;
 	@Column(name = "cotton_id")

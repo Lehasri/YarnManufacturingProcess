@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.yarnmanufacturingprocess.model.Orders;
 import com.chainsys.yarnmanufacturingprocess.model.Yarn;
 
 public interface YarnRepository extends CrudRepository<Yarn,Integer>  {
@@ -14,4 +13,6 @@ public interface YarnRepository extends CrudRepository<Yarn,Integer>  {
 	List <Yarn> findAll();
 	List<Yarn> findAllByCottonId(int id);
 	Yarn findByCottonId(int id);
+	
+	
 }

@@ -1,11 +1,13 @@
 package com.chainsys.yarnmanufacturingprocess.model;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -13,7 +15,11 @@ import javax.persistence.Table;
 public class Orders {
 	@Column(name = "yarn_id")
 	private int yarnId;
+	@Column(name = "customer_id")
+	private int customerId;
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "order_id")
+	@SequenceGenerator(name = "order_id", sequenceName = "order_id", allocationSize = 1)
 	@Column(name = "order_id")
 	private int orderId;
 	@Column(name = "order_date")
@@ -27,7 +33,7 @@ public class Orders {
 	@Column(name = "order_amount")
 	private double orderAmount;
 	@Column(name = "receiving_date")
-	private Date receivingDate;
+	private String receivingDate;
 	@Column(name = "order_status")
 	private String orderStatus;
 	@Column(name = "advance")
@@ -39,6 +45,17 @@ public class Orders {
 
 	public void setYarnId(int yarnId) {
 		this.yarnId = yarnId;
+	}
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public void setOrderDate(String orderDate) {
+		this.orderDate = orderDate;
 	}
 
 	public int getOrderId() {
@@ -93,11 +110,15 @@ public class Orders {
 		this.orderAmount = orderAmount;
 	}
 
-	public Date getReceivingDate() {
+	public String getReceivingDate() {
 		return receivingDate;
 	}
 
-	public void setReceivingDate(Date receivingDate) {
+	public void setReceivingDate() {
+		Calendar vCalendar = Calendar.getInstance();
+		String receivingDate = (vCalendar.get(Calendar.DATE)+7) + " / " + (vCalendar.get(Calendar.MONTH) + 1) + " / "
+				+ vCalendar.get(Calendar.YEAR);
+
 		this.receivingDate = receivingDate;
 	}
 
@@ -109,7 +130,7 @@ public class Orders {
 		this.orderStatus = orderStatus;
 	}
 
-	public double getAdvance() {
+	public double getAdvance() {	
 		return advance;
 	}
 

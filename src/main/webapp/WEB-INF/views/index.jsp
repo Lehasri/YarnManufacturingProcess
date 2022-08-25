@@ -7,17 +7,42 @@
 <meta charset="ISO-8859-1">
 <title>Index</title>
 <style>
-<%@include file="/WEB-INF/css/indexa.css" %>
+<%@include file="/WEB-INF/css/indexa.css"%>
 </style>
 </head>
 <body>
 
 	<h1>
 		Yarn Manufacturing Process Tracking System
-
 		<div>
-			<a href="supplierlogin/addform">&emsp;&emsp;New Login&emsp;&emsp;</a>
-			<a href="/supplierlogin/loginsupplier"> login </a>
+			<div class="navbar">
+				<div class="dropdown">
+					<button class="dropbtn">
+					  <b>Sign Up&emsp;</b> <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="/supplier/addform">Supplier </a> 
+						<a	href="/customer/addform">Customer</a> 
+
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="navbar">
+				<div class="dropdown">
+					<button class="dropbtn">
+						<b>Login &emsp;&emsp;</b> <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="/supplier/loginsupplier">Supplier</a> 
+						<a href="/adminlogin/loginadmin">Admin</a> 
+						<a href="/customer/logincustomer">Customer</a>
+
+					</div>
+				</div>
+			</div>
+
 
 		</div>
 	</h1>

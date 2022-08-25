@@ -1,0 +1,105 @@
+@charset "ISO-8859-1";
+.heading {
+	background-color: black;
+	width: 1330px;
+	border: 1px lightgrey;
+	font-family: Century Gothic;
+	float:right;
+	padding: 9px;
+	
+}
+* {
+	font-family: cursive;
+}
+.s {
+	background-color: lightgrey;
+	Height: 464px;
+	width: 19%;
+	outline-color: black;
+	outline-style: dashed;
+	padding: 10px;
+	color: red;
+	font-family: Century Gothic;
+	padding-left: 180;
+	text-align: center;
+	margin-left:5px;
+	margin-top: 56px;
+}
+.list {
+	color: Black;
+	text-align: center;
+	morgin: 20px;
+	tab-size: 20;
+	font-size: 20px;
+	text-decoration: none;
+}
+.edit {
+	color: Black;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+}
+.create {
+	color: Black;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+}
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+.dropdown .dropbtn {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 17px 17px; 
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+}
+.dropdown-content a {
+	float: none;
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	font-size: 18px;
+}
+.dropdown-content a:hover {
+	 background-color: lightgrey; 
+	 color:black;
+}
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+.image {
+	margin-left: 266px;
+	margin-top: -345px;
+    }
+ .account{
+ 	float: right;
+    font-size: larger;
+    margin-top: 18px;
+	font-family: Century Gothic;
+	display: flex;
+	justify-content: space-around;
+	width: 200px;
+ }
+ a{
+ text-decoration: none;
+ color: White;
+ }
+ img{
+ float:right;
+ width:30px;
+ heigth:30px;
+ }

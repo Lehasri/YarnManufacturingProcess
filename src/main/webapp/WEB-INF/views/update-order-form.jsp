@@ -7,73 +7,47 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Order</title>
+<style type="text/css">
+<%@include file="/WEB-INF/css/order-form.css"%>
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+	<div class=top style="color: white; text-decoration: none">
+		Update Order<a href="/yarn/mypreviousyarnindex"><em class="fa fa-home"
+		style="font-size: 30px; color: white;float:right"></em></a>
+	</div>
+	<br>
 	<div id="root">
 		<div id="form">
 			<form:form action="update" method="post" modelAttribute="updateorder">
-				<div>
 					<label for="yarnId">Yarn Id</label>
-					<div>
-						<form:input path="yarnId" />
-					</div>
-				</div>
-				<div>
+						<form:input path="yarnId" readonly="true" />
+					<label for="customerId">Customer Id</label>
+						<form:input path="customerId" readonly="true" />
 					<label for="orderId">Order Id</label>
-					<div>
-						<form:input path="orderId" />
-					</div>
-				</div>
-				<div>
+						<form:input path="orderId" readonly="true" />
 					<label for="orderDate">Order Date</label>
-					<div>
-						<form:input path="orderDate" />
-					</div>
-				</div>
-				<div>
+						<form:input path="orderDate" readonly="true" />
 					<label for="orderedCustomer">Ordered Customer</label>
-					<div>
-						<form:input path="orderedCustomer" />
-					</div>
-				</div>
-				<div>
-					<label for="orderedQuantity">Ordered Quantity</label>
-					<div>
-						<form:input path="orderedQuantity" />
-					</div>
-				</div>
-				<div>
+						<form:input path="orderedCustomer" readonly="true" />
+						<label for="orderedQuantity">Ordered Quantity</label>
+						<form:input path="orderedQuantity" readonly="true" />
 					<label for="rate">Rate</label>
-					<div>
-						<form:input path="rate" />
-					</div>
-				</div>
-				<div>
+						<form:input path="rate" readonly="true" />
 					<label for="orderAmount">Order Amount</label>
-					<div>
-						<form:input path="orderAmount" />
-					</div>
-				</div>
-				<div>
+						<form:input path="orderAmount" readonly="true" />
 					<label for="receivingDate">Receiving Date</label>
-					<div>
-						<form:input path="receivingDate" />
-					</div>
-				</div>
-				<div>
+						<form:input path="receivingDate" readonly="true" />
 					<label for="orderStatus">Order Status</label>
-					<div>
-						<form:input path="orderStatus" />
-					</div>
-				</div>
-				<div>
+						<form:input path="orderStatus" class="text-box"
+							placeholder="Enter a order status"
+							title="Order status must contain only alphabets"
+							pattern="^[a-zA-Z][a-zA-Z\\s]+$" required="true" />
 					<label for="advance">Advance</label>
-					<div>
-						<form:input path="advance" />
-					</div>
-				</div>
-				<div>
-					<form:button>Update</form:button>
+						<form:input path="advance" readonly="true" />
+				<div class=movecenter>
+					<form:button class="but hover">Update</form:button>
 				</div>
 			</form:form>
 		</div>

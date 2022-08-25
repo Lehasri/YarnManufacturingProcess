@@ -3,6 +3,7 @@ package com.chainsys.yarnmanufacturingprocess.service;
 import java.util.List;
 import java.util.Optional;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +16,14 @@ public class SupplierCottonService {
 	@Autowired
 	private SupplierCottonRepository supplierCottonRepository;
 
-	public SupplierCotton save(SupplierCotton supplierCotton) {
-		return supplierCottonRepository.save(supplierCotton);
-	}
-
 	public List<SupplierCotton> getAllSupplierCottons() {
-		List<SupplierCotton> listCotton = supplierCottonRepository.findAll();
-		return listCotton;
+		return supplierCottonRepository.findAll();
 	}
-
+    public SupplierCotton save(SupplierCotton supplierCotton)
+    {
+		return supplierCottonRepository.save(supplierCotton);
+    	
+    }
 	public void deleteById(SupplierCottonCompositeKey id) {
 		supplierCottonRepository.deleteById(id);
 	}
@@ -40,5 +40,14 @@ public class SupplierCottonService {
 	public SupplierCotton findBySupplierId(int id){
         return supplierCottonRepository.findBySupplierId(id);
     }
+//	@Transactional
+//	 public SupplierCotton save(SupplierCotton supplierCotton) {
+//	 supplierCotton = supplierCottonRepository.save(supplierCotton);
+//	 Cotton cotton = cottonRepository.findById(supplierCotton.getCottonId());
+//	 int stockInHand = cotton.getStockInHand()-supplierCotton.getMaximumSupplyQuantity();
+//	 cotton.setStockInHand(stockInHand);
+//	 cottonRepository.save(cotton);
+//	 return supplierCotton;
+//	}
 
 }

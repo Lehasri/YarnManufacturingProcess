@@ -3,14 +3,16 @@ package com.chainsys.yarnmanufacturingprocess.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "supplier")
+@Table(name="SUPPLIER")
 public class Supplier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "supplier_id")
@@ -19,61 +21,57 @@ public class Supplier {
 	private int supplierId;
 	
 	@Column(name = "first_name")
-//	@Size(max = 20,min = 3,message = "*length should be 3 to 20")
-//	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter a valid name ")
 	private String firstName;
 	
 	@Column(name = "last_name")
-//	@Size(max = 20,min = 3,message = "*length should be 3 to 20")
-//	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter a valid name ")
 	private String lastName;
 	
 	
 	@Column(name = "door_no")
-//	@NotBlank(message = "*Door no is required")
-//	@Pattern(regexp="(\\d+\\s*(?:[A-Z](?![A-Z]))?)",message = "*Enter a valid door no")
 	private int doorNo;
 	
 	@Column(name = "address_line_1")
-//	@NotBlank(message = "*Address is required")
 	private String addressLine1;
 	
 	@Column(name = "address_line_2")
-//	@Pattern(regexp="^([a-zA-z0-9/\\\\''(),-\s]{2,255})$",message = "*Enter a valid address")
 	private String addressLine2;
 	
 	@Column(name = "city")
-//	@NotBlank(message = "*City is required")
-	private String City;
+	private String city;
 	
 	@Column(name = "pincode")
-//	@NotBlank(message = "*Pincode is required")
 	private int pincode;
 	
 	
 	@Column(name = "phone_no")
 	
-//	@Digits(message="*Invalid Mobile Number",integer=10,fraction = 0)
 	private long phoneNo;
 	
 	@Column(name = "email_id")
-//	@NotBlank(message = "*Email is required")
-//    @Email(message="*Invalid Email",regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	private String emailId;
 	
 	@Column(name = "bank_name")
-//	@Size(max = 20,min = 3,message = "*length should be 3 to 20")
-//	@NotBlank(message = "*Bank name is required")
-//	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid bank name ")
 	private String bankName;
 	
 	@Column(name = "account_number")
 	private long accountNumber;
 	
 	@Column(name = "ifsc_code")
-//	@NotBlank(message = "*ifsc number is required")
-//	@Pattern(regexp = "^[A-Z]{4}0[A-Z0-9]{6}$",message = "*Enter valid ifsc code")
 	private String ifscCode;
+	
+	@Column(name = "user_password")
+	private String userPassword;
+	
+	@OneToOne(mappedBy = "supplier",fetch = FetchType.LAZY)
+	private SupplierCotton supplierCotton;
+
+	public SupplierCotton getSupplierCotton() {
+		return supplierCotton;
+	}
+
+	public void setSupplierCotton(SupplierCotton supplierCotton) {
+		this.supplierCotton = supplierCotton;
+	}
 
 	public int getSupplierId() {
 		return supplierId;
@@ -99,9 +97,6 @@ public class Supplier {
 		this.lastName = lastName;
 	}
 
-	
-	
-
 	public int getDoorNo() {
 		return doorNo;
 	}
@@ -126,16 +121,16 @@ public class Supplier {
 		this.addressLine2 = addressLine2;
 	}
 
+	public int getPincode() {
+		return pincode;
+	}
+
 	public String getCity() {
-		return City;
+		return city;
 	}
 
 	public void setCity(String city) {
-		City = city;
-	}
-
-	public int getPincode() {
-		return pincode;
+		this.city = city;
 	}
 
 	public void setPincode(int pincode) {
@@ -179,15 +174,14 @@ public class Supplier {
 	public void setIfscCode(String ifscCode) {
 		this.ifscCode = ifscCode;
 	}
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
 
 	
-	
-
-//	@Override
-//	public String toString() // Default method
-//	{
-//		return String.format("%d, %s, %s, %s, %d, %s,%s", supplierId, firstName, lastName, address, phoneNo, emailId,
-//				bankDetails);
-//	}
 }
 

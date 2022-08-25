@@ -2,19 +2,30 @@ package com.chainsys.yarnmanufacturingprocess.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="yarn_stock")
 public class YarnStock {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "yarn_id")
+	@SequenceGenerator(name = "yarn_id", sequenceName = "yarn_id", allocationSize = 1)
 	@Column(name="yarn_id")
 	private int yarnId;
+	@Column(name="yarn_type")
+	private String yarnType; 
 	@Column(name="yarn_status")
 	private String yarnStatus; 
 	@Column(name="per_day_production")
 	private int perDayProduction;
+	@Column(name="quantity")
+	private int quantity;
+	@Column(name="rate")
+	private int rate;
 	@Column(name="total_stock_in_hand")
 	private int totalStockInHand;
 	
@@ -24,6 +35,12 @@ public class YarnStock {
 	}
 	public void setYarnId(int yarnId) {
 		this.yarnId = yarnId;
+	}
+	public String getYarnType() {
+		return yarnType;
+	}
+	public void setYarnType(String yarnType) {
+		this.yarnType = yarnType;
 	}
 	public String getYarnStatus() {
 		return yarnStatus;
@@ -37,17 +54,22 @@ public class YarnStock {
 	public void setPerDayProduction(int perDayProduction) {
 		this.perDayProduction = perDayProduction;
 	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public int getRate() {
+		return rate;
+	}
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
 	public int getTotalStockInHand() {
 		return totalStockInHand;
 	}
 	public void setTotalStockInHand(int totalStockInHand) {
 		this.totalStockInHand = totalStockInHand;
 	}
-	@Override
-	public String toString() // Default method
-	{
-		return String.format("%d, %s, %d, %d",yarnId,yarnStatus,perDayProduction,totalStockInHand);
-	}
-	
-
 }

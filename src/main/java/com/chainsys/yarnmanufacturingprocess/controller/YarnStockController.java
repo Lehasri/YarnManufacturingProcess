@@ -19,12 +19,14 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 @Controller
 @RequestMapping("/yarnstock")
 public class YarnStockController {
+	private static final String REDIRECT_PAGE = "redirect:/yarnstock/list";
+	
 	@Autowired
 	YarnStockService yarnStockService;
-	
+
 	@Autowired
 	CustomerService customerService;
-	
+
 	@GetMapping("/list")
 	public String getAllYarnStocks(Model model) {
 		List<YarnStock> yarnstockList = yarnStockService.getAllYarnStocks();
@@ -42,14 +44,16 @@ public class YarnStockController {
 	@PostMapping("/add")
 	public String addNewYarnStocks(@ModelAttribute("addyarnstock") YarnStock theyarnstock) {
 		yarnStockService.save(theyarnstock);
-		return "redirect:/yarnstock/list";
+		return REDIRECT_PAGE;
 	}
+
 	@GetMapping("/modifyform")
 	public String showModifyForm() {
 		return "yarnstock-modify-form";
 	}
+
 	@GetMapping("/updateform")
-	public String showUpdateForm( int id, Model model) {
+	public String showUpdateForm(@RequestParam("id")int id, Model model) {
 		YarnStock theYarnStock = yarnStockService.findById(id);
 		model.addAttribute("updateyarnstock", theYarnStock);
 		return "update-yarnstock-form";
@@ -58,37 +62,37 @@ public class YarnStockController {
 	@PostMapping("/update")
 	public String updateYarnStocks(@ModelAttribute("updateyarnstock") YarnStock theYarnStock) {
 		yarnStockService.save(theYarnStock);
-		return "redirect:/yarnstock/list";
+		return REDIRECT_PAGE;
 	}
+
 	@GetMapping("/deleteform")
 	public String showdeleteForm() {
 		return "yarnstock-delete-form";
 	}
-
 
 	@GetMapping("/deleteyarnstock")
 	public String deleteYarnStocks(int id) {
 		yarnStockService.deleteById(id);
 		return "redirect:/yarnstock/list";
 	}
+
 	@GetMapping("/findform")
 	public String showFindForm() {
 		return "fetch-yarnstock-form";
 	}
+
 	@GetMapping("/findyarnstockbyid")
-	public String findYarnStockById( int id, Model model) {
+	public String findYarnStockById(int id, Model model) {
 		YarnStock theYarnStock = yarnStockService.findById(id);
 		model.addAttribute("findyarnstockbyid", theYarnStock);
 		return "find-yarnstock-by-id-form";
 	}
-	 @GetMapping("/getyarnbycustomer")
-	    public String getYarnByCustomerId(@RequestParam("id")int id, Model model) {
-	    	Customer theCustomer = customerService.findById(id);
-	        model.addAttribute("fetchcustomerbyid", theCustomer);
-	    	List<YarnStock> theYarnStock = yarnStockService.getYarnStock(theCustomer.getYarnId());
-	        model.addAttribute("listyarnstockbycustomerid", theYarnStock);
-	        return "list-yarnstock-by-customer-id-form";
-	    }
-	 
-	
+
+	@GetMapping("/status")
+	public String getAllStatus(Model model) {
+		List<YarnStock> yarnStatus = yarnStockService.yarnGetByStatus("Ready");
+		model.addAttribute("allyarn", yarnStatus);
+		return "list-yarnproduct";
+	}
+
 }

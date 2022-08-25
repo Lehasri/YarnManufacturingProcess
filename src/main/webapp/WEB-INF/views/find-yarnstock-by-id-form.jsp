@@ -19,6 +19,12 @@
 					</div>
 				</div>
 				<div>
+					<label for="yarnType">Yarn Type</label>
+					<div>
+						<form:input path="yarnType" />
+					</div>
+				</div>
+				<div>
 					<label for="yarnStatus">Yarn Status</label>
 					<div>
 						<form:input path="yarnStatus" readonly="true"/>
@@ -28,6 +34,18 @@
 					<label for="perDayProduction">Per Day Production</label>
 					<div>
 						<form:input path="perDayProduction" readonly="true"/>
+					</div>
+				</div>
+				<div>
+					<label for="quantity">Quantity</label>
+					<div>
+						<form:input path="quantity" />
+					</div>
+				</div>
+				<div>
+					<label for="rate">Rate</label>
+					<div>
+						<form:input path="rate" />
 					</div>
 				</div>
 				<div>

@@ -7,50 +7,37 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Invoice</title>
+<style type="text/css">
+<%@include file="/WEB-INF/css/invoice-form.css"%>
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+	<div class=top style="color: white; text-decoration: none">
+		Update Invoice<a href="/yarn/mypreviousyarnindex"><em class="fa fa-home"
+		style="font-size: 30px; color: white;float:right"></em></a>
+	</div>
+	<br>
 	<div id="root">
 		<div id="form">
 			<form:form action="update" method="post" modelAttribute="updateinvoice">
-				<div>
 					<label for="invoiceNo">Invoice No</label>
-					<div>
-						<form:input path="invoiceNo" />
-					</div>
-				</div>
-				<div>
+						<form:input path="invoiceNo" readonly="true"/>
 					<label for="invoiceDate">Invoice Date</label>
-					<div>
-						<form:input path="invoiceDate" />
-					</div>
-				</div>
-				<div>
+						<form:input path="invoiceDate" readonly="true"/>
 					<label for="orderId">Order Id</label>
-					<div>
 						<form:input path="orderId" readonly="true"/>
-					</div>
-				</div>
-				<div>
 					<label for="totalAmount">Total Amount</label>
-					<div>
-						<form:input path="totalAmount" />
-					</div>
-				</div>
-				<div>
+						<form:input path="totalAmount" readonly="true"/>
 					<label for="paymentMethod">Payment Method</label>
-					<div>
-						<form:input path="paymentMethod" />
-					</div>
-				</div>
-				<div>
-				<div>
+						<form:input path="paymentMethod" readonly="true"/>
 					<label for="invoiceStatus">Invoice Status</label>
-					<div>
-						<form:input path="invoiceStatus" />
-					</div>
-				</div>
-				<div>
-					<form:button>Update</form:button>
+						<form:input path="invoiceStatus" class="text-box"
+						placeholder="Enter a invoice status"
+						title="Invoice status must contain only alphabets"
+						pattern="^[a-zA-Z][a-zA-Z\\s]+$" required="true" />
+				<div class=movecenter>
+					<form:button class="but hover">Update</form:button>
 				</div>
 			</form:form>
 		</div>

@@ -3,7 +3,6 @@ package com.chainsys.yarnmanufacturingprocess.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.yarnmanufacturingprocess.model.Cotton;
 import com.chainsys.yarnmanufacturingprocess.model.SupplierLogin;
 
 public interface SupplierLoginRepository extends CrudRepository<SupplierLogin,Integer>  {

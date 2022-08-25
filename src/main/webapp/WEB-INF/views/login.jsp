@@ -6,63 +6,30 @@
 <meta charset="ISO-8859-1">
 <title>login form</title>
 <style>
-.login-wrapper{
-    line-height:30px;
-	width: 20%;
-	margin: auto;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10%;
-	}
-.submit-btn{
-margin-left : 60px;
-}	
-h2{
-margin-left : 60px;
-}
-.a{
-border-left:none;
-border-right:none;
-border-top:none;
-outline:none;
-}
-.login {
-	background-color: black;
-	width: 1280px;
-	border: 1px lightgrey;
-	padding: 20px;
-	color: White;
-	font-family: Century Gothic ";
-}
-body
-{
-/*  background-color: #ff9900; */
- /*  background-image:
-        url(https://media.istockphoto.com/vectors/blue-turquoise-blurred-abstract-background-design-graphic-vector-vector-id819665724?k=20&m=819665724&s=612x612&w=0&h=sicloEPA0LALRc8LFUNyDwmQTyPZoDGa0ct7IyzhxuQ=); */
-  background-size: cover
- }
-* {
-	font-family: cursive;
-}
+<%@include file="/WEB-INF/css/login.css"%>
 </style>
 </head>
 <body>
-<h2 class=login>Login</h2>
+	<h2 class=login>Login<a href="/supplier/cottonindex"><em class="fa fa-home"
+		style="font-size: 30px;float:right; color: white;"></em></a></h2>
+	
 	<div class="login-wrapper">
-	<form action="checkuserlogin" method="post" modelAttribute="log">
-			
+		<form action="checkuserlogin" method="post" modelAttribute="log">
+		<div class=s>
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqJ0rLOdjj19gDwDaBK6IBxPbXxc0Cr_bd792mH6I&s">
 			<div>
-			<label for="emailId">User Id </label><br>
-				<input  class=a  type="text" name="emailId" id="emailId" /> 
-					
+				<label for="emailId">User Id </label><br> <input class=a
+					type="text" name="emailId" id="emailId" />
+
 			</div>
 			<div class="input-group">
-			<label for="userPassword">Password</label><br>
-				<input class=a
-				type="password" name="userPassword" id="userPassword"/> 	 
+				<label for="userPassword">Password</label><br> <input class=a
+					type="password" name="userPassword" id="userPassword" />
 			</div>
-			<input type="submit" value="Login" class="submit-btn" />
+			<input class="movecenter background" type="submit" value="LOGIN" class="submit-btn" />
+         </div>
 		</form>
 	</div>
+	
 </body>
 </html>

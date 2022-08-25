@@ -6,31 +6,51 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer List</title>
+<style>
+<%@include file="/WEB-INF/css/listyarn.css"%>
+</style>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+	<div class=top >
+		<div>Customers List</div>
+		<div><a href="/yarn/yarnindex"><em class="fa fa-home"
+		style="font-size: 30px;float:right; color: white;"></em></a></div>
+	</div>
+	<br>
+	<div id="table-root">
+	<table>
+	<caption></caption>
 			<thead>
 				<tr>
-					<th>Yarn Id</th>
 					<th>Customer Id</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Address</th>
+					<th>Name</th>
+					<th>Door No</th>
+					<th>Address Line 1</th>
+					<th>Address Line 2</th>
+					<th>City</th>
+					<th>Pincode</th>
 					<th>Phone No</th>
 					<th>Email Id</th>
+					<th>Delete</th>
+
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="customer" items="${allcustomers}">
 					<tr>
-						<td>${customer.yarnId}</td>
 						<td>${customer.customerId}</td>
-						<td>${customer.firstName}</td>
-						<td>${customer.lastName}</td>
-						<td>${customer.address}</td>
+						<td>${customer.name}</td>
+						<td>${customer.doorNo}</td>
+						<td>${customer.addressLine1}</td>
+						<td>${customer.addressLine2}</td>
+						<td>${customer.city}</td>
+						<td>${customer.pincode}</td>
 						<td>${customer.phoneNo}</td>
 						<td>${customer.emailId}</td>
+						<td><a class=text
+							href="deletecustomer?id=${customer.customerId}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

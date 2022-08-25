@@ -3,9 +3,11 @@ package com.chainsys.yarnmanufacturingprocess.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 @Entity
@@ -33,7 +35,16 @@ public class Cotton {
 	@Column(name="stock_in_hand")
 	private int stockInHand;
 	
+	@OneToOne(mappedBy = "cotton",fetch = FetchType.LAZY)
+	private SupplierCotton supplierCotton;
 	
+	
+	public SupplierCotton getSupplierCotton() {
+		return supplierCotton;
+	}
+	public void setSupplierCotton(SupplierCotton supplierCotton) {
+		this.supplierCotton = supplierCotton;
+	}
 	public int getCottonId() {
 		return cottonId;
 	}

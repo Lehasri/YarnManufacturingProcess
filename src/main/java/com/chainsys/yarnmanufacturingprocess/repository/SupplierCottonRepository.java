@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.yarnmanufacturingprocess.compositekey.SupplierCottonCompositeKey;
-import com.chainsys.yarnmanufacturingprocess.model.Orders;
 import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
 
 public interface SupplierCottonRepository extends CrudRepository<SupplierCotton, SupplierCottonCompositeKey> {
@@ -15,6 +14,7 @@ public interface SupplierCottonRepository extends CrudRepository<SupplierCotton,
 	SupplierCotton findBySupplierId(int id);
 	
     
+	@SuppressWarnings("unchecked")
 	SupplierCotton save(SupplierCotton supplierCotton);
 
 	void deleteById(SupplierCottonCompositeKey supplierId);

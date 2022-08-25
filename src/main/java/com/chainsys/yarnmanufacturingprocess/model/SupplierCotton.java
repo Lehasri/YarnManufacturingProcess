@@ -19,7 +19,7 @@ public class SupplierCotton {
 	@Id
 	@Column(name="supplier_id")
 	private int supplierId;
-	@Id
+	@Id 
 	@Column(name="cotton_id")
 	private int cottonId; 
 	@Column(name="maximum_supply_quantity")
@@ -31,8 +31,24 @@ public class SupplierCotton {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "supplier_id", nullable = false, insertable = false, updatable = false)
-//	private Supplier supplier;
+	private Supplier supplier;
 	
+	public Supplier getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "cotton_id", nullable = false, insertable = false, updatable = false)
+	private Cotton cotton;
+	
+	public Cotton getCotton() {
+		return cotton;
+	}
+	public void setCotton(Cotton cotton) {
+		this.cotton = cotton;
+	}
 	public int getSupplierId() {
 		return supplierId;
 	}
@@ -66,7 +82,7 @@ public class SupplierCotton {
 	@Override
 	public String toString() // Default method
 	{
-		return String.format("%d, %d, %d, %d, %n",supplierId,cottonId,maximumSupplyQuantity,rate,leadTime);
+		return String.format("%d, %d, %d, %d, %s", supplierId, cottonId, maximumSupplyQuantity, rate, leadTime);
 	}
 	
 }

@@ -1,0 +1,72 @@
+@charset "ISO-8859-1";
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top:200px;
+	border:2px;
+	width:100%;
+	padding-top: 180px;
+	
+	
+}
+
+th {
+	text-align: left;
+	padding: 8px;
+	color: white;
+	background: black;
+	border-style: groove;
+}
+ td{
+ border-style: groove;
+ }
+
+tr:nth-child(even) {
+	background-color: lightgrey;
+
+}
+
+.center {
+	margin-top: 20%;
+}
+
+.text {
+	text-decoration: none;
+	color: black;
+}
+
+.background:hover {
+	background-color: lightgrey;
+	color: black;
+}
+
+.previous {
+	background-color: black;
+	color: white;
+	border-radius: 50%;
+	float: left;
+	margin-top: 205px;
+	float: left;
+	text-decoration: none;
+	padding: 5px 16px;
+}
+
+.top {
+	background-color: black;
+	width: 1330px;
+	border: 1px lightgrey;
+	display: flex;
+	justify-content: space-between;
+	font-family: cursive;
+	float:right;
+	padding: 9px;
+	color: white;
+	font-size: 20px;
+	height: 62px;
+	align-items: center;
+}
+
+img {
+	float: right;
+}

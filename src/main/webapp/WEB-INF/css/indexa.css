@@ -12,7 +12,7 @@
 }
 h1 {
   background-color: black;
-  width: 1310px;
+  width: 1290px;
   border: 1px lightgrey;
   padding: 30px;
  /* margin: 10px;*/
@@ -35,4 +35,58 @@ login-wrapper{
 } 
 .line{
 	text-align: center;
+}
+.dropdown {
+	float: right;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	color: white;
+	background-color: inherit;
+	font-family: Century Gothic;
+	margin: 0;
+	float:right;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: #ddd;
+	color: black;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 115px;
+	margin-top: 33px;
+}
+
+.dropdown-content a {
+	float: none;
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	font-size: 18px;
+}
+
+.dropdown-content a:hover {
+	background-color: lightgrey;
+	color: black;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+.background:hover {
+	background-color: lightgrey;
+	color: black;
+}
+.fa fa-caret-down{
+	color: white
 }

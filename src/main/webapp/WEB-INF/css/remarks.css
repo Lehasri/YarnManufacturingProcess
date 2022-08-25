@@ -1,0 +1,61 @@
+@charset "ISO-8859-1";
+* {
+	font-family: cursive;
+}
+
+#root {
+    line-height:30px;
+	width: 20%;
+	margin: auto;
+	margin-top: 147px;
+	background-color: lightgrey;
+	Height: 129px;
+	width: 325px;
+	outline-color: black;
+	outline-style: dashed;
+	padding: 75px;
+	font-family: Century Gothic ;
+	padding-left: 180;
+	text-align: center;
+}
+.form {
+	trxt-align: center;
+}
+
+.check-box {
+	margin-left: 20px;
+}
+
+.background:hover {
+	background-color: lightgrey;
+	color: black;
+}
+
+.previous {
+	background-color: black;
+	color: white;
+	border-radius: 50%;
+	float: left;
+	margin-top: 127px;
+	text-decoration: none;
+	padding: 5px 16px;
+}
+.top {
+	background-color: black;
+	width: 1295px;
+	border: 1px lightgrey;
+	font-family: Century Gothic;
+	padding: 26px;
+	font-family: cursive;
+	font-size: 20px;
+	text-decoration: none;
+	float: right;
+	margin-top: 4px;
+	color: white;
+	text-decoration: none;
+}
+img{
+	float:right;	
+	width:30px; 
+	height:30px;
+}

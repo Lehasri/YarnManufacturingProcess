@@ -2,9 +2,12 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +18,7 @@ import com.chainsys.yarnmanufacturingprocess.model.Cotton;
 import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 import com.chainsys.yarnmanufacturingprocess.model.Orders;
 import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
+import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
 import com.chainsys.yarnmanufacturingprocess.service.InvoiceService;
 import com.chainsys.yarnmanufacturingprocess.service.OrdersService;
 
@@ -34,16 +38,26 @@ public class InvoiceController {
 	}
 
 	@GetMapping("/addform")
-	public String showAddForm(Model model) {
+	public String showAddForm(@RequestParam("orderId") int id,Model model) {
+		Orders theorder = ordersService.findById(id);
+		model.addAttribute("orderid", theorder);
 		Invoice theInvoice = new Invoice();
+		theorder.setOrderId(id);
 		model.addAttribute("addinvoice", theInvoice);
 		return "add-invoice-form";
 	}
 
 	@PostMapping("/add")
-	public String addNewInvoices(@ModelAttribute("addinvoice") Invoice theInvoice) {
-		invoiceService.save(theInvoice);
-		return "redirect:/invoice/list";
+	public String addNewInvoices(@Valid@ModelAttribute("addinvoice") Invoice theInvoice,Errors error,Model model) {
+		try {
+			invoiceService.save(theInvoice);
+			model.addAttribute("result","Added Successfully");
+			return "add-invoice-form";
+		}
+		catch(Exception err) {
+			model.addAttribute("result","Sorry! Could not generate Invoice");
+			return "add-invoice-form";
+		}
 	}
 	@GetMapping("/modifyform")
 	public String showModifyForm() {
@@ -51,7 +65,7 @@ public class InvoiceController {
 	}
 
 	@GetMapping("/updateform")
-	public String showUpdateForm( int id, Model model) {
+	public String showUpdateForm(@RequestParam("id") int id, Model model) {
 		Invoice theInvoice = invoiceService.findById(id);
 		model.addAttribute("updateinvoice", theInvoice);
 		return "update-invoice-form";
@@ -78,7 +92,7 @@ public class InvoiceController {
 		}
 
 	@GetMapping("/findinvoicebyid")
-	public String findInvoiceById( int id, Model model) {
+	public String findInvoiceById( @RequestParam("oid")int id, Model model) {
 		Invoice theInvoice = invoiceService.findById(id);
 		model.addAttribute("findinvoicebyid", theInvoice);
 		return "find-invoice-by-id-form";

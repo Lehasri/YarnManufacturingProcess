@@ -1,16 +1,12 @@
 package com.chainsys.yarnmanufacturingprocess.service;
 
-import java.util.Iterator;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.chainsys.yarnmanufacturingprocess.model.Supplier;
-import com.chainsys.yarnmanufacturingprocess.model.SupplierCotton;
-import com.chainsys.yarnmanufacturingprocess.repository.SupplierCottonRepository;
 import com.chainsys.yarnmanufacturingprocess.repository.SupplierRepository;
 	@Service
 	public class SupplierService {
@@ -31,8 +27,8 @@ import com.chainsys.yarnmanufacturingprocess.repository.SupplierRepository;
 		{
 			supplierRepository.deleteById(id);
 		}
-		public int getNextValue()
-	    {
-	        return supplierRepository.getNextValMySequence();
-	    }
+		public Supplier getEmailIdUserPassword(String emailId, String userPassword) {
+			return supplierRepository.findByEmailIdAndUserPassword(emailId, userPassword);
+		}
+		
 	}

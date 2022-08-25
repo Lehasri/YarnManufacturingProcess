@@ -58,7 +58,7 @@ public class YarnController {
 	
 
 	@GetMapping("/updateform")
-	public String showUpdateForm( int id, Model model) {
+	public String showUpdateForm(@RequestParam("yarnid") int id, Model model) {
 		Yarn theYarn = yarnService.findById(id);
 		model.addAttribute("updateyarn", theYarn);
 		return "update-yarn-form";
@@ -76,7 +76,7 @@ public class YarnController {
 
 
 	@GetMapping("/deleteyarn")
-	public String deleteYarn( int id) {
+	public String deleteYarn(@RequestParam("yarnid") int id) {
 		yarnService.deleteById(id);
 		return "redirect:/yarn/list";
 	}
@@ -91,6 +91,7 @@ public class YarnController {
 		model.addAttribute("findyarnbyid", theYarn);
 		return "find-yarn-by-id-form";
 	}
+	
 	@GetMapping("/findyarnform")
 	public String showFindYarnForm() {
 		return "fetch-cotton-yarn-form";
@@ -103,6 +104,9 @@ public class YarnController {
         model.addAttribute("cottondetail", theCotton);
         return "find-remarks-by-cotton-id-form";
     }
-	
+	@GetMapping("/mypreviousyarnindex")
+	public String myPreviousyarnIndex() {
+		return "yarn";
+	}
 	
 }

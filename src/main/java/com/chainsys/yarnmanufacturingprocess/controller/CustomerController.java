@@ -12,8 +12,10 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 	import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RequestParam;
     import com.chainsys.yarnmanufacturingprocess.model.Customer;
+import com.chainsys.yarnmanufacturingprocess.model.CustomerLogin;
 import com.chainsys.yarnmanufacturingprocess.model.Invoice;
 import com.chainsys.yarnmanufacturingprocess.model.Orders;
+import com.chainsys.yarnmanufacturingprocess.model.Yarn;
 import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
 import com.chainsys.yarnmanufacturingprocess.service.CustomerService;
 import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
@@ -41,7 +43,7 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 	    @PostMapping("/add")
 		public String addNewCustomer(@ModelAttribute("addcustomer") Customer theCustomer) {
 	    	customerService.save(theCustomer);
-	    	return "redirect:/customer/list";
+	    	return "customer";
 		}
 	    @GetMapping("/modifyform")
 		public String showModifyForm() {
@@ -78,5 +80,26 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 	    	model.addAttribute("findcustomerbyid",theCustomer);
 	    	return "find-customer-by-id-form";
 		}
-	   
+	    @GetMapping("/customerindex")
+		public String CustomerIndex() {
+			
+			return "customer";
+		}
+	    @GetMapping("/logincustomer")
+		public String loginForm(Model model) {
+			CustomerLogin login = new CustomerLogin ();
+			model.addAttribute("log",login);
+			return "customerlogin";
+		}
+	    @PostMapping("/checkuserlogin")
+	    public String checkingAccess(@ModelAttribute("log") Customer customer,Model model) {
+			Customer log = customerService.getEmailIdUserPassword(customer.getEmailId(), customer.getUserPassword());
+	        if (log!= null){
+
+	        	return "redirect:/customer/customerindex";
+	        } else {
+	        
+	            return "redirect:/customer/logincustomer";
+	        }
+	    }
 }

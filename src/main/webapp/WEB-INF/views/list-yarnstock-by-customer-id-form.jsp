@@ -19,21 +19,12 @@
 					</div>
 				</div>
 				<div>
-					<label for="customerId">Customer Id</label>
+					<label for="name">Name</label>
 					<div>
-						<form:input path="customerId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="firstName">First Name</label>
-					<div>
-						<form:input path="firstName" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="lastName">Last Name</label>
-					<div>
-						<form:input path="lastName" readonly="true" />
+						<form:input path="name" class="text-box"
+						placeholder="Enter a name"
+						title="Name must contain only alphabets"
+						pattern="^[a-zA-Z][a-zA-Z\\s]+$" required="true" />
 					</div>
 				</div>
 				<div>

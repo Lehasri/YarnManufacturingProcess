@@ -18,6 +18,12 @@
 						<form:input path="yarnId" readonly="true"/>
 					</div>
 				</div>
+				 <div>
+					<label for="customerId">Customer Id</label>
+					<div>
+						<form:input path="customerId" />
+					</div>
+				</div>
 				<div>
 					<label for="orderId">Order Id</label>
 					<div>

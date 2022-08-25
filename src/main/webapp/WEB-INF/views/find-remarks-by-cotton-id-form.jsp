@@ -7,74 +7,27 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Cotton By Id</title>
-<style>type="text/css">
-.form {
-	trxt-align: center;
-}
-
-.check-box {
-	margin-left: 20px;
-}
+<style>
+<%@include file="/WEB-INF/css/remarks.css"%>
 </style>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+<div class=top>
+		Remarks<a href="/supplier/cottonindex"><em class="fa fa-home"
+		style="font-size: 30px;float:right; color: white;"></em></a></div>
+	<br>
 	<div id="root">
 		<div id="form">
 			<form:form class="form" action="" method="get" modelAttribute="cottondetail">
-				<div>
-					<label for="cottonId">Cotton Id</label>
-					<div>
-						<form:input path="cottonId" readonly="true"/>
-					</div>
-				</div>
 				<div>
 					<label for="cottonType">Cotton Type</label>
 					<div>
 						<form:input path="cottonType" readonly="true"/>
 					</div>
 				</div>
-				<div>
-					<label for="colour">Colour</label>
-					<div>
-						<form:input path="colour" class="check-box"/>
-					</div>
-				</div>
-				<div>
-					<label for="trashContent">Trash Content</label>
-					<div>
-						<form:input path="trashContent" class="check-box"/>
-					</div>
-				</div>
-				<div>
-					<label for="ginningPercentage">Ginning Percentage</label>
-					<div>
-						<form:input path="ginningPercentage" class="check-box"/>
-					</div>
-				</div>
-				<div>
-					<label for="stapleLength">Staple Length</label>
-					<div>
-						<form:input path="stapleLength" />
-					</div>
-				</div>
-				<div>
-					<label for="stapleLength">Micronaire</label>
-					<div>
-						<form:input path="stapleLength" />
-					</div>
-				</div>
-				<div>
-					<label for="ratePerTon">Rate Per Ton</label>
-					<div>
-						<form:input path="ratePerTon" readonly="true"/>
-					</div>
-				</div>
-				<div>
-					<label for="stockInHand">Stock In Hand</label>
-					<div>
-						<form:input path="stockInHand" readonly="true"/>
-					</div>
-				</div>
+				
 			</form:form>
 			
 			<form:form action="" method="get" modelAttribute="yarndetail">
@@ -88,5 +41,8 @@
 			</form:form>
 		</div>
 	</div>
+	<footer>
+		<a href="/cotton/myindexpreviousfetch" class="previous background">&#8249;</a>
+	</footer>
 </body>
 </html>

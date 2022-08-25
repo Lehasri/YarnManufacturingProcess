@@ -3,9 +3,12 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,7 +48,11 @@ public class CottonController {
 	}
 
 	@PostMapping("/add")
-	public String addNewCottons(@ModelAttribute("addcotton") Cotton theCotton) {
+	public String addNewCottons(@Valid@ModelAttribute("addcotton") Cotton theCotton,Errors error) {
+		if(error.hasErrors())
+		{
+			return "add-cotton-form";
+		}
 		cottonService.save(theCotton);
 		return "redirect:/cotton/list";
 	}
@@ -63,7 +70,11 @@ public class CottonController {
 	}
 
 	@PostMapping("/update")
-	public String updateCotton(@ModelAttribute("updatecotton") Cotton theCotton) {
+	public String updateCotton(@ModelAttribute("updatecotton") Cotton theCotton,Errors error) {
+		if(error.hasErrors())
+		{
+			return "update-cotton-form";
+		}
 		cottonService.save(theCotton);
 		return "redirect:/cotton/list";
 	}
@@ -84,6 +95,8 @@ public class CottonController {
 
 	@GetMapping("/findcottonbyid")
 	public String findCottonById(@RequestParam("cottonid") int id, Model model) {
+		List<Cotton> cottonIdList = cottonService.getAllCottons();
+        model.addAttribute("listAllCustomerId", cottonIdList);
 		Cotton theCotton = cottonService.findById(id);
 		model.addAttribute("findcottonbyid", theCotton);
 		return "find-cotton-by-id-form";
@@ -101,5 +114,13 @@ public class CottonController {
 	        model.addAttribute("allyarns", theYarn);
 	        return "find-cotton-yarn-by-id-form";
 	    }
-	 
+	 @GetMapping("/myindexpreviousupdatecotton")
+		public String myUpdateCotonIndexForm(Model model) {
+			return "redirect:/cotton/list";
+		}
+	 @GetMapping("/myindexpreviousfetch")
+		public String myPreviousFetchIndexForm(Model model) {
+			return "fetch-cotton-yarn-form";
+		}
+		 
 }

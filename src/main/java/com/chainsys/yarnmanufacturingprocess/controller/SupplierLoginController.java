@@ -33,32 +33,5 @@ public class SupplierLoginController {
 		return "cotton";
 	}
 	
-	@GetMapping("/loginsupplier")
-	public String loginForm(Model model) {
-		SupplierLogin login = new SupplierLogin ();
-		model.addAttribute("log",login);
-		return "login";
-	}
-
-	@PostMapping("/checkuserlogin")
-    public String checkingAccess(@ModelAttribute("log") SupplierLogin supplierLogin,Model model) {
-		SupplierLogin log = supplierLoginService.getEmailIdUserPassword(supplierLogin.getEmailId(), supplierLogin.getUserPassword());
-        if (log!= null){
-
-        	return "redirect:/supplierlogin/cottonindex";
-        } else {
-        
-            return "redirect:/supplierlogin/loginsupplier";
-        }
-    }
-	@GetMapping("/cottonindex")
-	public String cottonForm(Model model) {
-		return "cotton";
-	}
-	@GetMapping("/myProfileindex")
-	public String myProfileForm(Model model) {
-		return "myprofile";
-	}
-	
 	
 }

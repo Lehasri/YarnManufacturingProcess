@@ -12,6 +12,6 @@ public interface SupplierRepository extends CrudRepository<Supplier,Integer> {
 	Supplier save(Supplier supplier);
 	void deleteById(int supplier_id);
 	List <Supplier> findAll();
-	@Query(value = "select supplier_id.nextval from dual", nativeQuery = true)
-    public int getNextValMySequence();
+	Supplier findByEmailIdAndUserPassword(String emailId, String userPassword);
+	
 }

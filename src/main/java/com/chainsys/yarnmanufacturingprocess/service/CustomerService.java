@@ -26,9 +26,10 @@ import com.chainsys.yarnmanufacturingprocess.repository.CustomerRepository;
 		{
 			customerRepository.deleteById(id);
 		}
-		public List<Customer> getCustomer(int id)
-		{
-			return customerRepository.findByYarnId(id);
+		public Customer getEmailIdUserPassword(String emailId, String userPassword) {
+			return customerRepository.findByEmailIdAndUserPassword(emailId, userPassword);
 		}
-		
+		public Customer getName(String customer) {
+			return customerRepository.findByName(customer);
+		}
 	}

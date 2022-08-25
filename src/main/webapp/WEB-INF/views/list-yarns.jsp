@@ -6,10 +6,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Yarn List</title>
+<style>
+<%@include file="/WEB-INF/css/listyarn.css"%>
+</style>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+	<div class=top >
+		<div>Yarn Daily Production List</div>
+		<div><a href="/yarn/yarnindex"><em class="fa fa-home"
+		style="font-size: 30px;float:right; color: white;"></em></a></div>
+	</div>
+	<br>
+	<div id="table-root">
+	<table>
+	<caption></caption>
 			<thead>
 				<tr>
 					<th>Production Date</th>
@@ -17,6 +29,8 @@
 					<th>Remarks</th>
 					<th>Cotton Id</th>
 					<th>Quantity Used</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +41,8 @@
 						<td>${yarn.remarks}</td>
 						<td>${yarn.cottonId}</td>
 						<td>${yarn.quantityUsed}</td>
+						<td><a class=text href="updateform?yarnid=${yarn.cottonId}">Edit</a></td>
+						<td><a class=text href="deleteyarn?yarnid=${yarn.cottonId}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

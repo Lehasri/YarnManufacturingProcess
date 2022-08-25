@@ -2,25 +2,26 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Cotton List</title>
 <style>
-.center {
-	margin-top: 17%;
-}
-
-.text{
-text-decoration:none;
-color:black;
-}
-
+<%@include file="/WEB-INF/css/listyarn.css"%>
 </style>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div id="table root" class=center>
-		<table border="2" width="100%" cellpadding="2">
+	<div class=top >
+		<div>Cotton List</div>
+		<div><a href="/supplier/cottonindex"><em class="fa fa-home"
+		style="font-size: 30px;float:right; color: white;"></em></a></div>
+	</div>
+	<br>
+	<div id="table root" class="center">
+		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Cotton Id</th>
@@ -32,6 +33,8 @@ color:black;
 					<th>Micronaire</th>
 					<th>Rate Per Ton</th>
 					<th>Stock In Hand</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,8 +49,10 @@ color:black;
 						<td>${cotton.micronaire}</td>
 						<td>${cotton.ratePerTon}</td>
 						<td>${cotton.stockInHand}</td>
-						<td><a class=text href="updateform?cottonid=${cotton.cottonId}">Edit</a></td>
-						<td><a class=text href="deletecotton?cottonid=${cotton.cottonId}">Delete</a></td>
+						<td><a class=text
+							href="updateform?cottonid=${cotton.cottonId}">Edit</a></td>
+						<td><a class=text
+							href="deletecotton?cottonid=${cotton.cottonId}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
