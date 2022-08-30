@@ -15,6 +15,8 @@
 <body>
 	<div class=top >
 		<div>Products</div>
+		<div><a href="/orders/findorderbycustomerid?id=${customer.customerId}"style="float:right; color: white;text-decoration:none;">My Orders</a></div>
+		<div><a href="/customer/myprofile"style="float:right; color: white;text-decoration:none;">My Account</a></div>
 		<div><a href="/yarn/yarnindex"><em class="fa fa-home"
 		style="font-size: 30px;float:right; color: white;"></em></a></div>
 	</div>
@@ -26,6 +28,7 @@
 				<tr>
 				<tr>
 					<th>Yarn Type</th>
+					<th>Color</th>
 					<th>Quantity</th>
 					<th>Rate</th>
 					<th>Order</th>
@@ -35,6 +38,7 @@
 				<c:forEach var="yarnstock" items="${allyarn}">
 					<tr>
 						<td>${yarnstock.yarnType}</td>
+						<td>${yarnstock.color}</td>
 						<td>${yarnstock.quantity}</td>
 						<td>${yarnstock.rate}</td>
 						<td><a class=text

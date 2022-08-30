@@ -2,6 +2,7 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,12 +45,13 @@ public class YarnStockController {
 	}
 
 	@PostMapping("/add")
-	public String addNewYarnStocks(@Valid@ModelAttribute("addyarnstock") YarnStock theyarnstock,Errors error) {
+	public String addNewYarnStocks(@Valid @ModelAttribute("addyarnstock") YarnStock theYarnStock,Errors error) {
+		theYarnStock.setProductionDate();
 		if(error.hasErrors())
 		{
 			return "add-yarnstock-form";
 		}
-		yarnStockService.save(theyarnstock);
+		yarnStockService.save(theYarnStock);
 		return REDIRECT_PAGE;
 	}
 
@@ -104,5 +106,26 @@ public class YarnStockController {
 		model.addAttribute("allyarn", yarnStatus);
 		return "list-yarnproduct";
 	}
-
+	/*
+	 * @GetMapping("/color") public String getAllColor(Model model) { YarnStock
+	 * yarnColor = yarnStockService.yarnGetByColor("Orange");
+	 * model.addAttribute("yarncolor", yarnColor); return "findcolor"; }
+	 * 
+	 * @GetMapping("/pinkcolor") public String getPinkColor(Model model) { YarnStock
+	 * yarnColor = yarnStockService.yarnGetByColor("Pink");
+	 * model.addAttribute("yarncolor", yarnColor); return "findcolor"; }
+	 * 
+	 * @GetMapping("/bluecolor") public String getBlueColor(Model model) { YarnStock
+	 * yarnColor = yarnStockService.yarnGetByColor("Blue");
+	 * model.addAttribute("yarncolor", yarnColor); return "findcolor"; }
+	 * 
+	 * @GetMapping("/redcolor") public String getRedColor(Model model) { YarnStock
+	 * yarnColor = yarnStockService.yarnGetByColor("Red");
+	 * model.addAttribute("yarncolor", yarnColor); return "findcolor"; }
+	 * 
+	 * @PostMapping("/fetch") public String getColor(@ModelAttribute("yarncolor")
+	 * YarnStock theYarnStock,Model model) {
+	 * System.out.println(theYarnStock.getYarnId()); int yarnId =
+	 * theYarnStock.getYarnId(); return "redirect:/orders/addform?yarnId="+yarnId; }
+	 */
 }

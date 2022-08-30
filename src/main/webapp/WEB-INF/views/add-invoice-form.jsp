@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="formA" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,25 +18,28 @@
 		style="font-size: 30px; color: white;float:right"></em></a>
 	</div>
 	<br>
-	<div>${result}</div>
 	<div id="root">
 		<div id="form">
-			<form:form action="add" method="post" modelAttribute="addinvoice">
+			<formA:form action="add" method="post" modelAttribute="addinvoice">
 					<label for="invoiceDate">Invoice Date</label>
-						<form:input path="invoiceDate" value="${orderid.orderDate}" readonly="true"/>
+						<formA:input path="invoiceDate" value="${orderid.orderDate}" readonly="true"/>
 					<label for="orderId">Order Id</label>
-						<form:input path="orderId" value="${orderid.orderId}" readonly="true"/>
+						<formA:input path="orderId" value="${orderid.orderId}" readonly="true"/>
 					<label for="totalAmount">Amount</label>
-						<form:input path="totalAmount" value="${orderid.advance}" readonly="true"/>
+						<formA:input path="totalAmount" value="${orderid.advance}" readonly="true"/>
 					<label for="paymentMethod">Payment Method</label>
-						<form:input path="paymentMethod"/>
-						
-				<div class=movecenter>
-					<form:button class="but hover">Add</form:button>
+						<select id="paymentMethod" name="paymentMethod" required="required">
+						<option value=" " selected disabled>-select payment method-</option>
+						<option value="cash">Cash</option>
+						<option value="online">online payment</option>
+						</select>
+				<div class="movecenter">
+					<formA:button class="but hover">Add</formA:button>
 				</div>
-				<div>${result}</div>
-			</form:form>
+			</formA:form>
 		</div>
+					 
+				<div style="color:red">${result}</div>
 	</div>
 </body>
 </html>

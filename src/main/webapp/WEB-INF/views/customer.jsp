@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Cotton</title>
 <style type="text/css">
-<%@include file="/WEB-INF/css/cottonhome.css"%>
+<%@include file="/WEB-INF/css/customer.css"%>
 </style>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,7 +22,7 @@
 	</div>
 	<br>
 	<div class="content">
-	<div class=s style="width: fit-content;">
+	<div class=s>
 		<div>
 			<br> <a class="edit" href="/yarnstock/status">Products
 				<hr>

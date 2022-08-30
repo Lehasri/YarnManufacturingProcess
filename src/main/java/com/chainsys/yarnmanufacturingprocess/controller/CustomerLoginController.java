@@ -38,7 +38,7 @@ public class CustomerLoginController {
 		return "customerlogin";
 	}
 	@GetMapping("/customerindex")
-	public String CustomerIndex() {
+	public String ccustomerIndex() {
 		
 		return "customer";
 	}

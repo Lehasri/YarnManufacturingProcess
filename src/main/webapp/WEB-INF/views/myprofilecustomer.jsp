@@ -79,9 +79,6 @@
 	</div>
 	<div class=s>
 		<div style="margin-top: 20px">
-			<a class="edit" href="/customer/addform">Create Account<hr></a><br>
-		</div>
-		<div >
 			<a class="list" href="/customer/modifyform">Edit Account<hr> </a><br>
 		</div>
 		<div >

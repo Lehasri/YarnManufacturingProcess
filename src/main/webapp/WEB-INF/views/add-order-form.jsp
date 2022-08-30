@@ -12,10 +12,11 @@
         var orderedQuantity = document.getElementById("orderedQuantity").value;
         var rate = document.getElementById("rate").value;
         var orderAmount = parseInt(orderedQuantity) * parseInt(rate);
-
+        var advance = parseInt(orderAmount)*25/100;
         document.getElementById("orderAmount").value = orderAmount;
-        return orderAmount;
+        document.getElementById("advance").value = advance;
     }
+
 </script>
 <style type="text/css">
 <%@include file="/WEB-INF/css/order-form.css"%>
@@ -31,31 +32,23 @@
 	<div id="root">
 		<div id="form">
 			<form:form action="add" method="post" modelAttribute="addorder">
+			<%-- <c:param name="var" items="yarned"></c:param>
+			<c:out value="${var.yarnId}">${var.yarnId}</c:out> --%>
 					<label for="yarnId">Yarn Id</label>
 						<form:input path="yarnId" value="${yarnid.yarnId}" readonly="true"/>
 					<label for="customerId">Customer Id</label>
-						<form:input path="customerId"  class="text-box"
-							placeholder="Enter a customer id" title="Enter a number"
-							maxlength="5" pattern="^([0-9]+\\.?[0-9]|\\.[0-9]+)$"
-							required="true"/>
-					<label for="orderedCustomer">Name</label>
-						<form:input path="orderedCustomer" class="text-box"
-							placeholder="Enter a name"
-							title="Name must contain only alphabets"
-							pattern="^[a-zA-Z][a-zA-Z\\s]+$" required="true" />
+						<form:input path="customerId"  readonly="true"/>
+					<label for="name">Name</label>
+						<form:input path="name" readonly="true"/>
 					<label for="orderedQuantity">Ordered Quantity</label>
-						<form:input path="orderedQuantity" onchange="amountCalculate()"/>
+						<form:input path="orderedQuantity" />
 					<label for="rate">Rate</label>
-						<form:input path="rate" value="${yarnid.rate}"
-							onchange="amountCalculate()" readonly="true"/>
+						<form:input path="rate" value="${yarnid.rate}" readonly="true"/>
 					<label for="orderAmount">Order Amount</label>
 						<form:input path="orderAmount"
-							onchange="amountCalculate(this.form)" readonly="true"/>
+							onclick="amountCalculate()" readonly="true"/>
 					<label for="advance">Advance</label>
-						<form:input path="advance"  class="text-box"
-							placeholder="Enter a advance" title="Enter a number"
-							maxlength="5" pattern="^([0-9]+\\.?[0-9]|\\.[0-9]+)$"
-							required="true"/>
+						<form:input path="advance" readonly="true"/>
 				<div class=movecenter>
 					<form:button class="but hover">Add</form:button>
 				</div>

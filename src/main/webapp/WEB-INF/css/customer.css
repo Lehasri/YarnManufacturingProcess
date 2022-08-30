@@ -1,0 +1,118 @@
+@charset "ISO-8859-1";
+.heading {
+	background-color: black;
+	width: 1345px;
+	border: 1px lightgrey;
+	font-family: cursive;
+	float:right;
+	padding: 0px;
+	height:79px;
+	margin-right:3px;
+	
+}
+* {
+	font-family: cursive;
+}
+.s {
+	background-color: lightgrey;
+	Height: 464px;
+	width: 249px;
+	outline-color: black;
+	outline-style: dashed;
+	padding: 10px;
+	padding-top: 5px;
+	color: red;
+	font-family: cursive;
+	padding-left: 180;
+	text-align: center;
+}
+.list {
+	color: Black;
+	text-align: center;
+	margin: 20px;
+	tab-size: 20;
+	font-size: 20px;
+	text-decoration: none;
+}
+.edit {
+	color: Black;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+}
+.create {
+	color: Black;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+}
+.dropdown {
+	    display: flex;
+    justify-content: space-between;
+	overflow: hidden;
+}
+.dropdown .dropbtn {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 17px 17px; 
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+}
+.dropdown-content a {
+	float: none;
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	font-size: 18px;
+}
+.dropdown-content a:hover {
+	 background-color: lightgrey; 
+	 color:black;
+}
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+ .account{
+ 	float: right;
+    font-size: larger;
+    margin-top: 18px;
+	font-family: cursive;
+	display: flex;
+	justify-content: space-around;
+	width: 200px;
+ }
+ a{
+ text-decoration: none;
+ color: White;
+ }
+ .content{
+     display: inline-flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+     margin-left: 5px;
+ }
+ 
+ .imgg{
+     margin-left: 5px;
+    height: 486px;
+    margin-top: 1px;
+    width: 1098px;
+ }
+ .navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }

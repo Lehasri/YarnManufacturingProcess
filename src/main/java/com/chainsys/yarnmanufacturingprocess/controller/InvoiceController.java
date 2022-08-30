@@ -48,13 +48,16 @@ public class InvoiceController {
 	public String addNewInvoices(@Valid@ModelAttribute("addinvoice") Invoice theInvoice,Errors error,Model model) {
 		try {
 			invoiceService.save(theInvoice);
-			model.addAttribute("result","Added Successfully");
-			return "add-invoice-form";
+			String result="Added Successfully";
+			model.addAttribute("result",result);
 		}
 		catch(Exception err) {
-			model.addAttribute("result","Sorry! Could not generate Invoice");
-			return "add-invoice-form";
+			String result= "Sorry! Could not generate Invoice";
+			model.addAttribute("result",result);
+//			return "redirect:/invoice/addform";
 		}
+
+		return "add-invoice-form";
 	}
 	@GetMapping("/modifyform")
 	public String showModifyForm() {

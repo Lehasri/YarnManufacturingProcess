@@ -3,7 +3,9 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 
 	import java.util.List;
 
-	import org.springframework.beans.factory.annotation.Autowired;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Controller;
 	import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -94,7 +96,7 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 	    @GetMapping("/customerindex")
 		public String customerIndex() {
 			
-			return "customer";
+			return "products";
 		}
 	    @GetMapping("/logincustomer")
 		public String loginForm(Model model) {
@@ -103,14 +105,20 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 			return "customerlogin";
 		}
 	    @PostMapping("/checkuserlogin")
-	    public String checkingAccess(@ModelAttribute("log") Customer customer,Model model) {
+	    public String checkingAccess(@ModelAttribute("log") Customer customer,Model model,HttpSession session) {
 			Customer log = customerService.getEmailIdUserPassword(customer.getEmailId(), customer.getUserPassword());
 	        if (log!= null){
-
-	        	return "redirect:/customer/customerindex";
+	        	session.setAttribute("customerId", log.getCustomerId());
+	        	session.setAttribute("name", log.getName());
+	        	return "redirect:/yarnstock/status";
 	        } else {
 	        
 	            return "redirect:/customer/logincustomer";
 	        }
 	    }
+	    @GetMapping("/myprofile")
+	 			public String myProfile() {
+	 				
+	 				return "myprofilecustomer";
+	 			}
 }

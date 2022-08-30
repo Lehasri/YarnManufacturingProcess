@@ -1,0 +1,6 @@
+@charset "ISO-8859-1";
+.row{
+display:flex;
+align-content: space-between;
+justify-content: row;
+}

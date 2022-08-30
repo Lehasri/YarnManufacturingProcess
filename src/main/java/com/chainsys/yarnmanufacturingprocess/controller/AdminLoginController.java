@@ -53,6 +53,10 @@ public class AdminLoginController {
         }
     }
 	
-	
+	@GetMapping("/yarncolor")
+	public String yarnColor() {
+		
+		return "colorsingle";
+	}
 	
 }

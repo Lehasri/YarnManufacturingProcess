@@ -17,4 +17,9 @@ public interface YarnStockRepository extends CrudRepository<YarnStock,Integer>  
  @Query(value="SELECT * FROM yarn_stock where yarn_status=?1",nativeQuery=true)
  public List<YarnStock> getYarnIdByYarnStatus(String status);
 
+	/*
+	 * @Query(value="SELECT * FROM yarn_stock where color=?1 and yarn_type?=2"
+	 * ,nativeQuery=true) public YarnStock getYarnIdByColor(String color,String
+	 * yarnType);
+	 */
 }

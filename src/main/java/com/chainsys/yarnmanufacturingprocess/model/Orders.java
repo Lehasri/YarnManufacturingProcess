@@ -24,8 +24,8 @@ public class Orders {
 	private int orderId;
 	@Column(name = "order_date")
 	private String orderDate;
-	@Column(name = "ordered_customer")
-	private String orderedCustomer;
+	@Column(name = "name")
+	private String name;
 	@Column(name = "ordered_quantity")
 	private int orderedQuantity;
 	@Column(name = "rate")
@@ -78,12 +78,12 @@ public class Orders {
 		this.orderDate = orderDate;
 	}
 
-	public String getOrderedCustomer() {
-		return orderedCustomer;
+	public String getName() {
+		return name;
 	}
 
-	public void setOrderedCustomer(String orderedCustomer) {
-		this.orderedCustomer = orderedCustomer;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getOrderedQuantity() {

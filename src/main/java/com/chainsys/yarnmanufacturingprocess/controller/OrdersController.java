@@ -2,6 +2,8 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,10 +43,16 @@ public class OrdersController {
 	}
 
 	@GetMapping("/addform")
-	public String showAddForm(@RequestParam("id") int id, Model model) {
+	public String showAddForm(@RequestParam("id") int id,Model model,HttpServletRequest request) {
 		YarnStock theYarn = yarnStockService.findById(id);
+		HttpSession session = request.getSession();
+		int customerId = (int) session.getAttribute("customerId");
 		model.addAttribute("yarnid", theYarn);
+		String name = (String) session.getAttribute("name");
 		Orders theOrders = new Orders();
+		theOrders.setCustomerId(customerId);
+		theOrders.setYarnId(id);
+		theOrders.setName(name);
 		model.addAttribute("addorder", theOrders);
 		return "add-order-form";
 	}
@@ -110,14 +118,14 @@ public class OrdersController {
 		return "fetch-order-product-form";
 	}
 	@GetMapping("/findorderbycustomerid")
-	public String findOrdersByCustomerId(int id, Model model) {
-		List<Orders> theOrders = ordersService.getOrdersByCustomerId(id);
+	public String findOrdersByCustomerId( Model model,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		int customerId = (int) session.getAttribute("customerId");
+		List<Orders> theOrders = ordersService.getOrdersByCustomerId(customerId);
 		model.addAttribute("allOrders", theOrders);
 		System.out.println(theOrders);
 		return "list-orders-by-customer-id";
 	}
-	
-
 	@GetMapping("/getyarnorder")
     public String getYarnOrderById(@RequestParam("id")int id, Model model) {
     	Orders theOrders = ordersService.findById(id);
