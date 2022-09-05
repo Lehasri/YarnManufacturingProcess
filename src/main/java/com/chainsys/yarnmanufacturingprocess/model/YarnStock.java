@@ -27,7 +27,7 @@ public class YarnStock {
 	@Column(name="yarn_status")
 	private String yarnStatus; 
 	@Column(name="per_day_production")
-	private int perDayProduction;
+	private String perDayProduction;
 	@Column(name="quantity")
 	private int quantity;
 	@Column(name="rate")
@@ -69,10 +69,10 @@ public class YarnStock {
 	public void setYarnStatus(String yarnStatus) {
 		this.yarnStatus = yarnStatus;
 	}
-	public int getPerDayProduction() {
+	public String getPerDayProduction() {
 		return perDayProduction;
 	}
-	public void setPerDayProduction(int perDayProduction) {
+	public void setPerDayProduction(String perDayProduction) {
 		this.perDayProduction = perDayProduction;
 	}
 	public int getQuantity() {

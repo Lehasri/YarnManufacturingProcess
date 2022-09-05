@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.yarnmanufacturingprocess.businesslogic.Logic;
 import com.chainsys.yarnmanufacturingprocess.model.Orders;
 import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
 import com.chainsys.yarnmanufacturingprocess.service.CustomerService;
@@ -43,28 +44,29 @@ public class OrdersController {
 	}
 
 	@GetMapping("/addform")
-	public String showAddForm(@RequestParam("id") int id,Model model,HttpServletRequest request) {
-		YarnStock theYarn = yarnStockService.findById(id);
+	public String showAddForm(@RequestParam("yarnId") int yarnId,Model model,HttpServletRequest request) {
+		YarnStock theYarn = yarnStockService.findById(yarnId);
 		HttpSession session = request.getSession();
 		int customerId = (int) session.getAttribute("customerId");
 		model.addAttribute("yarnid", theYarn);
 		String name = (String) session.getAttribute("name");
 		Orders theOrders = new Orders();
 		theOrders.setCustomerId(customerId);
-		theOrders.setYarnId(id);
+		theOrders.setYarnId(yarnId);
 		theOrders.setName(name);
+		theOrders.setOrderDate(Logic.getInstanceDate()); 
 		model.addAttribute("addorder", theOrders);
 		return "add-order-form";
 	}
 
 	@PostMapping("/add")
 	public String addNewOrder(@Valid @ModelAttribute("addorder") Orders theOrders, Errors error) {
-		theOrders.setOrderDate();
-		theOrders.setReceivingDate();
 		if(error.hasErrors())
 		{
 			return "add-order-form";
 		}
+		theOrders.getReceivingDate();
+		System.out.println(theOrders.getReceivingDate());
 		ordersService.save(theOrders);
 		int orderId = theOrders.getOrderId();
 		return "redirect:/invoice/addform?orderId=" + orderId;
@@ -78,16 +80,20 @@ public class OrdersController {
 	@GetMapping("/updateform")
 	public String showUpdateForm(@RequestParam("id") int id, Model model) {
 		Orders theOrders = ordersService.findById(id);
+		theOrders.setOrderDate(Logic.getInstanceDate()); 
 		model.addAttribute("updateorder", theOrders);
 		return "update-order-form";
 	}
 
 	@PostMapping("/update")
-	public String updateOrder(@Valid Orders theOrders, Errors errors) {
+	public String updateOrder(@Valid @ModelAttribute("updateorder") Orders theOrders, Errors errors) {
+		System.out.println(theOrders.getReceivingDate());		
 		if (errors.hasErrors()) {
 			return "update-order-form";
 		}
+		System.out.println("b"+theOrders);
 		ordersService.save(theOrders);
+		System.out.println(theOrders);
 		return "redirect:/orders/list";
 	}
 
@@ -134,5 +140,25 @@ public class OrdersController {
         model.addAttribute("yarnstockdetail", theYarnStock);
         return "find-product-by-order-id-form";
     }
-	
+	@GetMapping("/findorderbyyarnid")
+	public String findOrdersByYarnId(@RequestParam("id")int id, Model model,HttpServletRequest request) {
+		List<Orders> theOrders = ordersService.getOrdersByYarnId(id);
+		model.addAttribute("allOrdersbyyarnid", theOrders);
+		return "list-orders-by-yarn-id";
+	}
+	@GetMapping("/orderlist")
+	public String orderList(Model model) {
+		List<Orders> ordersList = ordersService.getAllOrders();
+		model.addAttribute("allorders", ordersList);
+		return "list-orders";
+	}
+	@GetMapping("/findorderbycustomer")
+	public String findOrdersByCustomer( Model model,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		int customerId = (int) session.getAttribute("customerId");
+		List<Orders> theOrders = ordersService.getOrdersByCustomerId(customerId);
+		model.addAttribute("allOrders", theOrders);
+		System.out.println(theOrders);
+		return "list-orders-by-customer-id";
+	}
 }

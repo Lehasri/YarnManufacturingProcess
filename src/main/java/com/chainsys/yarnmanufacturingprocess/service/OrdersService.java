@@ -24,10 +24,6 @@ public class OrdersService {
 	public Orders findById(int id) {
 		return ordersRepository.findById(id);
 	}
-	/*
-	 * public Orders save(Orders orders) { return ordersRepository.save(orders); }
-	 */
-
 	public List<Orders> getAllOrders() {
 		List<Orders> listOrders = ordersRepository.findAll();
 		return listOrders;
@@ -43,6 +39,10 @@ public class OrdersService {
 
 	public List<Orders> getOrders(int id) {
 		return ordersRepository.findByOrderId(id);
+
+	}
+	public List<Orders> getOrdersByYarnId(int id) {
+		return ordersRepository.findAllByYarnId(id);
 
 	}
 	public List<Orders> getOrdersByCustomerId(int id) {

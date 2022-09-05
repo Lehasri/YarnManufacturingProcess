@@ -45,11 +45,12 @@ public class InvoiceController {
 	}
 
 	@PostMapping("/add")
-	public String addNewInvoices(@Valid@ModelAttribute("addinvoice") Invoice theInvoice,Errors error,Model model) {
+	public String addNewInvoices(@Valid@ModelAttribute("addinvoice") Invoice theInvoice,Model model) {
 		try {
 			invoiceService.save(theInvoice);
-			String result="Added Successfully";
-			model.addAttribute("result",result);
+			Invoice invoice= invoiceService.findById(theInvoice.getInvoiceNo());
+			model.addAttribute("invoice",invoice);
+			return "find-invoice-by-id-form";
 		}
 		catch(Exception err) {
 			String result= "Sorry! Could not generate Invoice";
@@ -98,7 +99,7 @@ public class InvoiceController {
 	@GetMapping("/findinvoicebyid")
 	public String findInvoiceById( @RequestParam("oid")int id, Model model) {
 		Invoice theInvoice = invoiceService.findById(id);
-		model.addAttribute("findinvoicebyid", theInvoice);
+		model.addAttribute("invoice", theInvoice);
 		return "find-invoice-by-id-form";
 	}
 	@GetMapping("/getordersinvoice")
@@ -109,6 +110,19 @@ public class InvoiceController {
         model.addAttribute("orderdetail", theorders);
         return "find-invoice-by-order-id-form";
     }
-	
+	@GetMapping("/getcustomerordersinvoice")
+    public String getCustomerOrdersInvoiceById(@RequestParam("id")int id, Model model) {
+    	Invoice theInvoice = invoiceService.fetchByOrderId(id);
+    	Orders theorders = ordersService.findById(theInvoice.getOrderId());
+        model.addAttribute("invoicedetail",theInvoice);
+        model.addAttribute("orderdetail", theorders);
+        return "fetch-invoice-by-order-id-form";
+    }
+	@GetMapping("/invoicelist")
+	public String invoiceList(Model model) {
+		List<Invoice> invoiceList = invoiceService.getAllInvoices();
+		model.addAttribute("allinvoices", invoiceList);
+		return "list-invoices";
+	}
 
 }

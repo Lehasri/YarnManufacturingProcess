@@ -7,20 +7,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Supplier</title>
-<script>
-	function onSubmit() {
-		alert("Master_Data.xlsx and Consistency_Check_Data.xlsx are located under d:/stage/MasterDataReports");
-	}
-</script>
 <style type="text/css">
 <%@include file="/WEB-INF/css/supplier-form.css"%>
+body {
+    background-image:
+        url(https://www.kibrispdr.org/data/704/kerajinan-dari-benang-woll-59.jpg);
+    background-size: cover; 
+    background-repeat:no-repeat; 
+    
+   }  
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class=top style="color: white; text-decoration: none">
-		Sign Up<a href="/supplier/cottonindex"><em class="fa fa-home"
-		style="font-size: 30px; color: white;"></em></a>
+		Add Supplier<a href="/yarn/mypreviousyarnindex"><em class="fa fa-home"
+		style="font-size: 30px; color: white;float:right"></em></a>
 	</div>
 	<br> 
 	<div id="root">
@@ -66,16 +68,7 @@
 									required="true" />
 							</div>
 						</div>
-						<div>
-							<label for="userPassword">User Password</label>
-							<div>
-								<form:input path="userPassword" class="text-box"
-									placeholder="Enter a password" title="Enter a valid pasword"
-									pattern="^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.[@#$%^&-+=()])(?=\\S+$).{8, 20}$"
-									required="true" />
-							</div>
 						</div>
-					</div>
 					<div>
 						<div>
 							<label>Address Details :</label>
@@ -85,8 +78,8 @@
 							<div>
 								<form:input path="doorNo" class="text-box"
 									placeholder="Enter a door no"
-									title="Door number must contain only numbers or it should below 3 digits"
-									pattern="^[1-9]\d*(?:[ -]?(?:[a-zA-Z]+|[1-9]\d*))?$"
+									title="Enter a valid door number"
+									pattern="^[1-9]\d*(?:[ -]?(?:[a-zA-Z]|[1-9]\d*(?:\s*[/-]\s*\d+[a-z]?)?))?$"
 									required="true" />
 							</div>
 						</div>
@@ -96,7 +89,7 @@
 								<form:input path="addressLine1" class="text-box"
 									placeholder="Enter a address"
 									title="Address must contain only alphabets"
-									pattern="^[a-zA-Z][a-zA-Z\\s]+$" required="true" />
+									pattern="^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.[@#$%^&-+=()])(?=\\S+$).{8, 20}$" required="true" />
 							</div>
 						</div>
 						<div>
@@ -105,7 +98,7 @@
 								<form:input path="addressLine1" class="text-box"
 									placeholder="Enter a address"
 									title="Address must contain only alphabets"
-									pattern="^[a-zA-Z][a-zA-Z\\s]+$" />
+									pattern="^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.[@#$%^&-+=()])(?=\\S+$).{8, 20}$" />
 							</div>
 						</div>
 						<div>
@@ -164,15 +157,8 @@
 				<div class=movecenter>
 					<form:button class="but hover">Add</form:button>
 				</div>
-				<div>
-				${result}
-				</div>
 			</form:form>
 		</div>
 	</div>
-	<br>
-	<footer>
-		<a href="/supplier/mypreviousprofileform" class="background previous">&#8249;</a>
-	</footer>
 </body>
 </html>

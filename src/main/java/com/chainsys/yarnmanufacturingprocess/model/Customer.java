@@ -19,7 +19,7 @@ public class Customer {
 	@Column(name="name")
 	private String name; 
 	@Column(name = "door_no")
-	private int doorNo;
+	private String doorNo;
 	@Column(name = "address_line_1")
 	private String addressLine1;
 	@Column(name = "address_line_2")
@@ -48,10 +48,10 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getDoorNo() {
+	public String getDoorNo() {
 		return doorNo;
 	}
-	public void setDoorNo(int doorNo) {
+	public void setDoorNo(String doorNo) {
 		this.doorNo = doorNo;
 	}
 	public String getAddressLine1() {

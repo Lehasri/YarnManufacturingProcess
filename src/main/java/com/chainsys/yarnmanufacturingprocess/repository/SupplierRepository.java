@@ -12,6 +12,5 @@ public interface SupplierRepository extends CrudRepository<Supplier,Integer> {
 	Supplier save(Supplier supplier);
 	void deleteById(int supplier_id);
 	List <Supplier> findAll();
-	Supplier findByEmailIdAndUserPassword(String emailId, String userPassword);
 	
 }

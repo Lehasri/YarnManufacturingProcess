@@ -5,7 +5,7 @@
 }
 
 .movecenter {
-	margin-left: 327px;
+	margin-left: 145px;
 }
 
 input {
@@ -16,15 +16,16 @@ input {
 	line-height: 40px;
 	margin: auto;
 	margin-top: 41px;
-	background-color: lightgrey;
+	background-color:#9eb1ef;
+	border-radius: 30px;
 	Height: 310px;
-	width: 1278px;
+	width: 564px;
 	outline-color: black;
-	outline-style: dashed;
 	padding: 22px;
 	font-family: cursive;
 	padding-left: 180;
 	text-align: center;
+	margin-left: 50px;
 }
 
 .background:hover {
@@ -60,17 +61,18 @@ a{
 }
 
 .hover:hover {
-	background-color: lightgrey;
-	color: black;
+	background-color:#00248b;
+	color:white;
 }
 
 .but {
-	background-color: black;
+	background-color: darkblue;
 	color: white;
 	margin-left: 1px;
 	width: 70px;
 	height: 30px;
 	margin-top: 50px;
+	outline:none;
 }
 
  form{

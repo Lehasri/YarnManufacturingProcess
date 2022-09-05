@@ -5,7 +5,7 @@
 }
 
 .movecenter {
-	margin-left: 117px;
+	margin-left: 145px;
 }
 
 input {
@@ -18,14 +18,13 @@ input {
 	margin-top: 41px;
 	background-color:#9eb1ef;
 	border-radius: 30px;
-	Height: 289px;
-    width: 564px;
+	Height: 407px;
 	outline-color: black;
 	padding: 22px;
-	font-family: cursive;
 	padding-left: 180;
 	text-align: center;
-	margin-left: 50px;
+	width: 564px;
+    margin-left: 50px;
 }
 
 .background:hover {
@@ -44,15 +43,17 @@ input {
 
 .top {
 	background-color: black;
-	width: 1278px;
+	width: 1285px;
 	border: 1px lightgrey;
-	font-family: cursive;
+	font-family: Century Gothic;
 	padding: 26px;
+	font-family: cursive;
 	font-size: 20px;
 	text-decoration: none;
 	margin-left: auto;
 	margin-right: auto;
 	color: white;
+	font-family: cursive;
 }
 a{
 	text-decoration: none;
@@ -60,7 +61,8 @@ a{
 
 .hover:hover {
 	background-color:#00248b;
-	color:white;}
+	color:white;
+}
 
 .but {
 	background-color: darkblue;
@@ -80,7 +82,7 @@ a{
 	justify-content: center;
 	margin: auto;
 	width: 70%;
-	padding-top:40px;
+	padding-top:40px
 }
 img {
 	float: right;

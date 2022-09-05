@@ -44,15 +44,20 @@ public class AdminLoginController {
 	@PostMapping("/checkuserlogin")
     public String checkingAccess(@ModelAttribute("log") AdminLogin adminLogin,Model model) {
 		AdminLogin log = adminLoginService.getEmailIdUserPassword(adminLogin.getEmailId(), adminLogin.getUserPassword());
-        if (log!= null){
+       try {
+		if (log!= null){
 
         	return "redirect:/adminlogin/yarnindex";
         } else {
-        
-            return "redirect:/adminlogin/loginadmin";
-        }
-    }
-	
+        	model.addAttribute("result","Invalid user name and password");
+    	}
+   	}
+        catch(Exception e)
+   		{
+       	 model.addAttribute("error",e.getMessage());
+   		}
+   		return "adminlogin";
+   	}
 	@GetMapping("/yarncolor")
 	public String yarnColor() {
 		

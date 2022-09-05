@@ -18,11 +18,11 @@
 				<button class="dropbtn">
 					Add On <em class="fa fa-caret-down"></em>
 				</button>
-				<div class="dropdown-content">
-					<a href="/yarn/addform">Daily Production</a> <br> <a
-						href="/yarnstock/addform">Stock</a> <br>
-				</div>
-		</div>
+				<div style="margin-top:60px" class="dropdown-content">
+                <a href="/yarnstock/addform">Yarn Production</a> <br>
+                <a href="/supplier/addform">Supplier</a> <br>
+		        </div>
+		    </div>
 		<div class="account" style="width:55px">
 			<div>
 				<a href="/supplier/myindexprevious"><em class="fa fa-sign-out"
@@ -34,13 +34,8 @@
 	<br>
 	<div class="content">
 	<div class=s>
-		<div>
-			<br> <a class="edit" href="/yarn/list">Daily Production Details
-				<hr>
-			</a><br>
-		</div>
-		<div>
-			<a class="list" href="/yarnstock/list">Stock Details
+		<div style="margin-top:30px">
+			<a class="list" href="/yarnstock/list">Yarn production Details
 				<hr>
 			</a><br>
 		</div>
@@ -61,16 +56,16 @@
 		</div>
 		<div>
 			<a class="create" href="/customer/list">Customer Details
-				
+				<hr>
 			</a><br>
 		</div>
 		</div>
-		<div>
+	 
 		<div>
 			<img src="https://img.freepik.com/premium-photo/knitting-needles-lying-near-bunch-yarn-pastel-background_141856-146.jpg?w=2000"
  alt="image" class="imgg"> 
 		</div>
-	</div>
+
 	</div>
 </body>
 </html>

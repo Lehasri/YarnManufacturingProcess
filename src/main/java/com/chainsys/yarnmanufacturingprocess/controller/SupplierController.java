@@ -25,12 +25,11 @@ import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 @Controller
 @RequestMapping("/supplier")
 public class SupplierController {
+	private static final String REDIRECT_PAGE = "redirect:/supplier/list";
+	
 	@Autowired
 	SupplierService supplierService;
 	
-	@Autowired
-	SupplierLoginService supplierLoginService;
-
 	@GetMapping("/list")
 	public String getAllSuppliers(Model model) {
 		List<Supplier> supplierList = supplierService.getAllSuppliers();
@@ -46,17 +45,15 @@ public class SupplierController {
 	}
 
 	@PostMapping("/add")
-	public String addNewSuppliers(@Valid @ModelAttribute("addsupplier") Supplier theSupplier,Model model) {
-		try {
-			supplierService.save(theSupplier);
-			model.addAttribute("result","Added Successfully");
+	public String addNewSuppliers(@Valid @ModelAttribute("addsupplier") Supplier theSupplier,Errors error) {
+		if(error.hasErrors())
+		{
 			return "add-supplier-form";
 		}
-		catch(Exception err) {
-			model.addAttribute("message","could not create account,try again");
-			return "add-supplier-form";
-		}
+		supplierService.save(theSupplier);
+		return REDIRECT_PAGE;
 	}
+
 	@GetMapping("/fetchform")
 	public String showForm() {
 		return "supplier-modify-form";
@@ -69,16 +66,13 @@ public class SupplierController {
 	}
 
 	@PostMapping("/update")
-	public String updateSuppliers(@ModelAttribute("updatesupplierA") Supplier theSupplier,Model model) {
-		try {
-			supplierService.save(theSupplier);
-			model.addAttribute("result","Updated Successfully");
-			return "update-supplier-form";
+	public String updateSuppliers(@ModelAttribute("updatesupplierA") Supplier theSupplier,Model model,Errors error) {
+		if(error.hasErrors())
+		{
+			return "Update-supplier-form";
 		}
-		catch(Exception err) {
-			model.addAttribute("message","could not Update account,try again");
-			return "update-supplier-form";
-		}
+		supplierService.save(theSupplier);
+		return REDIRECT_PAGE;
 	}
 	@GetMapping("/deleteform")
 	public String showdeleteForm() {
@@ -111,18 +105,6 @@ public class SupplierController {
 		return "login";
 	}
 
-	@PostMapping("/checkuserlogin")
-    public String checkingAccess(@ModelAttribute("log") Supplier supplier,Model model,HttpSession session) {
-		Supplier log = supplierService.getEmailIdUserPassword(supplier.getEmailId(), supplier.getUserPassword());
-        if (log!= null){
-        	session.setAttribute("Id", supplier.getSupplierId());
-        	System.out.println(log.getSupplierId());
-        	return "redirect:/supplier/cottonindex";
-        } else {
-        
-            return "redirect:/supplier/loginsupplier";
-        }
-    }
 	@GetMapping("/cottonindex")
 	public String cottonForm(Model model) {
 		return "cotton";
@@ -148,6 +130,11 @@ public class SupplierController {
 	public String myIndexPreviousFetch(Model model) {
 		return "fetch-cotton-suppliercotton-form";
 	}
-	
+	@GetMapping("/supplierlist")
+	public String supplierList(Model model) {
+		List<Supplier> supplierList = supplierService.getAllSuppliers();
+		model.addAttribute("allsuppliers", supplierList);
+		return "list-suppliers";
+	}
 	
 }

@@ -30,8 +30,8 @@ public class YarnStockService {
 		return yarnStockRepository.findAllByYarnId(id);
 	}
 
-	public List<YarnStock> yarnGetByStatus(String status) {
-		return yarnStockRepository.getYarnIdByYarnStatus(status);
+	public YarnStock yarnGetByStatus(String status,String color,String yarnType) {
+		return yarnStockRepository.findByYarnStatusAndColorAndYarnType(status,color,yarnType);
 	}
 
 	/*

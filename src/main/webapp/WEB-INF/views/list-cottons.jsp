@@ -8,6 +8,13 @@
 <title>Cotton List</title>
 <style>
 <%@include file="/WEB-INF/css/listyarn.css"%>
+ body {
+    background-image:
+        url(https://st.depositphotos.com/10614052/54679/i/450/depositphotos_546796424-stock-photo-thread-spools-light-background.jpg);
+    background-size: cover; 
+    background-repeat:no-repeat; 
+    
+   }  
 </style>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

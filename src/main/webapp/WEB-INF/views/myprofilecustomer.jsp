@@ -11,7 +11,7 @@
 }
 .profile {
 	background-color: black;
-	width: 1300px;
+	width: 1303px;
 	border: 1px lightgrey;
 	padding: 25px;
 	color: White;
@@ -20,17 +20,16 @@
 }
 
 .s {
-	background-color: lightgrey;
+	background-color: #7f85f5;
 	Height: 462px;
 	width: 19%;
 	outline-color: black;
-	outline-style: dashed;
 	padding: 10px;
 	color: red;
 	font-family: Century Gothic ";
 	padding-left:180;
 	text-align:center;
-	margin-left:3px;
+	margin-left:0px;
 }
 
 .list {
@@ -70,21 +69,36 @@
 	text-decoration: none;
 	padding: 5px 16px; 
 }
+ .imgg {
+   margin-left: 273px;
+    height: 482px;
+    margin-top: -482px;
+    width: 1080px;
+    margin-bottom: 18px;
+}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
 	<div class=profile >
-	<b>My Account</b>	
+	My Account <a href="/customer/customerindex"><em class="fa fa-home"
+		style="font-size: 30px; color: white;float:right; margin-left: 20px;"></em></a>	
 	</div>
-	<div class=s>
-		<div style="margin-top: 20px">
-			<a class="list" href="/customer/modifyform">Edit Account<hr> </a><br>
+		<div class=s>
+		<div>
+			<br> <a class="edit" href="/customer/updateform">Edit Account
+				<hr>
+			</a><br>
 		</div>
-		<div >
-			<a class="create" href="/customer/findform">View Account<hr> </a>
+		<div>
+			<a class="list" href="/customer/findcustomerbyid">View
+				<hr>
+			</a><br>
 		</div>
-	</div>
-<footer>	 <a href="/customerlogin/myProfileindex" class="previous background">&#8249;</a> </footer>
+		</div>
+		<div>
+			<img src=https://i.pinimg.com/736x/4e/d0/aa/4ed0aace4331b8010814f6e4a94265bd.jpg
+             alt="image" class="imgg"> 
+		</div>
 </body>
 </html>

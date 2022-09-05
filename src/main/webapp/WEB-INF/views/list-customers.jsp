@@ -6,8 +6,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer List</title>
+<link rel = "stylesheet"
+         href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <style>
 <%@include file="/WEB-INF/css/listyarn.css"%>
+ body {
+    background-image:
+        url(https://st.depositphotos.com/10614052/54679/i/450/depositphotos_546796424-stock-photo-thread-spools-light-background.jpg);
+    background-size: cover; 
+    background-repeat:no-repeat; 
+    
+   }  
 </style>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,7 +26,7 @@
 <body>
 	<div class=top >
 		<div>Customers List</div>
-		<div><a href="/yarn/yarnindex"><em class="fa fa-home"
+		<div><a href="/yarn/mypreviousyarnindex"><em class="fa fa-home"
 		style="font-size: 30px;float:right; color: white;"></em></a></div>
 	</div>
 	<br>
@@ -50,7 +61,7 @@
 						<td>${customer.phoneNo}</td>
 						<td>${customer.emailId}</td>
 						<td><a class=text
-							href="deletecustomer?id=${customer.customerId}">Delete</a></td>
+							href="deletecustomer?id=${customer.customerId}"onclick="return confirm('Are you sure you want to delete customer ${customer.customerId} ?');"><button type="button" class="btn btn-danger">Delete</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

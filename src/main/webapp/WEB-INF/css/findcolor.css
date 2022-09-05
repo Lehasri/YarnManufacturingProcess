@@ -5,7 +5,7 @@
 }
 
 .movecenter {
-	margin-left: 117px;
+	margin-left: 145px;
 }
 
 input {
@@ -18,8 +18,8 @@ input {
 	margin-top: 41px;
 	background-color:#9eb1ef;
 	border-radius: 30px;
-	Height: 289px;
-    width: 564px;
+	Height: 319px;
+	width: 564px;
 	outline-color: black;
 	padding: 22px;
 	font-family: cursive;
@@ -48,42 +48,51 @@ input {
 	border: 1px lightgrey;
 	font-family: cursive;
 	padding: 26px;
+	font-family: cursive;
 	font-size: 20px;
 	text-decoration: none;
 	margin-left: auto;
 	margin-right: auto;
 	color: white;
 }
-a{
+
+a {
 	text-decoration: none;
 }
 
-.hover:hover {
+a:hover {
 	background-color:#00248b;
-	color:white;}
+	color:white;
+}
 
-.but {
+a {
 	background-color: darkblue;
 	color: white;
 	margin-left: 1px;
 	width: 70px;
-	height: 30px;
+	height: 35px;
 	margin-top: 50px;
-	border:none;
-	outline:none;
+	text-align: center;
 }
 
- form{
+form {
 	display: grid;
 	grid-template-columns: 30% 50%;
 	text-align: left;
 	justify-content: center;
 	margin: auto;
 	width: 70%;
-	padding-top:40px;
+	padding-top: 40px;
+	width: 493px;
 }
+
 img {
 	float: right;
 	width: 30px;
 	height: 30px;
+}
+
+.kg {
+	margin-left: 396px;
+	margin-top: -34px;
 }

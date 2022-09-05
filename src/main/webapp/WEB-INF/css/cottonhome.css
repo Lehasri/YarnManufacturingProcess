@@ -13,17 +13,18 @@
 	font-family: cursive;
 }
 .s {
-	background-color: lightgrey;
-	Height: 464px;
-	width: 19%;
+	background-color:#9eb1ef;
+	Height: 480px;
+	width: 226px;
 	outline-color: black;
-	outline-style: dashed;
 	padding: 10px;
 	padding-top: 5px;
 	color: red;
 	font-family: cursive;
 	padding-left: 180;
 	text-align: center;
+	margin-top: -19px;
+	margin-left:0px;
 }
 .list {
 	color: Black;
@@ -105,10 +106,11 @@
  }
  
  .imgg{
-     margin-left: 5px;
-    height: 486px;
+   margin-left: 0px;
+    height: 494px;
     margin-top: 1px;
     width: 1098px;
+    margin-bottom: 16px;
  }
  .navbar{
     display: flex;

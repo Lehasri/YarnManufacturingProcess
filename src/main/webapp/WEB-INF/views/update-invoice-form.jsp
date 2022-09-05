@@ -9,6 +9,13 @@
 <title>Update Invoice</title>
 <style type="text/css">
 <%@include file="/WEB-INF/css/invoice-form.css"%>
+body {
+    background-image:
+        url(https://www.kibrispdr.org/data/704/kerajinan-dari-benang-woll-59.jpg);
+    background-size: cover; 
+    background-repeat:no-repeat; 
+    
+   }  
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -29,18 +36,21 @@
 						<form:input path="orderId" readonly="true"/>
 					<label for="totalAmount">Total Amount</label>
 						<form:input path="totalAmount" readonly="true"/>
-					<label for="paymentMethod">Payment Method</label>
+					<label for="paymentMethod">Pay By</label>
 						<form:input path="paymentMethod" readonly="true"/>
 					<label for="invoiceStatus">Invoice Status</label>
-						<form:input path="invoiceStatus" class="text-box"
-						placeholder="Enter a invoice status"
-						title="Invoice status must contain only alphabets"
-						pattern="^[a-zA-Z][a-zA-Z\\s]+$" required="true" />
+						<select id="invoiceStatus" name="invoiceStatus" class="text-box" required="required">
+						<option value="Paid">Paid</option>
+						<option value="Not Paid">Not Paid</option>
+						</select>
 				<div class=movecenter>
 					<form:button class="but hover">Update</form:button>
 				</div>
 			</form:form>
 		</div>
 	</div>
+	<footer>
+		<a href="/invoice/invoicelist" class="background previous">&#8249;</a>
+	</footer>
 </body>
 </html>

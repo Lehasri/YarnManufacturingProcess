@@ -27,8 +27,4 @@ import com.chainsys.yarnmanufacturingprocess.repository.SupplierRepository;
 		{
 			supplierRepository.deleteById(id);
 		}
-		public Supplier getEmailIdUserPassword(String emailId, String userPassword) {
-			return supplierRepository.findByEmailIdAndUserPassword(emailId, userPassword);
-		}
-		
 	}

@@ -1,5 +1,9 @@
 package com.chainsys.yarnmanufacturingprocess.model;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 import javax.persistence.Column;
@@ -23,7 +27,7 @@ public class Orders {
 	@Column(name = "order_id")
 	private int orderId;
 	@Column(name = "order_date")
-	private String orderDate;
+	private Date orderDate;
 	@Column(name = "name")
 	private String name;
 	@Column(name = "ordered_quantity")
@@ -33,7 +37,7 @@ public class Orders {
 	@Column(name = "order_amount")
 	private double orderAmount;
 	@Column(name = "receiving_date")
-	private String receivingDate;
+	private Date receivingDate;
 	@Column(name = "order_status")
 	private String orderStatus;
 	@Column(name = "advance")
@@ -54,8 +58,17 @@ public class Orders {
 		this.customerId = customerId;
 	}
 
-	public void setOrderDate(String orderDate) {
+	public void setOrderDate(Date orderDate) {
+		/*
+		 * Calendar vCalendar = Calendar.getInstance(); String orderDate =
+		 * vCalendar.get(Calendar.DATE) + " / " + (vCalendar.get(Calendar.MONTH) + 1) +
+		 * " / " + vCalendar.get(Calendar.YEAR);
+		 */
+		/* Date orderDate = Date.valueOf(LocalDate.now()); */
 		this.orderDate = orderDate;
+	}
+	public Date getOrderDate() {
+		return orderDate;
 	}
 
 	public int getOrderId() {
@@ -64,18 +77,6 @@ public class Orders {
 
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
-	}
-
-	public String getOrderDate() {
-		return orderDate;
-	}
-
-	public void setOrderDate() {
-		Calendar vCalendar = Calendar.getInstance();
-		String orderDate = vCalendar.get(Calendar.DATE) + " / " + (vCalendar.get(Calendar.MONTH) + 1) + " / "
-				+ vCalendar.get(Calendar.YEAR);
-
-		this.orderDate = orderDate;
 	}
 
 	public String getName() {
@@ -110,14 +111,16 @@ public class Orders {
 		this.orderAmount = orderAmount;
 	}
 
-	public String getReceivingDate() {
+	public Date getReceivingDate() {
 		return receivingDate;
 	}
 
-	public void setReceivingDate() {
-		Calendar vCalendar = Calendar.getInstance();
-		String receivingDate = (vCalendar.get(Calendar.DATE)+7) + " / " + (vCalendar.get(Calendar.MONTH) + 1) + " / "
-				+ vCalendar.get(Calendar.YEAR);
+	public void setReceivingDate(Date receivingDate) {
+		/*
+		 * Calendar vCalendar = Calendar.getInstance(); String receivingDate =
+		 * vCalendar.get(Calendar.DATE) + " / " + (vCalendar.get(Calendar.MONTH) + 1) +
+		 * " / " + vCalendar.get(Calendar.YEAR);
+		 */
 
 		this.receivingDate = receivingDate;
 	}

@@ -12,7 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="SUPPLIER")
+@Table(name="supplier")
 public class Supplier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "supplier_id")
@@ -59,20 +59,6 @@ public class Supplier {
 	@Column(name = "ifsc_code")
 	private String ifscCode;
 	
-	@Column(name = "user_password")
-	private String userPassword;
-	
-	@OneToOne(mappedBy = "supplier",fetch = FetchType.LAZY)
-	private SupplierCotton supplierCotton;
-
-	public SupplierCotton getSupplierCotton() {
-		return supplierCotton;
-	}
-
-	public void setSupplierCotton(SupplierCotton supplierCotton) {
-		this.supplierCotton = supplierCotton;
-	}
-
 	public int getSupplierId() {
 		return supplierId;
 	}
@@ -174,14 +160,6 @@ public class Supplier {
 	public void setIfscCode(String ifscCode) {
 		this.ifscCode = ifscCode;
 	}
-	public String getUserPassword() {
-		return userPassword;
-	}
 
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
-	}
-
-	
 }
 

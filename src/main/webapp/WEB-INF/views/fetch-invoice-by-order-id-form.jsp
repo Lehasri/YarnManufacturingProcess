@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Find Invoice By Orders Id</title>
 <style type="text/css">
-<%@include file="/WEB-INF/css/order-invoice-form.css"%>
+<%@include file="/WEB-INF/css/view-order-invoice-form.css"%>
 body {
     background-image:
         url(https://www.kibrispdr.org/data/704/kerajinan-dari-benang-woll-59.jpg);
@@ -21,7 +21,7 @@ body {
 </head>
 <body>
 	<div class=top style="color: white; text-decoration: none">
-		Invoice<a href="/yarn/mypreviousyarnindex"><em class="fa fa-home"
+		Invoice<a href="/customer/customerindex"><em class="fa fa-home"
 		style="font-size: 30px; color: white;float:right"></em></a>
 	</div>
 	<br>
@@ -43,5 +43,8 @@ body {
 
 		</div>
 	</div>
+	<footer>
+		<a href="/orders/findorderbycustomer" class="background previous">&#8249;</a>
+	</footer>
 </body>
 </html>

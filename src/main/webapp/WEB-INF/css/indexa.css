@@ -1,41 +1,83 @@
 @charset "ISO-8859-1";
+
+.login {
+	color: white;
+	margin-top: 72px;
+	font-size: 30px;
+	margin-left: 553px;
+	background-color: darkblue;
+	padding: -2px;
+	border-radius: 30px;
+	width: 250px;
+	height: 41px;
+	text-align: center;
+}
+
+.class {
+	color: #d723d7;
+	margin-top: 55px;
+	font-size: 29px;
+	margin-left: 496px;
+}
+
+.row {
+	display: flex;
+	align-content: space-between;
+	justify-content: row;
+	margin-top: 100px;
+	width: 80%;
+}
+.outline{
+	background-color: black; width : 1272px;
+	border: 1px lightgrey;
+	padding: 0px;
+	color: White;
+	font-family: Century Gothic ;
+	width: 1335px;
+	
+}
 .ab {
 	text-align: center;
 	margin-top: 10px;
-	font-family:Century Gothic
+	font-family: Century Gothic;
+	color:white;
 }
+
 .ba {
 	text-align: center;
 	margin-top: 300px;
 	margin-left: 1px;
-	font-family:Century Gothic
+	font-family: Century Gothic;
+	color:white;
 }
+
+
 h1 {
-  background-color: black;
-  width: 1290px;
-  border: 1px lightgrey;
-  padding: 30px;
- /* margin: 10px;*/
-  color: White; 
- font-family: Century Gothic"
+	background-color: black; width : 1272px;
+	border: 1px lightgrey;
+	padding: 30px;
+	color: White;
+	font-family: Century Gothic ;
+	width: 1272px;
 }
 
 a {
-	font-family: Century Gothic; 
-	color: White; 
-	font-size: 20px; 
-	text-decoration: none; 
-	float:right;
-	
+	font-family: Century Gothic;
+	color: White;
+	font-size: 20px;
+	text-decoration: none;
+	float: right;
 }
 
-login-wrapper{
+login-wrapper {
 	width: 50%;
 	margin: auto;
-} 
-.line{
+}
+
+.line {
 	text-align: center;
 }
+
 .dropdown {
 	float: right;
 	overflow: hidden;
@@ -49,7 +91,8 @@ login-wrapper{
 	background-color: inherit;
 	font-family: Century Gothic;
 	margin: 0;
-	float:right;
+	float: right;
+	margin-left: 5px;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
@@ -61,8 +104,8 @@ login-wrapper{
 	display: none;
 	position: absolute;
 	background-color: black;
-	min-width: 115px;
-	margin-top: 33px;
+	min-width: 113px;
+	margin-top: 28px;
 }
 
 .dropdown-content a {
@@ -83,10 +126,73 @@ login-wrapper{
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
 .background:hover {
 	background-color: lightgrey;
 	color: black;
 }
-.fa fa-caret-down{
+
+.fa fa-caret-down {
 	color: white
+}
+
+.container {
+	position: relative;
+	width: 33%;
+}
+
+.image {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.overlay {
+	margin-top: 232px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+	width: 300px;
+	margin-left: 8px;
+	opacity: 0;
+	transition: .5s ease;
+}
+
+.container:hover .overlay {
+	opacity: 1;
+	background-color: #d789d7;
+}
+
+.text {
+	color: #2a3d66;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+
+}
+
+.zoom {
+	padding: 10px;
+	transition: transform .2s;
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+.zoom:hover {
+	transform: scale(1.1);
+}
+
+.texta {
+	margin-left:30px;
+	font-size: 36px;
+	color:darkblue;
 }

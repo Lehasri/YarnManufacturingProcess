@@ -8,6 +8,13 @@
 <title>Yarn Stock List</title>
 <style>
 <%@include file="/WEB-INF/css/listyarn.css"%>
+ body {
+    background-image:
+        url(https://st.depositphotos.com/10614052/54679/i/450/depositphotos_546796424-stock-photo-thread-spools-light-background.jpg);
+    background-size: cover; 
+    background-repeat:no-repeat; 
+    
+   }  
 </style>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,9 +22,9 @@
 <body>
 	<div class=top >
 		<div>Products</div>
-		<div><a href="/orders/findorderbycustomerid?id=${customer.customerId}"style="float:right; color: white;text-decoration:none;">My Orders</a></div>
+		<div><a href="/orders/findorderbycustomerid?id=${customer.customerId}"style="float:right; color: white;text-decoration:none;margin-left: 897px;">My Orders</a></div>
 		<div><a href="/customer/myprofile"style="float:right; color: white;text-decoration:none;">My Account</a></div>
-		<div><a href="/yarn/yarnindex"><em class="fa fa-home"
+		<div><a href="/supplier/myindexprevious"><em class="fa fa-sign-out"
 		style="font-size: 30px;float:right; color: white;"></em></a></div>
 	</div>
 	<br>

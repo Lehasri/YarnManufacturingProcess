@@ -5,7 +5,7 @@
 }
 
 .movecenter {
-	margin-left: 117px;
+	margin-left: 26px;
 }
 
 input {
@@ -18,14 +18,15 @@ input {
 	margin-top: 41px;
 	background-color:#9eb1ef;
 	border-radius: 30px;
-	Height: 289px;
-    width: 564px;
+	Height: 565px;
+	width: 564px;
 	outline-color: black;
 	padding: 22px;
 	font-family: cursive;
 	padding-left: 180;
 	text-align: center;
 	margin-left: 50px;
+	
 }
 
 .background:hover {
@@ -53,19 +54,21 @@ input {
 	margin-left: auto;
 	margin-right: auto;
 	color: white;
+
 }
 a{
-	text-decoration: none;
+		text-decoration: none;
 }
 
 .hover:hover {
 	background-color:#00248b;
-	color:white;}
+	color:white;
+}
 
 .but {
 	background-color: darkblue;
 	color: white;
-	margin-left: 1px;
+	margin-left: 184px;
 	width: 70px;
 	height: 30px;
 	margin-top: 50px;
@@ -75,15 +78,19 @@ a{
 
  form{
 	display: grid;
-	grid-template-columns: 30% 50%;
+	grid-template-columns: 30% 50% ;
 	text-align: left;
 	justify-content: center;
 	margin: auto;
-	width: 70%;
+	width: 100%;
 	padding-top:40px;
 }
 img {
 	float: right;
 	width: 30px;
 	height: 30px;
+}
+.error{
+	text-align: right;
+	color:red;
 }

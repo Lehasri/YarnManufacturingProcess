@@ -29,7 +29,7 @@ h2 {
 	border: 1px lightgrey;
 	padding: 16px;
 	color: White;
-	font-family: Century Gothic;
+	font-family: Century Gothic ;
 	margin-left:-8px;
 }
 
@@ -78,17 +78,21 @@ float:right;
 	margin-left: 3px;
 	box-shadow:10px 10px;
 }
-.movecenter{
+.movecenter {
 background-color:black; 
 color:white;
+text-decoration:none;
+float:right;
+}
+.move{
+background-color:black; 
+color:white;
+text-decoration:none;
+float:right;
+width:110px
 }
 .img{
 	width:30px;
 	height:30px;
 	float:right;
-}
-.style{
-float:right;	
-color:white;
-text-decoration:none;
 }

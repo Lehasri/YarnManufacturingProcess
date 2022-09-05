@@ -7,6 +7,13 @@
 <title>login form</title>
 <style>
 <%@include file="/WEB-INF/css/login.css"%>
+body {
+    background-image:
+        url(https://media.istockphoto.com/photos/knitting-course-creative-hobby-leisure-threads-picture-id1199536345?b=1&k=20&m=1199536345&s=170667a&w=0&h=16pJT5HEmFCjkLQmZVPB4uXiS9GHaCTo4UWCmRRmAeY=);
+    background-size: cover; 
+    background-repeat:no-repeat; 
+    
+   }  
 </style>
 </head>
 <body>
@@ -26,7 +33,7 @@
 				<label for="userPassword">Password</label><br> <input class=a
 					type="password" name="userPassword" id="userPassword" />
 			</div>
-			<input class="movecenter background" type="submit" value="LOGIN" class="submit-btn" />
+			<input class="moveleft background" type="submit" value="LOGIN" class="submit-btn" />
          </div>
 		</form>
 	</div>

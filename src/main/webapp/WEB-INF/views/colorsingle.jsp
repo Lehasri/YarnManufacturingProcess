@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class=row>
-			<a href="/yarnstock/color"> <img
+			<a href="/yarnstock/status"> <img
 			src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkuiUTIP_3qQF4Gbn169W5yXWUQK102snmBSw8FhGW5Aq1rzPhlKOl4aPTbqC9UFuORng&usqp=CAU" alt=yarn
 			width="200px" height="200px" style="vertical-align:middle;margin:0px 4px"></a>
 		<!-- <p class=a>polyestar cotton yarn Rs.180/kg</p> -->
