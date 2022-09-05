@@ -47,7 +47,8 @@
 				</div>
 			</form:form>
 			<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Yarn Id</th>

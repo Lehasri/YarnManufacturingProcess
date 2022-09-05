@@ -42,7 +42,7 @@
 </head>
 <body>
 	<div class=top style="color: white; text-decoration: none">
-		<b>Fetch</b><a href="/supplier/cottonindex"><img alt="image" class=" float" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxXTuxRJzWsUA0uiZKT-_79osm34J9fwZ9A&usqp=CAU"width="30px" height="30px"></a>
+		Fetch<a href="/supplier/cottonindex"><img alt="image" class=" float" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxXTuxRJzWsUA0uiZKT-_79osm34J9fwZ9A&usqp=CAU"width="30px" height="30px"></a>
 	</div>
 	<br>
 	<form action="/customer/findcustomerbyid" method="get"

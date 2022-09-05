@@ -32,14 +32,13 @@
 	border: 1px lightgrey;
 	padding: 0px;
 	color: White;
-	font-family: cursive;
 	width: 1335px;
 	
 }
 .ab {
 	text-align: center;
 	margin-top: 10px;
-	font-family: cursive;
+	font-family: Sans-serif;
 	color:white;
 }
 
@@ -47,7 +46,7 @@
 	text-align: center;
 	margin-top: 300px;
 	margin-left: 1px;
-	font-family: cursive;
+	font-family: Sans-serif;
 	color:white;
 }
 
@@ -62,7 +61,7 @@ h1 {
 }
 
 a {
-	font-family: cursive;
+	font-family: Sans-serif;
 	color: White;
 	font-size: 20px;
 	text-decoration: none;

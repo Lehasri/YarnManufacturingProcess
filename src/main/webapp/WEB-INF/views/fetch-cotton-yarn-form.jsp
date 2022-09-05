@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class=top>
-		<b>Fetch</b><a href="/supplier/cottonindex"><img alt="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxXTuxRJzWsUA0uiZKT-_79osm34J9fwZ9A&usqp=CAU"></a>
+		Fetch<a href="/supplier/cottonindex"><img alt="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxXTuxRJzWsUA0uiZKT-_79osm34J9fwZ9A&usqp=CAU"></a>
 	</div>
 	<br>
 	<form action="/yarn/getcottonremarks" method="get" style="margin: 0;">

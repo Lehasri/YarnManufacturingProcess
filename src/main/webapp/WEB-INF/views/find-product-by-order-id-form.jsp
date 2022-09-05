@@ -65,7 +65,7 @@
 </head>
 <body>
 	<div class=top style="color: white; text-decoration: none">
-		<b>My Order</b><a href="/supplier/cottonindex"><img class=" float" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxXTuxRJzWsUA0uiZKT-_79osm34J9fwZ9A&usqp=CAU"width="30px" height="30px"></a>
+		My Order
 	</div>
 	<br>
 	<div id="root">

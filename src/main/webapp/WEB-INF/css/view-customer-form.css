@@ -45,7 +45,6 @@ input {
 	background-color: black;
 	width: 1285px;
 	border: 1px lightgrey;
-	font-family: Century Gothic;
 	padding: 26px;
 	font-family: cursive;
 	font-size: 20px;
@@ -53,7 +52,6 @@ input {
 	margin-left: auto;
 	margin-right: auto;
 	color: white;
-	font-family: cursive;
 }
 a{
 	text-decoration: none;
