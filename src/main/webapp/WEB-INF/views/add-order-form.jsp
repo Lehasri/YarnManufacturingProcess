@@ -81,8 +81,6 @@ body {
 	d.setDate(d.getDate() + 7);
 	let revdate =d.toISOString().slice(0, 10);
 	console.log(revdate);  
-		/*  (((d.getDate() > 9) ? d.getDate() : ('0' + d.getDate())) + '-'+((d.getMonth() > 8) ? (d.getMonth() + 1) : ('0' + (d.getMonth() + 1))) + '-'  + d.getFullYear()); */	
-	console.log(revdate);
 	document.getElementById("rev").value =revdate;
 </script>
 </body>

@@ -29,7 +29,7 @@ h2 {
 	border: 1px lightgrey;
 	padding: 16px;
 	color: White;
-	font-family: Century Gothic ;
+    font-family: cursive;
 	margin-left:-8px;
 }
 
@@ -72,7 +72,7 @@ float:right;
 	outline-color: black;
 	outline-style: solid;
 	padding: 10px;
-	font-family: Century Gothic ;
+	font-family: cursive;
 	padding-left: 180;
 	text-align: center;
 	margin-left: 3px;

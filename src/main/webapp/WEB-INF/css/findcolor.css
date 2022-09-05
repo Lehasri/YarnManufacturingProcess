@@ -48,7 +48,6 @@ input {
 	border: 1px lightgrey;
 	font-family: cursive;
 	padding: 26px;
-	font-family: cursive;
 	font-size: 20px;
 	text-decoration: none;
 	margin-left: auto;
@@ -81,7 +80,6 @@ form {
 	text-align: left;
 	justify-content: center;
 	margin: auto;
-	width: 70%;
 	padding-top: 40px;
 	width: 493px;
 }

@@ -7,39 +7,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Order</title>
- <script>
- function dateCheck() {
-	let d = document.getElementById('ord').valueAsDate;
-	console.log(d);
-	
-	let revdate =d.setDate(d.getDate() + 7);
-	console.log(revdate);  	
-       let date = document.getElementById('rev').valueAsDate;
-       /* let dt1 =${updateorder.receivingDate}; */ 
-       console.log(dt1);
-       /*  dt2 = Date.parse(date);  */
-       console.log(date);
-    	   	console.log(revdate);
-       if (date >= revdate) {
-    	   	console.log(date);
-    	   	console.log(revdate);
-    	     document.getElementById('rev').value = " ";
-            alert("Date must be after the previous date"); 
-       }
- } 
- </script> 
-<!-- <script> 
- var GivenDate = document.getElementById("receivingDate").valueAsDate;
- var CurrentDate = new Date();
- GivenDate = new Date(GivenDate);
-
- if(GivenDate > CurrentDate){
-     alert('Given date is greater than the current date.');
- }else{
-     alert('Given date is not greater than the current date.');
- }
- 
-</script> -->
+  <script>
+  function dateCheck() {
+	  let date = document.getElementById('rev').value;
+      let now = new Date();
+      let dt1 = Date.parse(now),
+      dt2 = Date.parse(date);
+      if (dt2 < dt1) {
+           alert("Date must be in the future");
+      }
+ }  
+ </script>  
 <style type="text/css">
 <%@include file="/WEB-INF/css/update-order-form.css"%>
 body {
@@ -68,7 +46,7 @@ body {
 					<label for="orderId">Order Id</label>
 						<form:input path="orderId" readonly="true" />
 					<label for="orderDate">Order Date</label>
-						<form:input path="orderDate" id="ord" readonly="true" />
+						<form:input path="orderDate" readonly="true" />
 					<label for="name">Ordered Customer</label>
 						<form:input path="name" readonly="true" />
 						<label for="orderedQuantity">Ordered Quantity</label>
@@ -78,7 +56,8 @@ body {
 					<label for="orderAmount">Order Amount</label>
 						<form:input path="orderAmount" readonly="true" />
 					<label for="receivingDate">Receiving Date</label>
-						<form:input path="receivingDate" type="date" id="rev" required="true"/>
+				    <form:input path="receivingDate" type="date" id="rev" name="receivingDate" onblur="dateCheck()"
+                            placeholder="Enter Attendance Date" required="true" />
 					<label for="orderStatus">Order Status</label>
 						<select id="orderStatus" name="orderStatus" class="text-box" required="required">
 						<option value="Delivered">Delivered</option>

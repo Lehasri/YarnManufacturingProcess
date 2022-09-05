@@ -32,14 +32,14 @@
 	border: 1px lightgrey;
 	padding: 0px;
 	color: White;
-	font-family: Century Gothic ;
+	font-family: cursive;
 	width: 1335px;
 	
 }
 .ab {
 	text-align: center;
 	margin-top: 10px;
-	font-family: Century Gothic;
+	font-family: cursive;
 	color:white;
 }
 
@@ -47,22 +47,22 @@
 	text-align: center;
 	margin-top: 300px;
 	margin-left: 1px;
-	font-family: Century Gothic;
+	font-family: cursive;
 	color:white;
 }
 
 
 h1 {
-	background-color: black; width : 1272px;
+	background-color: black; 
 	border: 1px lightgrey;
 	padding: 30px;
 	color: White;
-	font-family: Century Gothic ;
+	font-family: Sans-serif;
 	width: 1272px;
 }
 
 a {
-	font-family: Century Gothic;
+	font-family: cursive;
 	color: White;
 	font-size: 20px;
 	text-decoration: none;
@@ -89,7 +89,7 @@ login-wrapper {
 	outline: none;
 	color: white;
 	background-color: inherit;
-	font-family: Century Gothic;
+	font-family: cursive;
 	margin: 0;
 	float: right;
 	margin-left: 5px;
