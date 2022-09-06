@@ -60,4 +60,4 @@ Features:
 Install and run it locally:
 
 1. download or clone the repository to your local machine:
-     $ git https://github.com/shanthini-1/mybabyvaccine
+     $ git https://github.com/Lehasri/YarnManufacturingProcess.git
