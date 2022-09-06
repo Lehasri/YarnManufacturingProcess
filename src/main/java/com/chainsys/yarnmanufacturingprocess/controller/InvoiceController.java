@@ -28,7 +28,7 @@ public class InvoiceController {
 	OrdersService ordersService;
 
 	@GetMapping("/list")
-	public String getAllInvoices(Model model) {
+	public String getInvoices(Model model) {
 		List<Invoice> invoiceList = invoiceService.getAllInvoices();
 		model.addAttribute("allinvoices", invoiceList);
 		return "list-invoices";
@@ -55,7 +55,6 @@ public class InvoiceController {
 		catch(Exception err) {
 			String result= "Sorry! Could not generate Invoice";
 			model.addAttribute("result",result);
-//			return "redirect:/invoice/addform";
 		}
 
 		return "add-invoice-form";

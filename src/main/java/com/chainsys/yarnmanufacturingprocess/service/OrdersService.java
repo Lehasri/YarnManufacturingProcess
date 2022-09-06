@@ -1,7 +1,6 @@
 package com.chainsys.yarnmanufacturingprocess.service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -25,8 +24,7 @@ public class OrdersService {
 		return ordersRepository.findById(id);
 	}
 	public List<Orders> getAllOrders() {
-		List<Orders> listOrders = ordersRepository.findAll();
-		return listOrders;
+		return ordersRepository.findAll();
 	}
 
 	public void deleteById(int id) {
@@ -47,15 +45,12 @@ public class OrdersService {
 	}
 	public List<Orders> getOrdersByCustomerId(int id) {
 		List<Orders> olist = ordersRepository.findAll();
-		System.out.println(olist);
 		List<Orders> clist = new ArrayList<Orders>();
 		for (Orders orders : olist) {
 			if(orders.getCustomerId()==id)
 				clist.add(orders);
 		}
-		System.out.println(clist);
 		return ordersRepository.findAllByCustomerId(id);
-//		return clist;
 
 	}
 

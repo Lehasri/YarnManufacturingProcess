@@ -33,11 +33,6 @@ public class YarnStockService {
 	public YarnStock yarnGetByStatus(String status,String color,String yarnType) {
 		return yarnStockRepository.findByYarnStatusAndColorAndYarnType(status,color,yarnType);
 	}
-
-	/*
-	 * public YarnStock yarnGetByColor(String color,String yarnType) { return
-	 * yarnStockRepository.getYarnIdByColor(color,yarnType); }
-	 */
 	public YarnStock save(YarnStock theyarnstock) {
 		return yarnStockRepository.save(theyarnstock);
 	}

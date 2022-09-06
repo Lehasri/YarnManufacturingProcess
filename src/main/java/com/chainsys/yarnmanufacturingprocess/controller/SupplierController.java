@@ -2,8 +2,6 @@ package com.chainsys.yarnmanufacturingprocess.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.yarnmanufacturingprocess.model.Customer;
 import com.chainsys.yarnmanufacturingprocess.model.Supplier;
 import com.chainsys.yarnmanufacturingprocess.model.SupplierLogin;
-import com.chainsys.yarnmanufacturingprocess.service.SupplierLoginService;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 
 @Controller
@@ -81,7 +76,7 @@ public class SupplierController {
 	@GetMapping("/deletesupplier")
 	public String deleteSuppliers( int id) {
 		supplierService.deleteById(id);
-		return "redirect:/supplier/list";
+		return REDIRECT_PAGE;
 	}
 	@GetMapping("/findform")
 	public String showFindForm() {

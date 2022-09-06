@@ -22,8 +22,7 @@ public class CustomerService {
 	}
 
 	public List<Customer> getAllCustomers() {
-		List<Customer> listCustomer = customerRepository.findAll();
-		return listCustomer;
+		return customerRepository.findAll();
 	}
 
 	public void deleteById(int id) {

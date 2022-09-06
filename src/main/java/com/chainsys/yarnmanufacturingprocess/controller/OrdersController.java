@@ -80,11 +80,6 @@ public class OrdersController {
 	public String showUpdateForm(@RequestParam("id") int id, Model model) {
 		Orders theOrders = ordersService.findById(id);
 		theOrders.setOrderDate(Logic.getInstanceDate()); 
-		/*
-		 * if(theOrders.getOrderStatus().equals("Delivered")) {
-		 * 
-		 * }
-		 */
 		model.addAttribute("updateorder", theOrders);
 		return "update-order-form";
 	}
@@ -130,7 +125,6 @@ public class OrdersController {
 		int customerId = (int) session.getAttribute("customerId");
 		List<Orders> theOrders = ordersService.getOrdersByCustomerId(customerId);
 		model.addAttribute("allOrders", theOrders);
-		System.out.println(theOrders);
 		return "list-orders-by-customer-id";
 	}
 	@GetMapping("/getyarnorder")
@@ -159,7 +153,6 @@ public class OrdersController {
 		int customerId = (int) session.getAttribute("customerId");
 		List<Orders> theOrders = ordersService.getOrdersByCustomerId(customerId);
 		model.addAttribute("allOrders", theOrders);
-		System.out.println(theOrders);
 		return "list-orders-by-customer-id";
 	}
 }

@@ -20,8 +20,7 @@ import com.chainsys.yarnmanufacturingprocess.repository.SupplierRepository;
 			 return supplierRepository.save(supplier);
 		}
         public List<Supplier>getAllSuppliers()		{
-		 List<Supplier>listSupplier=supplierRepository.findAll();
-		 return listSupplier;
+		 return supplierRepository.findAll();
 		}
 		public void deleteById(int id)
 		{

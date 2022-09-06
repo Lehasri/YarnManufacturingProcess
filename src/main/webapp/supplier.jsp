@@ -10,7 +10,6 @@
     <h1> Supplier </h1>
         <ul>
 		<li><a href="/supplier/addform">Add Supplier</a>
-		<!-- <li><a href="/supplier/modifyform">Update Supplier</a>
 		<li><a href="/supplier/findform">Find Supplier By Id</a>
 		<li><a href="/supplier/deleteform">Delete Supplier</a>
 		<li><a href="/supplier/list">List Suppliers</a> -->

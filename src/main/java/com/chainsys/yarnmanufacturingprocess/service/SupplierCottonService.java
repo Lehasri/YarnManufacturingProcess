@@ -40,14 +40,4 @@ public class SupplierCottonService {
 	public SupplierCotton findBySupplierId(int id){
         return supplierCottonRepository.findBySupplierId(id);
     }
-//	@Transactional
-//	 public SupplierCotton save(SupplierCotton supplierCotton) {
-//	 supplierCotton = supplierCottonRepository.save(supplierCotton);
-//	 Cotton cotton = cottonRepository.findById(supplierCotton.getCottonId());
-//	 int stockInHand = cotton.getStockInHand()-supplierCotton.getMaximumSupplyQuantity();
-//	 cotton.setStockInHand(stockInHand);
-//	 cottonRepository.save(cotton);
-//	 return supplierCotton;
-//	}
-
 }

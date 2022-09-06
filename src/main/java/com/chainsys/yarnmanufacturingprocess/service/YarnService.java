@@ -22,8 +22,7 @@ public class YarnService {
 	}
 
 	public List<Yarn> getAllYarns() {
-		List<Yarn> listYarn = yarnRepository.findAll();
-		return listYarn;
+		return yarnRepository.findAll();
 	}
 
 	public void deleteById(int id) {
