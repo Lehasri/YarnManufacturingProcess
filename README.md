@@ -5,21 +5,20 @@ Description:
 
 YARN MANUFACTURING PROCESS TRACKING SYSTEM :
 
-       It is a web application used for cotton suppliers,yarn manufactures and customers.cotton and suppliers can maintain their records.Customers can choose and buy yarn by this web application.
+       It is a web application used for yarn manufactures and customers.yarn manufactures can maintain their records.Customers can choose and buy yarn by this web application.
  
 # General Information:
 
 1. This website is used for customers to view products and they can order them.
 
-2. Cotton suppliers and yarn manufactures can maintain the stocks.
+2. yarn manufactures can maintain the stocks.
 
 Project Flow:    
 
  HOME -----> -HOME
-                -SIGN UP -----> -SUPPLIER
-               -CUSTOMER
+                -SIGN UP -----> -CUSTOMER
                 -LOGIN   -----> -ADMIN
-                                -SUPPLIER
+                                
 -CUSTOMER
                
     ADMIN LOGIN ------YARN ----> -ADD YARN
@@ -28,19 +27,7 @@ Project Flow:
                       DIALY PRODUCTION -----> -ADD DIALY PRODUCTION
                                               -UPDATE DIALY PRODUCTION
                                               -LIST DIALY PRODUCTION
-
-    SUPPLIER LOGIN ------------SUPPLIER-----> -ADD SUPPLIER
-                                              -UPDATE SUPPLIER
-                                              -FIND SUPPLIER
-                                                 
-                               COTTON -----> -ADD COTTON
-                                             -UPDATE COTTON
-                                             -DELETE COTTON
-                                             -LIST VACCINES
-
-                               SUPPLIER COTTON ----->   -ADD SUPPLIER COTTON
-                                                        -UPDATE SUPPLIER COTTON
-                                                        -LIST SUPPLIER COTTON
+   
 
     CUSTOMER LOGIN ------------CUSTOMER----------->ADD CUSTOMER
                                                   -UPDATE CUSTOMER
