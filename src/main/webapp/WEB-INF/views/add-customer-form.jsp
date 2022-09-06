@@ -83,7 +83,7 @@ body {
 		</div>
 	</div>
 	<footer>
-		<a href="/supplier/mypreviousprofileform" class="previous">&#8249;</a>
+		<a href="/customer/logincustomer" class="previous">&#8249;</a>
 	</footer>
 </body>
 </html>

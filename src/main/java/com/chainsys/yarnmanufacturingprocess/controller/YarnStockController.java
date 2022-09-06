@@ -22,6 +22,7 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 @RequestMapping("/yarnstock")
 public class YarnStockController {
 	private static final String REDIRECT_PAGE = "redirect:/yarnstock/list";
+	private static final String FINDCOLOR = "findcolor";
 
 	@Autowired
 	YarnStockService yarnStockService;
@@ -102,25 +103,25 @@ public class YarnStockController {
 	public String getAllStatus(Model model) {
 		YarnStock yarnStatus = yarnStockService.yarnGetByStatus("Ready","Blue","Macrame cord");
 		model.addAttribute("yarn", yarnStatus);
-		return "findcolor";
+		return FINDCOLOR;
 	}
 	@GetMapping("/statusred")
 	public String getAllStatusRed(Model model) {
 		YarnStock yarnStatus = yarnStockService.yarnGetByStatus("Ready","Red","3-Ply");
 		model.addAttribute("yarn", yarnStatus);
-		return "findcolor";
+		return FINDCOLOR;
 	}
 	@GetMapping("/statuspurple")
 	public String getAllStatusWhite(Model model) {
 		YarnStock yarnStatus = yarnStockService.yarnGetByStatus("Ready","Purple","4-Ply");
 		model.addAttribute("yarn", yarnStatus);
-		return "findcolor";
+		return FINDCOLOR;
 	}
 	@GetMapping("/statuswhite")
 	public String getAllStatusPink(Model model) {
 		YarnStock yarnStatus = yarnStockService.yarnGetByStatus("Ready","White","2-Ply");
 		model.addAttribute("yarn", yarnStatus);
-		return "findcolor";
+		return FINDCOLOR;
 	}
 	@GetMapping("/yarnlist")
 	public String yarnList(Model model) {

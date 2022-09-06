@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.chainsys.yarnmanufacturingprocess.model.Customer;
-import com.chainsys.yarnmanufacturingprocess.model.CustomerLogin;
 import com.chainsys.yarnmanufacturingprocess.service.CustomerService;
 import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 
@@ -21,6 +20,8 @@ import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 @RequestMapping("/customer")
 public class CustomerController {
 	private static final String REDIRECTPAGE = "redirect:/customer/list";
+	private static final String ADDCUSTOMER = "add-customer-form";
+	private static final String UPDATECUSTOMER = "update-customer-form";
 	@Autowired
 	CustomerService customerService;
 	@Autowired
@@ -37,7 +38,7 @@ public class CustomerController {
 	public String showAddForm(Model model) {
 		Customer theCustomer = new Customer();
 		model.addAttribute("addcustomer", theCustomer);
-		return "add-customer-form";
+		return ADDCUSTOMER;
 	}
 
 	@PostMapping("/add")
@@ -48,7 +49,7 @@ public class CustomerController {
 			return "add-customer-form";
 		} catch (Exception err) {
 			model.addAttribute("message", "Could not create account,try again");
-			return "add-customer-form";
+			return ADDCUSTOMER;
 		}
 	}
 
@@ -63,7 +64,7 @@ public class CustomerController {
 		int customerId = (int) session.getAttribute("customerId");
 		Customer theCustomer = customerService.findById(customerId);
 		model.addAttribute("updatecustomer", theCustomer);
-		return "update-customer-form";
+		return UPDATECUSTOMER;
 	}
 
 	@PostMapping("/update")
@@ -71,10 +72,10 @@ public class CustomerController {
 		try {
 			customerService.save(theCustomr);
 			model.addAttribute("result", "Updated Successfully");
-			return "update-customer-form";
+			return UPDATECUSTOMER;
 		} catch (Exception err) {
 			model.addAttribute("message", "could not Update account,try again");
-			return "update-customer-form";
+			return UPDATECUSTOMER;
 		}
 	}
 
@@ -104,7 +105,7 @@ public class CustomerController {
 	}
 	@GetMapping("/logincustomer")
 	public String loginForm(Model model) {
-		CustomerLogin login = new CustomerLogin();
+		Customer login = new Customer();
 		model.addAttribute("log", login);
 		return "customerlogin";
 	}

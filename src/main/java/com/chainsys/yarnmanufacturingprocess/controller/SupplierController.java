@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.chainsys.yarnmanufacturingprocess.model.Supplier;
-import com.chainsys.yarnmanufacturingprocess.model.SupplierLogin;
 import com.chainsys.yarnmanufacturingprocess.service.SupplierService;
 
 @Controller
@@ -92,12 +91,6 @@ public class SupplierController {
 	@GetMapping("/mypreviousprofileform")
 	public String showMyProfileForm() {
 		return "myprofile";
-	}
-	@GetMapping("/loginsupplier")
-	public String loginForm(Model model) {
-		SupplierLogin login = new SupplierLogin ();
-		model.addAttribute("log",login);
-		return "login";
 	}
 
 	@GetMapping("/cottonindex")
