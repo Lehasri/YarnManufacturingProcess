@@ -59,12 +59,6 @@ public class Orders {
 	}
 
 	public void setOrderDate(Date orderDate) {
-		/*
-		 * Calendar vCalendar = Calendar.getInstance(); String orderDate =
-		 * vCalendar.get(Calendar.DATE) + " / " + (vCalendar.get(Calendar.MONTH) + 1) +
-		 * " / " + vCalendar.get(Calendar.YEAR);
-		 */
-		/* Date orderDate = Date.valueOf(LocalDate.now()); */
 		this.orderDate = orderDate;
 	}
 	public Date getOrderDate() {
@@ -116,12 +110,6 @@ public class Orders {
 	}
 
 	public void setReceivingDate(Date receivingDate) {
-		/*
-		 * Calendar vCalendar = Calendar.getInstance(); String receivingDate =
-		 * vCalendar.get(Calendar.DATE) + " / " + (vCalendar.get(Calendar.MONTH) + 1) +
-		 * " / " + vCalendar.get(Calendar.YEAR);
-		 */
-
 		this.receivingDate = receivingDate;
 	}
 

@@ -65,6 +65,7 @@ body {
 					required="true" />
 				<label for="emailId">Email Id</label>
 				<form:input path="emailId" readonly="true" />
+				<form:input path="userPassword" type="hidden" readonly="true" />
 				<div class=movecenter>
 					<form:button class="but hover">Update</form:button>
 				</div>

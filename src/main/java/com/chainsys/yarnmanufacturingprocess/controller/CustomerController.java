@@ -8,15 +8,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.chainsys.yarnmanufacturingprocess.model.Customer;
 import com.chainsys.yarnmanufacturingprocess.model.CustomerLogin;
-import com.chainsys.yarnmanufacturingprocess.model.Orders;
-import com.chainsys.yarnmanufacturingprocess.model.YarnStock;
 import com.chainsys.yarnmanufacturingprocess.service.CustomerService;
 import com.chainsys.yarnmanufacturingprocess.service.YarnStockService;
 
@@ -70,14 +67,9 @@ public class CustomerController {
 	}
 
 	@PostMapping("/update")
-	/*
-	 * public String updateCustomer(@ModelAttribute("updatecustomer") Customer
-	 * theCustomer, Model model) {
-	 */
 	public String updateCustomer(@ModelAttribute("updatecustomer") Customer theCustomr,Model model) {
 		try {
 			customerService.save(theCustomr);
-			System.out.println(theCustomr.getCustomerId());
 			model.addAttribute("result", "Updated Successfully");
 			return "update-customer-form";
 		} catch (Exception err) {
@@ -124,6 +116,7 @@ public class CustomerController {
 			if (log != null) {
 				session.setAttribute("customerId", log.getCustomerId());
 				session.setAttribute("name", log.getName());
+				model.addAttribute("user",log);
 				return "products";
 			} else {
 				model.addAttribute("result", "Invalid user name and password");
@@ -135,13 +128,13 @@ public class CustomerController {
 	}
 
 	@GetMapping("/myprofile")
-	public String myProfile() {
+	public String myProfile(HttpServletRequest request) {
 
 		return "myprofilecustomer";
 	}
 
-	 @GetMapping("/customerindex") public String customerIndex() {
-	  
+	 @GetMapping("/customerindex")
+	 public String customerIndex(HttpServletRequest request) {
 	  return "products"; }
 	 
 

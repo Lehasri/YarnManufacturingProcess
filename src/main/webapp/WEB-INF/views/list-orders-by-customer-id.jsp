@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div class=top style="color:white; width:1349px; text-decoration: none">
+	<div class=top style="color:white; width:1364px; text-decoration: none">
 	Order List<a href="/customer/customerindex"><em class="fa fa-home"
 		style="font-size: 30px; color: white;float:right"></em></a>
 	</div>

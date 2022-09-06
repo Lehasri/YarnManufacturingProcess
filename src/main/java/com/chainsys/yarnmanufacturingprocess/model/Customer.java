@@ -25,7 +25,7 @@ public class Customer {
 	@Column(name = "address_line_2")
 	private String addressLine2;
 	@Column(name = "city")
-	private String City;
+	private String city;
 	@Column(name = "pincode")
 	private int pincode;
 	@Column(name="phone_no")
@@ -67,10 +67,10 @@ public class Customer {
 		this.addressLine2 = addressLine2;
 	}
 	public String getCity() {
-		return City;
+		return city;
 	}
 	public void setCity(String city) {
-		City = city;
+		this.city = city;
 	}
 	public int getPincode() {
 		return pincode;

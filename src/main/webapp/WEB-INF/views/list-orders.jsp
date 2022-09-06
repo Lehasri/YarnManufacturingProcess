@@ -24,7 +24,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div style="width:1349px"class=top >
+	<div style="width:1364px"class=top >
 		<div>Orders List</div>
 		<div><a href="/yarn/mypreviousyarnindex"><em class="fa fa-home"
 		style="font-size: 30px;float:right; color: white;"></em></a></div>
@@ -47,8 +47,7 @@
 					<th>Order Status</th>
 					<th>Advance</th>
 					<th>Invoice</th>
-					<th>Edit</th>
-					<th>Delete</th>
+					<th>Edit/View</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -65,9 +64,20 @@
 						<td>${orders.receivingDate}</td>
 						<td>${orders.orderStatus}</td>
 						<td>${orders.advance}</td>
-						<td><a class=text href="/invoice/getordersinvoice?id=${orders.orderId}"><button type="button" class="btn btn-primary">Invoice</button></a></td>
-						<td><a class=text href="updateform?id=${orders.orderId}"><button type="button" class="btn btn-dark">Edit</button></a></td>
-						<td><a class=text href="deleteorder?id=${orders.orderId}"onclick="return confirm('Are you sure you want to delete order ${orders.orderId} ?');"><button type="button" class="btn btn-danger">Delete</button></a></td>
+						<td><a class=text
+							href="/invoice/getordersinvoice?id=${orders.orderId}"><button
+									type="button" class="btn btn-primary">Invoice</button></a></td>
+						<c:set var="orderStatus" scope="session" value="${orders.orderStatus}" />
+						<c:choose>
+							<c:when test="${orderStatus =='Delivered'}">
+								<td><a class=text href="findorderbyid?id=${orders.orderId}"><button
+											type="button" class="btn btn-dark">View</button></a></td>
+							</c:when>
+							<c:otherwise>
+								<td><a class=text href="updateform?id=${orders.orderId}"><button
+											type="button" class="btn btn-dark">Edit</button></a></td>
+							</c:otherwise>
+						</c:choose>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -21,9 +21,10 @@
 <body>
 <div class=top >
 		<div>Products</div>
-		<div><a href="/orders/findorderbycustomerid?id=${customer.customerId}"style="float:right; color: white;text-decoration:none;margin-left: 897px;margin-left:1020px">My Orders</a></div>
+		<div style="margin-left:500px">Signed in as ${user.name}</div>
+		<div><a href="/orders/findorderbycustomerid?id=${customer.customerId}"style="float:right; color: white;text-decoration:none;margin-left:327px">My Orders</a></div>
 		<div><a href="/customer/myprofile"><em class="fa fa-user-circle-o"
-		style="font-size: 30px;float:right; color: white; margin-left:5px"></em></a></div>
+		style="font-size: 30px;float:right; color: white;"></em></a></div>
 		<div><a href="/supplier/myindexprevious"><em class="fa fa-sign-out"
 		style="font-size: 30px;float:right; color: white;"></em></a></div>
 	</div>

@@ -80,7 +80,7 @@ public class SupplierCotton {
 		this.leadTime = leadTime;
 	}
 	@Override
-	public String toString() // Default method
+	public String toString()
 	{
 		return String.format("%d, %d, %d, %d, %s", supplierId, cottonId, maximumSupplyQuantity, rate, leadTime);
 	}

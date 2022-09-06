@@ -61,10 +61,4 @@ public class CustomerLoginController {
 	public String myLoginIndexForm(Model model) {
 		return "customerlogin";
 	}
-	/*
-	 * @GetMapping("/myindexpreviouscustomer") public String myLoginIndexForm(Model
-	 * model) { return "customerlogin"; }
-	 */
-	
-	
 }

@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Find Invoice By Orders Id</title>
 <style type="text/css">
-<%@include file="/WEB-INF/css/order-invoice-form.css"%>
+<%@include file="/WEB-INF/css/view-order-invoice-form.css"%>
 body {
     background-image:
         url(https://www.kibrispdr.org/data/704/kerajinan-dari-benang-woll-59.jpg);

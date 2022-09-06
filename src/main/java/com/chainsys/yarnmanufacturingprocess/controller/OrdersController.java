@@ -66,7 +66,6 @@ public class OrdersController {
 			return "add-order-form";
 		}
 		theOrders.getReceivingDate();
-		System.out.println(theOrders.getReceivingDate());
 		ordersService.save(theOrders);
 		int orderId = theOrders.getOrderId();
 		return "redirect:/invoice/addform?orderId=" + orderId;
@@ -81,19 +80,21 @@ public class OrdersController {
 	public String showUpdateForm(@RequestParam("id") int id, Model model) {
 		Orders theOrders = ordersService.findById(id);
 		theOrders.setOrderDate(Logic.getInstanceDate()); 
+		/*
+		 * if(theOrders.getOrderStatus().equals("Delivered")) {
+		 * 
+		 * }
+		 */
 		model.addAttribute("updateorder", theOrders);
 		return "update-order-form";
 	}
 
 	@PostMapping("/update")
 	public String updateOrder(@Valid @ModelAttribute("updateorder") Orders theOrders, Errors errors) {
-		System.out.println(theOrders.getReceivingDate());		
 		if (errors.hasErrors()) {
 			return "update-order-form";
 		}
-		System.out.println("b"+theOrders);
 		ordersService.save(theOrders);
-		System.out.println(theOrders);
 		return "redirect:/orders/list";
 	}
 
